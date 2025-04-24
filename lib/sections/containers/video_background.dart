@@ -1,0 +1,78 @@
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:video_player/video_player.dart';
+
+class VideoBackground extends StatefulWidget {
+  final String videoAssetPath;
+
+  const VideoBackground({Key? key, required this.videoAssetPath}) : super(key: key);
+
+  @override
+  _VideoBackgroundState createState() => _VideoBackgroundState();
+}
+
+class _VideoBackgroundState extends State<VideoBackground> {
+  late VideoPlayerController _controller;
+  bool _isInitialized = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _initVideo();
+  }
+
+  Future<void> _initVideo() async {
+  try {
+    if (kIsWeb) {
+      _controller = VideoPlayerController.networkUrl(
+        Uri.parse(widget.videoAssetPath),
+        videoPlayerOptions: VideoPlayerOptions(
+          allowBackgroundPlayback: false,
+          mixWithOthers: false,
+        ),
+      );
+    } else {
+      _controller = VideoPlayerController.asset(widget.videoAssetPath);
+    }
+
+    await _controller.initialize();
+    
+    // Critical for web autoplay
+    await _controller.setLooping(true);
+    await _controller.setVolume(0); // Required for autoplay on most browsers
+    
+    // Workaround for Chrome's autoplay policies
+    if (kIsWeb) {
+      await Future.delayed(const Duration(milliseconds: 300));
+    }
+    
+    await _controller.play();
+    setState(() => _isInitialized = true);
+  } catch (e) {
+    debugPrint('Video error: $e');
+    // Fallback implementation
+    setState(() => _isInitialized = false);
+  }
+}
+
+  @override
+  Widget build(BuildContext context) {
+    if (!_isInitialized) {
+      return Container(
+        color: Colors.black,
+        child: Center(child: CircularProgressIndicator()),
+      );
+    }
+
+    return AspectRatio(
+      aspectRatio: _controller.value.aspectRatio,
+      child: VideoPlayer(_controller),
+    );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+}

@@ -1,4 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:veris744/sections/about.dart';
+import 'package:veris744/sections/contact.dart';
+import 'package:veris744/sections/highlighted.dart';
+import 'package:veris744/sections/intro.dart';
+import 'package:veris744/sections/projects.dart';
+import 'package:veris744/sections/skills.dart';
+import 'package:veris744/widgets/top_bar.dart';
 
 void main() {
   runApp(const MyPortfolio());
@@ -8,20 +15,35 @@ class MyPortfolio extends StatelessWidget {
   const MyPortfolio({super.key});
 
   @override
-  Widget build(BuildContext context) {
+   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'My Portfolio',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+      home: Scaffold(
+        appBar: TopBar(),  // Fixed top bar
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              IntroSection(),
+              HighlightedSection(),
+              ProjectsSection(),
+              SkillsSection(),
+              AboutSection(),
+              ContactSection(),
+              ContactSection(),
+              ContactSection(),
+              ContactSection(),
+              ContactSection(),
+              ContactSection(),
+              ContactSection(),
+              ContactSection(),
+              // Add more sections...
+            ],
+          ),
+        ),
       ),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => const HomePage(),
-        '/projectA': (context) => const ProjectAPage(),
-      },
     );
   }
 }
+
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
