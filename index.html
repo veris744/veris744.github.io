@@ -1,38 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
   <base href="/">
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+  <meta name="description" content="Game Developer Portfolio">
+  
+  <!-- Responsive viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Video player polyfill for web -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/video.js@7.21.1/dist/video.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/video.js@7.21.1/dist/video-js.min.css" rel="stylesheet">
 
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="veris744">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>veris744</title>
+  <!-- PWA manifest -->
   <link rel="manifest" href="manifest.json">
+
+  <!-- Flutter initialization -->
+  <script>
+    window.addEventListener('load', function() {
+      // Force video preload
+      const videoPreloader = document.createElement('video');
+      videoPreloader.preload = 'auto';
+      videoPreloader.src = 'assets/videos/game_demo.mp4';
+      
+      // Error handling for Flutter
+      window.addEventListener('error', function(e) {
+        console.error('Global error:', e.error);
+      });
+    });
+  </script>
+
+   <!-- Add these meta tags for autoplay permissions -->
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+   <meta http-equiv="origin-trial" content="your-origin-trial-token">
+   
+   <!-- Add this script for web video polyfill -->
+   <script>
+     document.addEventListener('DOMContentLoaded', () => {
+       // Workaround for Chrome's autoplay policy
+       document.addEventListener('click', () => {
+         const videos = document.querySelectorAll('video');
+         videos.forEach(v => v.play());
+       }, { once: true });
+     });
+   </script>
+
+  <title>veris744 - Game Developer Portfolio</title>
 </head>
 <body>
-  <script src="flutter_bootstrap.js" async></script>
+  <!-- Fallback content if Flutter fails -->
+  <div id="loading" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+    <p>Loading portfolio...</p>
+  </div>
+
+  <!-- Flutter app container -->
+  <div id="flutter-app" style="height: 100vh; width: 100vw;"></div>
+
+  <!-- Flutter bootstrap -->
+  <script src="flutter.js" defer></script>
+  <script src="main.dart.js" type="application/javascript"></script>
 </body>
 </html>
