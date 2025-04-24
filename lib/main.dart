@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:veris744/sections/about.dart';
-import 'package:veris744/sections/contact.dart';
-import 'package:veris744/sections/highlighted.dart';
-import 'package:veris744/sections/intro.dart';
-import 'package:veris744/sections/projects.dart';
-import 'package:veris744/sections/skills.dart';
-import 'package:veris744/widgets/top_bar.dart';
+import 'package:veris744/home_content.dart';
+import 'package:veris744/project_pages/project_content.dart';
+import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 
 void main() {
+  setUrlStrategy(PathUrlStrategy());
   runApp(const MyPortfolio());
 }
 
@@ -15,72 +12,43 @@ class MyPortfolio extends StatelessWidget {
   const MyPortfolio({super.key});
 
   @override
-   Widget build(BuildContext context) {
+  Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: TopBar(),  // Fixed top bar
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              IntroSection(),
-              HighlightedSection(),
-              ProjectsSection(),
-              SkillsSection(),
-              AboutSection(),
-              ContactSection(),
-              ContactSection(),
-              ContactSection(),
-              ContactSection(),
-              ContactSection(),
-              ContactSection(),
-              ContactSection(),
-              ContactSection(),
-              // Add more sections...
-            ],
-          ),
-        ),
-      ),
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomeContent(),
+        '/projectA': (context) => ProjectAPage(), // Case-sensitive!
+      },
     );
   }
 }
 
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+// class HomePage extends StatelessWidget {
+//   const HomePage({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('My Portfolio')),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text('Hello World!', style: TextStyle(fontSize: 24)),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/projectA');
-              },
-              child: const Text('View Project A'),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title: const Text('My Portfolio')),
+//       body: Center(
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: [
+//             const Text('Hello World!', style: TextStyle(fontSize: 24)),
+//             const SizedBox(height: 20),
+//             ElevatedButton(
+//               onPressed: () {
+//                 Navigator.pushNamed(context, '/projectA');
+//               },
+//               child: const Text('View Project A'),
+//             ),
+//             UpButton()
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
 
-class ProjectAPage extends StatelessWidget {
-  const ProjectAPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Project A')),
-      body: const Center(
-        child: Text('This is Project A', style: TextStyle(fontSize: 24)),
-      ),
-    );
-  }
-}

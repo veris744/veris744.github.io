@@ -5,7 +5,7 @@ import 'package:video_player/video_player.dart';
 class VideoBackground extends StatefulWidget {
   final String videoAssetPath;
 
-  const VideoBackground({Key? key, required this.videoAssetPath}) : super(key: key);
+  const VideoBackground({super.key, required this.videoAssetPath});
 
   @override
   _VideoBackgroundState createState() => _VideoBackgroundState();
