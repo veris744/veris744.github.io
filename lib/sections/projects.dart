@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:veris744/sections/containers/project.dart';
+import 'package:veris744/texts.dart';
 
 class ProjectsSection extends StatelessWidget {
   const ProjectsSection({super.key});
@@ -23,33 +24,35 @@ class ProjectsSection extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('Projects', style: Theme.of(context).textTheme.headlineMedium),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
+            Wrap(
+              alignment: WrapAlignment.center,
               children: [
                 Project(
                   name: "Project1",
-                  imagePath: "img",
-                  tags: ["tag1", "tag2"],
-                  description: "description",
+                  imagePath: "assets/images/test.png",
+                  tags: ["C++", "UE5", "AI", "UI"],
+                  description: kLongDescription,
+                  bulletPoints: kBulletPoints,
                   navigateToProject: () {
                     Navigator.of(context).pushNamed('/projectA');
                   },
                 ),
                 Project(
                   name: "Project2",
-                  imagePath: "img",
-                  tags: ["tag1", "tag2"],
+                  imagePath: "assets/images/test.png",
+                  tags: ["C#", "Unity"],
                   description: "description",
+                  bulletPoints: kBulletPoints,
                   navigateToProject: () {
                     Navigator.of(context).pushNamed('/projectA');
                   },
                 ),
                 Project(
                   name: "Project3",
-                  imagePath: "img",
-                  tags: ["tag1", "tag2"],
+                  imagePath: "assets/images/test.png",
+                  tags: ["C++"],
                   description: "description",
+                  bulletPoints: ["1 bulletpoint"],
                   navigateToProject: () {
                     Navigator.of(context).pushNamed('/projectA');
                   },

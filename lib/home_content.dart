@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:veris744/constants.dart';
 import 'package:veris744/project_pages/project_content.dart';
 import 'package:veris744/sections/about.dart';
 import 'package:veris744/sections/contact.dart';
@@ -21,7 +20,6 @@ class _HomeContentState extends State<HomeContent> {
   final ScrollController _scrollController = ScrollController();
   bool _showUpButton = false;
 
-  final GlobalKey _introKey = GlobalKey();
   final GlobalKey _projectsKey = GlobalKey();
   final GlobalKey _skillsKey = GlobalKey();
   final GlobalKey _highlightedKey = GlobalKey();
