@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:veris744/texts.dart';
 
 class AboutSection extends StatelessWidget {
   const AboutSection({super.key});
@@ -7,30 +8,47 @@ class AboutSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return ConstrainedBox(
       constraints: BoxConstraints(
-        minWidth: double.infinity, // Full width
+        minWidth: double.infinity,
         maxWidth: double.infinity,
-        minHeight: 0, // Flexible height
+        minHeight: 0,
       ),
       child: Container(
-        width: double.infinity, // Ensure full width
-        // padding: EdgeInsets.symmetric(
-        //   vertical: 10,
-        //   horizontal: 10,
-        // ),
-        decoration: BoxDecoration(
-          border: Border(bottom: BorderSide(color: Colors.grey[200]!)),
-        ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min, // Only take needed height
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('About Me'),
-            SizedBox(height: 10),
-            Text(
-              'I build cross-platform apps with Flutter...',
-            ),
-            // Add more content...
-          ],
+        width: double.infinity,
+        padding: EdgeInsets.symmetric(vertical: 10, horizontal: 80),
+        color: Colors.grey,
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            bool isMobile = constraints.maxWidth < 600;
+
+            return isMobile
+                ? Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      height: 400,
+                      child: Image.network(
+                        "assets/images/img.JPG",
+                        fit: BoxFit.fitHeight,
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    Text(kAboutText),
+                  ],
+                )
+                : Row(
+                  children: [
+                    SizedBox(
+                      height: 300,
+                      child: Image.network(
+                        "assets/images/img.JPG",
+                        fit: BoxFit.fitHeight,
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Expanded(child: Text(kAboutText)),
+                  ],
+                );
+          },
         ),
       ),
     );

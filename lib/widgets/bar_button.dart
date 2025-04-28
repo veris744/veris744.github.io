@@ -28,11 +28,14 @@ class _BarButtonState extends State<BarButton> {
         child: Container(
           decoration: BoxDecoration(
             border: Border.symmetric(vertical: BorderSide(color: kTextColor)),
-            color: _isHovered ? kAccentColor : kPrimaryColor
+            color: _isHovered ? kAccentColor : kPrimaryColor,
           ),
           height: double.infinity,
           child: TextButton(
-            onPressed: widget.scrollTo,
+            onPressed: () {
+              print("pasando");
+              widget.scrollTo();
+            },
             child: Text(widget.text, style: TextStyle(color: kTextColor)),
           ),
         ),

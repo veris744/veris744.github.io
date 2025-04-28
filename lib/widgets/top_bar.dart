@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:veris744/constants.dart';
 import 'package:veris744/widgets/bar_button.dart';
 
@@ -18,9 +19,20 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
     required this.scrollToContact,
   });
 
+  void scrollToResume() async {
+    const url =
+        'https://drive.google.com/file/d/11lzGRtngqYo_lW2vefK_1m4BDB6igjUS/view?usp=sharing';
+    if (await canLaunchUrl(Uri.parse(url))) {
+      await launchUrl(Uri.parse(url));
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      automaticallyImplyLeading: false,
       title: Builder(
         builder:
             (navContext) => TextButton(
@@ -38,13 +50,14 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
       actions:
           MediaQuery.of(context).size.width > 600
               ? [
+                BarButton(scrollTo: scrollToResume, text: "Résumé"),
                 BarButton(scrollTo: scrollToHihlighted, text: "Highlighted"),
                 BarButton(scrollTo: scrollToProjects, text: "Projects"),
                 BarButton(scrollTo: scrollToSkills, text: "Skills"),
                 BarButton(scrollTo: scrollToAbout, text: "About"),
                 BarButton(scrollTo: scrollToContact, text: "Contact"),
               ]
-              : [],
+              : [BarButton(scrollTo: scrollToResume, text: "Résumé")],
     );
   }
 

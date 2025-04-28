@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:veris744/sections/containers/video_background.dart';
+import 'package:veris744/projects/video_background.dart';
 
 class IntroSection extends StatelessWidget {
   const IntroSection({super.key});

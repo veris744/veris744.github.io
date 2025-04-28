@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:veris744/sections/containers/project.dart';
+import 'package:veris744/projects/project.dart';
 import 'package:veris744/texts.dart';
 
 class ProjectsSection extends StatelessWidget {
