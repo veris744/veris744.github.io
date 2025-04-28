@@ -20,13 +20,27 @@ class HomeContent extends StatefulWidget {
 
 class _HomeContentState extends State<HomeContent> {
   late ItemScrollController _scrollController;
+  late ItemPositionsListener _itemPositionsListener;
 
-  //bool _showUpButton = false;
+  bool _showUpButton = false;
 
   @override
   void initState() {
     super.initState();
     _scrollController = ItemScrollController();
+    _itemPositionsListener = ItemPositionsListener.create();
+
+    _itemPositionsListener.itemPositions.addListener(() {
+      final positions = _itemPositionsListener.itemPositions.value;
+      if (positions.isNotEmpty) {
+        final minIndex = positions
+            .map((e) => e.index)
+            .reduce((a, b) => a < b ? a : b);
+        setState(() {
+          _showUpButton = minIndex > 0;
+        });
+      }
+    });
   }
 
   @override
@@ -35,22 +49,13 @@ class _HomeContentState extends State<HomeContent> {
     super.dispose();
   }
 
-  // void _handleScroll() {
-  //   final bool shouldShow = _scrollController.offset > 100;
-  //   if (shouldShow != _showUpButton) {
-  //     setState(() {
-  //       _showUpButton = shouldShow;
-  //     });
-  //   }
-  // }
-
-  // void _scrollToTop() {
-  //   _scrollController.animateTo(
-  //     0,
-  //     duration: const Duration(milliseconds: 500),
-  //     curve: Curves.easeInOut,
-  //   );
-  // }
+  void _scrollToTop() {
+    _scrollController.scrollTo(
+      index: 0,
+      duration: Duration(milliseconds: 500),
+      curve: Curves.easeInOut,
+    );
+  }
 
   void _scrollToSection(int index) {
     _scrollController.scrollTo(
@@ -70,49 +75,40 @@ class _HomeContentState extends State<HomeContent> {
         scrollToAbout: () => _scrollToSection(4),
         scrollToContact: () => _scrollToSection(5),
       ),
-      body: ScrollablePositionedList.builder(
-        itemScrollController: _scrollController,
-        itemCount: 7,
-        itemBuilder: (context, index) {
-          switch (index) {
-            case 0:
-              return IntroSection();
-            case 1:
-              return HighlightedSection();
-            case 2:
-              return ProjectsSection();
-            case 3:
-              return SkillsSection();
-            case 4:
-              return AboutSection();
-            case 5:
-              return ContactSection();
-            case 6:
-              return Copyright();
-            default:
-              return SizedBox.shrink();
-          }
-        },
-        // children: [
-        //   ListView(
-        //     controller: _scrollController,
-        //     children: [
-        //       const IntroSection(),
-        //       HighlightedSection(key: _highlightedKey),
-        //       ProjectsSection(key: _projectsKey),
-        //       SkillsSection(key: _skillsKey),
-        //       AboutSection(key: _aboutKey),
-        //       ContactSection(key: _contactKey),
-        //       Copyright(),
-        //     ],
-        //   ),
-        //   if (_showUpButton)
-        //     Positioned(
-        //       bottom: 20,
-        //       right: 20,
-        //       child: UpButton(onPressed: _scrollToTop),
-        //     ),
-        // ],
+      body: Stack(
+        children: [
+          ScrollablePositionedList.builder(
+            itemScrollController: _scrollController,
+            itemPositionsListener: _itemPositionsListener,
+            itemCount: 7,
+            itemBuilder: (context, index) {
+              switch (index) {
+                case 0:
+                  return IntroSection();
+                case 1:
+                  return HighlightedSection();
+                case 2:
+                  return ProjectsSection();
+                case 3:
+                  return SkillsSection();
+                case 4:
+                  return AboutSection();
+                case 5:
+                  return ContactSection();
+                case 6:
+                  return Copyright();
+                default:
+                  return SizedBox.shrink();
+              }
+            },
+          ),
+          if (_showUpButton)
+            Positioned(
+              bottom: 20,
+              right: 20,
+              child: UpButton(onPressed: _scrollToTop),
+            ),
+        ],
       ),
     );
   }
