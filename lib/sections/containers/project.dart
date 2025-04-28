@@ -49,7 +49,7 @@ class Project extends StatelessWidget {
                 imagePath,
                 fit:
                     BoxFit
-                        .cover, // or BoxFit.contain / BoxFit.fitWidth depending on your needs
+                        .cover,
               ),
             ),
           ),
@@ -58,8 +58,8 @@ class Project extends StatelessWidget {
             child: Container(
               margin: EdgeInsets.symmetric(vertical: 8),
               child: Wrap(
-                spacing: 4, // horizontal spacing between tags
-                runSpacing: 4, // vertical spacing between lines
+                spacing: 4,
+                runSpacing: 4,
                 children: tags.map((tag) => Tag(name: tag)).toList(),
               ),
             ),

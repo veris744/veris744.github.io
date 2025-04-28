@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:veris744/constants.dart';
+import 'package:veris744/skills/languages.dart';
+import 'package:veris744/skills/soft.dart';
+import 'package:veris744/skills/tools.dart';
 
 class SkillsSection extends StatelessWidget {
   const SkillsSection({super.key});
@@ -7,10 +11,16 @@ class SkillsSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(32),
+      color: Color.fromARGB(255, 117, 117, 117),
       child: Column(
         children: [
-          Text('Skills', style: Theme.of(context).textTheme.headlineMedium),
-          Text('I build apps with Flutter...'),
+          Text('Skills', style: kHeader1Style),
+          Wrap(
+            spacing: 10,
+            runSpacing: 10,
+            runAlignment: WrapAlignment.center,
+            children: [LanguagesSkills(), ToolsSkills(), SoftSkills()],
+          ),
         ],
       ),
     );

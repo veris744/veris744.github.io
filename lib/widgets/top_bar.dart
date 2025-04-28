@@ -22,22 +22,29 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       title: Builder(
-        builder: (navContext) => TextButton(
-          onPressed: () {
-            Navigator.of(navContext).pushNamed('/');
-          },
-          child: Text('Isabel de Vergara', style: TextStyle(color: kTextColor)),
-        ),
+        builder:
+            (navContext) => TextButton(
+              onPressed: () {
+                Navigator.of(navContext).pushNamed('/');
+              },
+              child: Text(
+                'Isabel de Vergara',
+                style: TextStyle(color: kTextColor),
+              ),
+            ),
       ),
       elevation: 4,
       backgroundColor: kPrimaryColor,
-      actions: [
-        BarButton(scrollTo: scrollToHihlighted, text: "Highlighted"),
-        BarButton(scrollTo: scrollToProjects, text: "Projects"),
-        BarButton(scrollTo: scrollToSkills, text: "Skills"),
-        BarButton(scrollTo: scrollToAbout, text: "About"),
-        BarButton(scrollTo: scrollToContact, text: "Contact"),
-      ],
+      actions:
+          MediaQuery.of(context).size.width > 600
+              ? [
+                BarButton(scrollTo: scrollToHihlighted, text: "Highlighted"),
+                BarButton(scrollTo: scrollToProjects, text: "Projects"),
+                BarButton(scrollTo: scrollToSkills, text: "Skills"),
+                BarButton(scrollTo: scrollToAbout, text: "About"),
+                BarButton(scrollTo: scrollToContact, text: "Contact"),
+              ]
+              : [],
     );
   }
 
