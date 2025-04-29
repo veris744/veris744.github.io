@@ -10,7 +10,44 @@ Map<String, Color> tags = {
   "Unity" : Color.fromARGB(201, 255, 81, 0),
   "C++" : Color.fromARGB(200, 0, 225, 255),
   "UE5" : Color.fromARGB(199, 255, 85, 178),
-  "C#" : Color.fromARGB(200, 72, 255, 0)
+  "C#" : Color.fromARGB(200, 72, 255, 0),
+  "AI" : Color.fromARGB(199, 0, 255, 213),
+  "UI" : Color.fromARGB(199, 255, 0, 0),
+  "VR" : Color.fromARGB(199, 238, 255, 0)
+};
+
+
+enum Platforms { windows, oculus, steam, itch, android, vr, git }
+
+Map<Platforms, String> platformsIcons = {
+  Platforms.windows: 'assets/icons/windows.svg',
+  Platforms.oculus: 'assets/icons/oculus.svg',
+  Platforms.steam: 'assets/icons/steam.svg',
+  Platforms.itch: 'assets/icons/itch.svg',
+  Platforms.android: 'assets/icons/android.svg',
+  Platforms.vr: 'assets/icons/vr.svg',
+  Platforms.git: 'assets/icons/git.svg',
+};
+
+
+Map<Platforms, String> platformsImages = {
+  Platforms.windows: 'assets/images/windows.png',
+  Platforms.oculus: 'assets/images/oculus.png',
+  Platforms.steam: 'assets/images/steam.png',
+  Platforms.itch: 'assets/images/itch.png',
+  Platforms.android: 'assets/images/android.png',
+  Platforms.vr: 'assets/images/vr.png',
+  Platforms.git: 'assets/images/git.png',
+};
+
+Map<Platforms, String> platformsNames = {
+  Platforms.windows: 'Windows',
+  Platforms.oculus: 'Oculus',
+  Platforms.steam: 'Steam',
+  Platforms.itch: 'Itch.io',
+  Platforms.android: 'Android',
+  Platforms.vr: 'VR',
+  Platforms.git: 'GitHub',
 };
 
 // ================ Text Styles ================

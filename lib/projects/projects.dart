@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:veris744/constants.dart';
 import 'package:veris744/projects/project.dart';
 import 'package:veris744/texts.dart';
 
@@ -23,39 +24,76 @@ class ProjectsSection extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Projects', style: Theme.of(context).textTheme.headlineMedium),
+            Text('Academic Projects', style: kHeader1Style),
             Wrap(
               alignment: WrapAlignment.center,
               children: [
                 Project(
-                  name: "Project1",
-                  imagePath: "assets/images/test.png",
-                  tags: ["C++", "UE5", "AI", "UI"],
-                  description: kLongDescription,
-                  bulletPoints: kBulletPoints,
-                  navigateToProject: () {
-                    Navigator.of(context).pushNamed('/projectA');
-                  },
+                  name: "End of Life",
+                  imagePath: "assets/images/eolCover.jpg",
+                  tags: ["C++", "UE5", "AI", "UI", "Team Management"],
+                  description: kEOLShortDesc,
+                  bulletPoints: kBPEOL,
+                  pageName: "EndOfLife",
+                  links: ['https://store.steampowered.com/app/2666520/End_Of_Life/'],
+                  platforms: [Platforms.windows, Platforms.steam],
+                  award: 'PlayStation Talents Finalist',
                 ),
                 Project(
-                  name: "Project2",
-                  imagePath: "assets/images/test.png",
-                  tags: ["C#", "Unity"],
-                  description: "description",
-                  bulletPoints: kBulletPoints,
-                  navigateToProject: () {
-                    Navigator.of(context).pushNamed('/projectA');
-                  },
+                  name: "Nowhere To Run",
+                  imagePath: "assets/images/NTR.png",
+                  tags: ["C#", "Unity", "VR"],
+                  description: kNTRShortDesc,
+                  bulletPoints: kBPNTR,
+                  pageName: "NowhereToRun",
+                  platforms: [Platforms.vr, Platforms.android, Platforms.itch],
+                  links: ['https://veris744.itch.io/nowhere-to-run', 'https://github.com/veris744/NowhereToRun'],
                 ),
                 Project(
-                  name: "Project3",
+                  name: "Social MatchUp",
                   imagePath: "assets/images/test.png",
-                  tags: ["C++"],
-                  description: "description",
-                  bulletPoints: ["1 bulletpoint"],
-                  navigateToProject: () {
-                    Navigator.of(context).pushNamed('/projectA');
-                  },
+                  tags: ["C#", "Unity", "Oculus", "VR", "Multiplayer"],
+                  description: kSMUShortDesc,
+                  bulletPoints: kBPSMU,
+                  pageName: "SocialMatchUp",
+                  platforms: [Platforms.vr, Platforms.android, Platforms.itch],
+                  links: ['https://github.com/veris744/Social-Matchup'],
+                ),
+              ],
+            ),
+            Text('Personal Projects', style: kHeader1Style),
+            Wrap(
+              alignment: WrapAlignment.center,
+              children: [
+                Project(
+                  name: "C++ Game Engine",
+                  imagePath: "assets/images/eolCover.jpg",
+                  tags: ["C++", "Tools", "AI", "UI", "OpenGL"],
+                  description: kEOLShortDesc,
+                  bulletPoints: kBPEOL,
+                  pageName: "Engine",
+                  links: ['https://store.steampowered.com/app/2666520/End_Of_Life/'],
+                  platforms: [Platforms.windows],
+                ),
+                Project(
+                  name: "Flocking Project",
+                  imagePath: "assets/images/test.png",
+                  tags: ["C++", "UE5", "AI"],
+                  description: kNTRShortDesc,
+                  bulletPoints: kBPNTR,
+                  pageName: "Flocking",
+                  platforms: [Platforms.windows],
+                  links: ['https://github.com/veris744/FlockingProject'],
+                ),
+                Project(
+                  name: "CofradeJam",
+                  imagePath: "assets/images/test.png",
+                  tags: ["C#", "Unity", "Jam"],
+                  description: kSMUShortDesc,
+                  bulletPoints: kBPSMU,
+                  pageName: "Cofrade",
+                  platforms: [Platforms.windows, Platforms.itch],
+                  links: ['https://store.steampowered.com/app/2666520/End_Of_Life/'],
                 ),
               ],
             ),

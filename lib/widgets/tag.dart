@@ -12,14 +12,14 @@ class Tag extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(
-        vertical: 0,
-        horizontal: 5
+        vertical: 3,
+        horizontal: 8
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(90),
         color: tags.containsKey(name) ? tags[name] : Color.fromARGB(255, 116, 116, 116)
       ),
-      child: Text(name, style: TextStyle(fontSize: 10, color: kTextColor),),
+      child: Text(name, style: TextStyle(fontSize: 13, color: kTextColor),),
     );
   }
 

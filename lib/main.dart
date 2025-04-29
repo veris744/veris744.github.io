@@ -18,7 +18,7 @@ class MyPortfolio extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => HomeContent(),
-        '/projectA': (context) => ProjectAPage(), // Case-sensitive!
+        '/EndOfLife': (context) => ProjectAPage(), // Case-sensitive!
       },
     );
   }
