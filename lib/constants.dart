@@ -17,7 +17,7 @@ Map<String, Color> tags = {
 };
 
 
-enum Platforms { windows, oculus, steam, itch, android, vr, git }
+enum Platforms { windows, oculus, steam, itch, android, vr, git, none }
 
 Map<Platforms, String> platformsIcons = {
   Platforms.windows: 'assets/icons/windows.svg',

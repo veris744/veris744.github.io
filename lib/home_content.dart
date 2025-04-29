@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
-import 'package:veris744/project_pages/project_content.dart';
 import 'package:veris744/sections/about.dart';
 import 'package:veris744/sections/contact.dart';
 import 'package:veris744/sections/copyright.dart';
 import 'package:veris744/sections/highlighted.dart';
 import 'package:veris744/sections/intro.dart';
 import 'package:veris744/projects/projects.dart';
+import 'package:veris744/sections/mini_about.dart';
 import 'package:veris744/skills/skills.dart';
 import 'package:veris744/widgets/top_bar.dart';
 import 'package:veris744/widgets/up_button.dart';
@@ -69,33 +69,35 @@ class _HomeContentState extends State<HomeContent> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: TopBar(
-        scrollToHihlighted: () => _scrollToSection(1),
-        scrollToProjects: () => _scrollToSection(2),
-        scrollToSkills: () => _scrollToSection(3),
-        scrollToAbout: () => _scrollToSection(4),
-        scrollToContact: () => _scrollToSection(5),
+        scrollToHihlighted: () => _scrollToSection(2),
+        scrollToProjects: () => _scrollToSection(3),
+        scrollToSkills: () => _scrollToSection(4),
+        scrollToAbout: () => _scrollToSection(5),
+        scrollToContact: () => _scrollToSection(6),
       ),
       body: Stack(
         children: [
           ScrollablePositionedList.builder(
             itemScrollController: _scrollController,
             itemPositionsListener: _itemPositionsListener,
-            itemCount: 7,
+            itemCount: 8,
             itemBuilder: (context, index) {
               switch (index) {
                 case 0:
                   return IntroSection();
                 case 1:
-                  return HighlightedSection();
+                  return MiniAbout();
                 case 2:
-                  return ProjectsSection();
+                  return HighlightedSection();
                 case 3:
-                  return SkillsSection();
+                  return ProjectsSection();
                 case 4:
-                  return AboutSection();
+                  return SkillsSection();
                 case 5:
-                  return ContactSection();
+                  return AboutSection();
                 case 6:
+                  return ContactSection();
+                case 7:
                   return Copyright();
                 default:
                   return SizedBox.shrink();

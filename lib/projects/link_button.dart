@@ -21,17 +21,17 @@ class LinkButton extends StatelessWidget {
       style: TextButton.styleFrom(
         padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
         backgroundColor: Colors.grey,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Image.asset(platformsImages[platform]!, height: 24, width: 24),
+          platformsImages.containsKey(platform)
+              ? Image.asset(platformsImages[platform]!, height: 24, width: 24)
+              : SizedBox.shrink(),
           SizedBox(width: 8),
           Text(
-            platformsNames[platform]!,
+            platformsNames.containsKey(platform) ? platformsNames[platform]! : "Download",
             style: TextStyle(color: Colors.white),
           ),
           SizedBox(width: 8),

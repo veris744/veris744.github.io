@@ -31,6 +31,8 @@ class ToolsSkills extends StatelessWidget {
               Skill(iconPath: "assets/icons/opengl.svg", name: "OpenGL",),
               Skill(iconPath: "assets/icons/vs.svg", name: "Visual Studio 2022",),
               Skill(iconPath: "assets/icons/unity.svg", name: "Unity",),
+              Skill(iconPath: "assets/icons/argo.svg", name: "ArgoCD",),
+              Skill(iconPath: "assets/icons/cmake.svg", name: "CMake",),
               Skill(iconPath: "assets/icons/jenkins.svg", name: "Jenkins",),
             ],
           )

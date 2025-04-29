@@ -37,9 +37,12 @@ class Project extends StatelessWidget {
       return Platforms.itch;
     }
     if (_link.contains('git')) {
+      if (_link.contains('releases')) {
+        return Platforms.none;
+      }
       return Platforms.git;
     }
-    return Platforms.git;
+    return Platforms.none;
   }
 
   @override
@@ -52,7 +55,7 @@ class Project extends StatelessWidget {
         borderRadius: BorderRadius.circular(15),
       ),
       margin: EdgeInsets.all(10),
-      padding: EdgeInsets.all(10),
+      padding: EdgeInsets.symmetric(vertical: 5, horizontal: 20),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -92,11 +95,17 @@ class Project extends StatelessWidget {
             ),
           ),
           kBlankSeparator,
-          kBlankSeparator,
-          Text(
-            description,
-            textAlign: TextAlign.left,
-            style: TextStyle(color: kTextColor),
+          ConstrainedBox(
+            constraints: BoxConstraints(
+              minWidth: double.infinity, // Full width
+              maxWidth: double.infinity,
+              minHeight: 0,
+            ),
+            child: Text(
+              description,
+              textAlign: TextAlign.left,
+              style: TextStyle(color: kTextColor),
+            ),
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -107,11 +116,11 @@ class Project extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
+            spacing: 10,
             children: [
               Flexible(
                 child: Text("Platforms:", style: TextStyle(color: kTextColor)),
               ),
-              kBlankSeparator,
               ...platforms.map(
                 (platform) => Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 4),
@@ -129,16 +138,23 @@ class Project extends StatelessWidget {
           ),
           kBlankSeparator,
           kBlankSeparator,
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            spacing: 10,
-            children:
-                links
-                    .map(
-                      (link) =>
-                          LinkButton(link: link, platform: _checkLink(link)),
-                    )
-                    .toList(),
+          ConstrainedBox(
+            constraints: BoxConstraints(
+              minWidth: double.infinity,
+              maxWidth: double.infinity,
+              minHeight: 0,
+            ),
+            child: Wrap(
+              alignment: WrapAlignment.start,
+              spacing: 10,
+              children:
+                  links
+                      .map(
+                        (link) =>
+                            LinkButton(link: link, platform: _checkLink(link)),
+                      )
+                      .toList(),
+            ),
           ),
           kBlankSeparator,
           TextButton(

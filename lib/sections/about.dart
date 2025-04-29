@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:veris744/constants.dart';
 import 'package:veris744/texts.dart';
 
 class AboutSection extends StatelessWidget {
@@ -6,6 +7,9 @@ class AboutSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final isWideScreen = screenWidth > 800;
+
     return ConstrainedBox(
       constraints: BoxConstraints(
         minWidth: double.infinity,
@@ -14,11 +18,14 @@ class AboutSection extends StatelessWidget {
       ),
       child: Container(
         width: double.infinity,
-        padding: EdgeInsets.symmetric(vertical: 10, horizontal: 80),
+        padding: EdgeInsets.symmetric(
+          horizontal: isWideScreen ? 150 : 10,
+          vertical: 20,
+        ),
         color: Colors.grey,
         child: LayoutBuilder(
           builder: (context, constraints) {
-            bool isMobile = constraints.maxWidth < 600;
+            bool isMobile = constraints.maxWidth < 800;
 
             return isMobile
                 ? Column(
@@ -31,8 +38,11 @@ class AboutSection extends StatelessWidget {
                         fit: BoxFit.fitHeight,
                       ),
                     ),
-                    SizedBox(height: 10),
-                    Text(kAboutText),
+                    SizedBox(height: 20),
+                    Text(
+                      kAboutText,
+                      style: TextStyle(color: kTextColor, fontSize: 18),
+                    ),
                   ],
                 )
                 : Row(
@@ -44,8 +54,13 @@ class AboutSection extends StatelessWidget {
                         fit: BoxFit.fitHeight,
                       ),
                     ),
-                    SizedBox(width: 10),
-                    Expanded(child: Text(kAboutText)),
+                    SizedBox(width: 40),
+                    Expanded(
+                      child: Text(
+                        kAboutText,
+                        style: TextStyle(color: kTextColor, fontSize: 18),
+                      ),
+                    ),
                   ],
                 );
           },
