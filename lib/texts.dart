@@ -1,5 +1,5 @@
 const String kLongDescription =
-    "We're describing a game project.\nThis description is a bit longer and will key you in the main points, which are:";
+"We're describing a game project.\nThis description is a bit longer and will key you in the main points, which are:";
 
 const List<String> kBulletPoints = [
   "This is the 1st important thing",
@@ -51,7 +51,7 @@ const List<String> kBPUpcoming = [
 //////////////////////////
 
 const String kEOLShortDesc =
-    "Third Person Shooter game set in a dynamic, ever-rotating world that transforms in game time.\n\nMy contributions:";
+"Third Person Shooter game set in a dynamic, ever-rotating world that transforms in game time.\n\nMy contributions:";
 const List<String> kBPEOL = [
   "AI, including custom movement, BTs and a EQS",
   "UI programming",
@@ -59,7 +59,7 @@ const List<String> kBPEOL = [
 ];
 
 const String kNTRShortDesc =
-    "First Person Horror game for Android VR created as a solo project for University.\n\nKey Aspects:";
+"First Person Horror game for Android VR created as a solo project for University.\n\nKey Aspects:";
 const List<String> kBPNTR = [
   "Game Mechanics and Design",
   "Gameplay Programming, AI, UI",
@@ -67,7 +67,7 @@ const List<String> kBPNTR = [
 ];
 
 const String kSMUShortDesc =
-    "Oculus VR Multiplayer Minigame aimed at neurodivergent children during Covid.\n\nContributions:";
+"Oculus VR Multiplayer Minigame aimed at neurodivergent children during Covid.\n\nContributions:";
 const List<String> kBPSMU = [
   "Online Programming using Photon",
   "Gameplay and UI Programming",
@@ -75,7 +75,7 @@ const List<String> kBPSMU = [
 ];
 
 const String kEngineShortDesc =
-    "Small C++ game engine, this is still a work in progress.\n\nKey Aspects (already implemented):";
+"Small C++ game engine, this is still a work in progress.\n\nKey Aspects (already implemented):";
 const List<String> kBPEngine = [
   "Game Editor and showcase mini-game"
   "Graphics with OpenGL",
@@ -86,7 +86,7 @@ const List<String> kBPEngine = [
 ];
 
 const String kFlockShortDesc =
-    "Mini-game exploring flocking behavior.\n\nKey Aspects:";
+"Mini-game exploring flocking behavior.\n\nKey Aspects:";
 const List<String> kBPFlock = [
   "C++ and Unreal Engine",
   "AI Flocking behavior",
@@ -94,8 +94,20 @@ const List<String> kBPFlock = [
 ];
 
 const String kCJShortDesc =
-    "2D Tower Defense game created for a Game Jam.\n\nContributions:";
+"2D Tower Defense game created for a Game Jam.\n\nContributions:";
 const List<String> kBPCJ = [
   "UI programming",
   "Gameplay programming",
 ];
+
+
+
+///////////////////////////
+// PROJECT - END OF LIFE //
+///////////////////////////
+
+const String awardEOL = "PLAY STATION TALENTS FINALIST 2023\nBEST DESIGN";
+
+const String kDesc1EOL = "End of Life is a third-person action shooter created as the final project for my master’s in game programming. Developed over several months using Unreal Engine 5 and C++, the game was a multidisciplinary collaboration involving artists, designers, and programmers. As Lead AI Programmer and Producer, I was responsible for major technical systems and project coordination across the team.\n\nIn End of Life, players step into the role of Nashla, a demi-goddess fighting to restore her fading power. The game’s world is its standout feature: a rotating, fragmented environment inspired by a Rubik’s Cube, where gravity changes dynamically based on orientation. Nashla must traverse this ever-shifting terrain using her weapons — lethal magical needles — and her divine powers, including time manipulation and world rotation.\n\nThe game blends fast-paced shooting mechanics with spatial puzzle-solving, set in a mystic, surreal landscape.\n";
+
+const String kDesc2EOL = "Designing the AI to work within such a complex, non-Euclidean environment posed unique challenges. My main responsibilities included:\nEnvironment Query System (EQS): Built a system to dynamically evaluate NPC surroundings — including player behavior, environmental cover, and other enemies — to drive decision-making and tactical positioning.\nMovement and Path Following: I developed the NPC movement and path-following logic for our custom navmest, allowing characters to navigate seamlessly in a world with multiple gravity directions and rotating geometry.\nBehavior Trees & State Machines: Used Unreal’s built-in AI tools to design and implement flexible Behavior Trees, combining high-level strategies with reactive behaviors.\nOptimization & Profiling: Analyzed performance bottlenecks related to AI perception and navigation, implementing profiling tools and improving CPU usage under load.";

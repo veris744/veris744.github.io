@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:veris744/constants.dart';
 import 'package:veris744/texts.dart';
-import 'package:veris744/widgets/bulletpoint.dart';
 import 'package:veris744/widgets/carousel.dart';
 
 class HighlightedSection extends StatelessWidget {
   HighlightedSection({super.key});
 
   final List<String> imageUrls = [
-    'assets/images/editor.png',
-    'assets/images/eolCover.jpg',
-    'assets/images/flock.png',
+    'assets/images/editorMenu.png',
+    'assets/images/editorEdi.png',
+    'assets/images/editorAliens.png',
   ];
 
   @override

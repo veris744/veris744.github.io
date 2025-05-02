@@ -26,7 +26,7 @@ Map<Platforms, String> platformsIcons = {
   Platforms.itch: 'assets/icons/itch.svg',
   Platforms.android: 'assets/icons/android.svg',
   Platforms.vr: 'assets/icons/vr.svg',
-  Platforms.git: 'assets/icons/git.svg',
+  Platforms.git: 'assets/icons/github.svg',
 };
 
 
@@ -37,7 +37,7 @@ Map<Platforms, String> platformsImages = {
   Platforms.itch: 'assets/images/itch.png',
   Platforms.android: 'assets/images/android.png',
   Platforms.vr: 'assets/images/vr.png',
-  Platforms.git: 'assets/images/git.png',
+  Platforms.git: 'assets/images/github.png',
 };
 
 Map<Platforms, String> platformsNames = {

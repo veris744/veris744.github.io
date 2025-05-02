@@ -26,6 +26,8 @@ class ProjectsSection extends StatelessWidget {
           children: [
             Text('Academic Projects', style: kHeader1Style),
             Wrap(
+              spacing: 20,
+              runSpacing: 10,
               alignment: WrapAlignment.center,
               children: [
                 Project(
@@ -73,6 +75,8 @@ class ProjectsSection extends StatelessWidget {
             Text('Personal Projects', style: kHeader1Style),
             Wrap(
               alignment: WrapAlignment.center,
+              spacing: 20,
+              runSpacing: 10,
               children: [
                 Project(
                   name: "C++ Game Engine",

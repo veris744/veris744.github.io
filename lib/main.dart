@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:veris744/home_content.dart';
+import 'package:veris744/project_pages/eol/end_of_life.dart';
 import 'package:veris744/project_pages/project_content.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 
@@ -17,7 +18,7 @@ class MyPortfolio extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: HomeContent(),
       routes: {
-        '/EndOfLife': (context) => ProjectAPage(),
+        '/EndOfLife': (context) => EndOfLife(),
         '/NowhereToRun': (context) => ProjectAPage(),
         '/SocialMatchUp': (context) => ProjectAPage(),
         '/Engine': (context) => ProjectAPage(),

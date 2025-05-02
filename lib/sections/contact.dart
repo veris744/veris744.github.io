@@ -22,7 +22,7 @@ class ContactSection extends StatelessWidget {
               children: [
                 IconButton(
                   constraints: BoxConstraints.tight(Size.fromWidth(75)),
-                  icon: SvgPicture.network("assets/icons/git.svg"),
+                  icon: SvgPicture.network("assets/icons/github.svg"),
                   onPressed: () async {
                     const url =
                         'https://github.com/veris744';

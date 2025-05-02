@@ -20,7 +20,7 @@ class SoftSkills extends StatelessWidget {
         spacing: 15,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text("SOFT SKILLs", style: kHeader2Style, textAlign: TextAlign.center),
+          Text("SKILLS", style: kHeader2Style, textAlign: TextAlign.center),
           kBlankSeparator,
           Wrap(
             spacing: 40,

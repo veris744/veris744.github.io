@@ -51,13 +51,12 @@ class Project extends StatelessWidget {
     bool isMobile = screenWidth < 800;
 
     return Container(
-      height: isMobile ? 800 : 700,
+      height: isMobile ? 770 : 700,
       width: 450,
       decoration: BoxDecoration(
         color: kPrimaryColor,
         borderRadius: BorderRadius.circular(15),
       ),
-      margin: EdgeInsets.all(10),
       padding: EdgeInsets.symmetric(vertical: 5, horizontal: 20),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -76,11 +75,11 @@ class Project extends StatelessWidget {
                 ),
                 child: Text(
                   award,
-                  style: TextStyle(color: Colors.black),
+                  style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center,
                 ),
               )
-              : SizedBox(height: 30),
+              : (!isMobile ? SizedBox(height: 30) : SizedBox.shrink()),
           SizedBox(
             height: 180,
             child: Image.network(imagePath, fit: BoxFit.contain),
