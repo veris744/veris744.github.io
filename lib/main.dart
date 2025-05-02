@@ -15,10 +15,14 @@ class MyPortfolio extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/',
+      home: HomeContent(),
       routes: {
-        '/': (context) => HomeContent(),
-        '/EndOfLife': (context) => ProjectAPage(), // Case-sensitive!
+        '/EndOfLife': (context) => ProjectAPage(),
+        '/NowhereToRun': (context) => ProjectAPage(),
+        '/SocialMatchUp': (context) => ProjectAPage(),
+        '/Engine': (context) => ProjectAPage(),
+        '/Flocking': (context) => ProjectAPage(),
+        '/Cofrade': (context) => ProjectAPage(),
       },
     );
   }

@@ -12,11 +12,7 @@ class LinkButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: () async {
-        if (await canLaunchUrl(Uri.parse(link))) {
-          await launchUrl(Uri.parse(link));
-        } else {
-          throw 'Could not launch $link';
-        }
+        await launchUrl(Uri.parse(link), mode: LaunchMode.externalApplication);
       },
       style: TextButton.styleFrom(
         padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
@@ -27,7 +23,7 @@ class LinkButton extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           platformsImages.containsKey(platform)
-              ? Image.asset(platformsImages[platform]!, height: 24, width: 24)
+              ? Image.network(platformsImages[platform]!, height: 24, width: 24)
               : SizedBox.shrink(),
           SizedBox(width: 8),
           Text(

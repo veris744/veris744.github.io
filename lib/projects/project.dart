@@ -29,15 +29,15 @@ class Project extends StatelessWidget {
   final List<Platforms> platforms;
   final String award;
 
-  Platforms _checkLink(String _link) {
-    if (_link.contains('steam')) {
+  Platforms _checkLink(String link) {
+    if (link.contains('steam')) {
       return Platforms.steam;
     }
-    if (_link.contains('itch')) {
+    if (link.contains('itch')) {
       return Platforms.itch;
     }
-    if (_link.contains('git')) {
-      if (_link.contains('releases')) {
+    if (link.contains('git')) {
+      if (link.contains('releases')) {
         return Platforms.none;
       }
       return Platforms.git;
@@ -47,8 +47,11 @@ class Project extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    bool isMobile = screenWidth < 800;
+
     return Container(
-      height: 700,
+      height: isMobile ? 800 : 700,
       width: 450,
       decoration: BoxDecoration(
         color: kPrimaryColor,
@@ -58,10 +61,10 @@ class Project extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 5, horizontal: 20),
       child: Column(
         mainAxisSize: MainAxisSize.min,
+        spacing: 8,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(name, style: kHeader2Style, textAlign: TextAlign.center),
-          kBlankSeparator,
           (award != '')
               ? Container(
                 width: 300,
@@ -78,12 +81,10 @@ class Project extends StatelessWidget {
                 ),
               )
               : SizedBox(height: 30),
-          kBlankSeparator,
           SizedBox(
             height: 180,
             child: Image.network(imagePath, fit: BoxFit.contain),
           ),
-          kBlankSeparator,
           Center(
             child: Container(
               margin: EdgeInsets.symmetric(vertical: 8),
@@ -94,7 +95,6 @@ class Project extends StatelessWidget {
               ),
             ),
           ),
-          kBlankSeparator,
           ConstrainedBox(
             constraints: BoxConstraints(
               minWidth: double.infinity, // Full width
@@ -137,7 +137,6 @@ class Project extends StatelessWidget {
             ],
           ),
           kBlankSeparator,
-          kBlankSeparator,
           ConstrainedBox(
             constraints: BoxConstraints(
               minWidth: double.infinity,
@@ -146,7 +145,8 @@ class Project extends StatelessWidget {
             ),
             child: Wrap(
               alignment: WrapAlignment.start,
-              spacing: 10,
+              spacing: 8,
+              runSpacing: 5,
               children:
                   links
                       .map(
@@ -156,10 +156,9 @@ class Project extends StatelessWidget {
                       .toList(),
             ),
           ),
-          kBlankSeparator,
           TextButton(
             onPressed: () {
-              Navigator.of(context).pushNamed(pageName);
+              Navigator.of(context).pushNamed('/$pageName');
             },
             child: Text("See More", style: TextStyle(color: kTextColor)),
           ),

@@ -71,7 +71,7 @@ class _CarouselWithButtonsState extends State<CarouselWithButtons> {
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(12),
-                  child: Image.asset(_loopedImages[index], fit: BoxFit.cover),
+                  child: Image.network(_loopedImages[index], fit: BoxFit.cover),
                 ),
               );
             },

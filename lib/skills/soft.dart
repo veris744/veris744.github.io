@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:veris744/constants.dart';
-import 'package:veris744/skills/skill.dart';
 import 'package:veris744/widgets/bulletpoint.dart';
 
 class SoftSkills extends StatelessWidget {
