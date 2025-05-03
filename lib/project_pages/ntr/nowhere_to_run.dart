@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:veris744/constants.dart';
-import 'package:veris744/project_pages/image_legend.dart';
 import 'package:veris744/project_pages/status.dart';
 import 'package:veris744/project_pages/youtube_video.dart';
 import 'package:veris744/sections/copyright.dart';
@@ -8,14 +7,14 @@ import 'package:veris744/texts.dart';
 import 'package:veris744/widgets/top_bar.dart';
 import 'package:veris744/widgets/up_button.dart';
 
-class EndOfLife extends StatefulWidget {
-  const EndOfLife({super.key});
+class NowhereToRun extends StatefulWidget {
+  const NowhereToRun({super.key});
 
   @override
-  State<EndOfLife> createState() => _EndOfLifeState();
+  State<NowhereToRun> createState() => _NowhereToRunState();
 }
 
-class _EndOfLifeState extends State<EndOfLife> {
+class _NowhereToRunState extends State<NowhereToRun> {
   final ScrollController _scrollController = ScrollController();
   bool _showUpButton = false;
 
@@ -62,29 +61,13 @@ class _EndOfLifeState extends State<EndOfLife> {
                 child: Column(
                   spacing: 15,
                   children: [
-                    Text("End Of Life", style: kHeader1Style),
+                    Text("NOWHERE TO RUN", style: kHeader1Style),
                     Status(
                       isDone: true,
-                      duration: "1 year",
-                      language: "C++",
-                      software: "Unreal Engine 5",
-                      role: "AI and UI programmer, producer",
-                    ),
-                    Container(
-                      width: 400,
-                      padding: EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        color: Colors.amber,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Text(
-                        awardEOL,
-                        style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
+                      duration: "6 months",
+                      language: "C#",
+                      software: "Unity, Android VR",
+                      role: "Solo project",
                     ),
                     kBlankSeparator,
                     LayoutBuilder(
@@ -100,9 +83,7 @@ class _EndOfLifeState extends State<EndOfLife> {
 
                         final mediaWidget = SizedBox(
                           width: 600,
-                          child: YoutubeVideo(
-                            video: 'MCdZHNheqqQ',
-                          ), // or Image.asset(...)
+                          child: YoutubeVideo(video: 'waJktW4Bhzg'), // or Image.asset(...)
                         );
 
                         if (isSmallScreen) {
@@ -162,31 +143,6 @@ class _EndOfLifeState extends State<EndOfLife> {
                       width: double.infinity,
                       child: Text(
                         kDesc2EOL,
-                        style: TextStyle(fontSize: 16),
-                        textAlign: TextAlign.left,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 1000,
-                      child: ImageLegend(path:
-                        'assets/images/eolEditor.png', legend: "Screenshot from the Editor showing multi-gravity world and Navmesh",
-                      ), // or Image.asset(...)
-                    ),
-                    SizedBox(
-                      width: double.infinity,
-                      child: Text(
-                        "UI",
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        textAlign: TextAlign.left,
-                      ),
-                    ),
-                    SizedBox(
-                      width: double.infinity,
-                      child: Text(
-                        kDesc4EOL,
                         style: TextStyle(fontSize: 16),
                         textAlign: TextAlign.left,
                       ),

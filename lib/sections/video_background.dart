@@ -64,7 +64,8 @@ class _VideoBackgroundState extends State<VideoBackground> {
       return Container(
         height: containerHeight,
         color: Colors.black,
-        child: Center(child: CircularProgressIndicator()),
+        child: Stack(children: [Image.network("assets/images/eolmenu.png"),
+        Center(child: CircularProgressIndicator())]),
       );
     }
 

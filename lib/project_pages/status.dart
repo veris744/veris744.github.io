@@ -19,7 +19,7 @@ class Status extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final String text =
-        "Status: ${isDone ? "Finished" : "In Progress"}\n${isDone ? "Duration:$duration\n" : ""}Language: $language\nSoftware: $software\nRoles: $role";
+        "Status: ${isDone ? "Finished" : "In Progress"}\n${isDone ? "Duration: $duration\n" : ""}Language: $language\nSoftware: $software\nRoles: $role";
 
     return Container(
       padding: EdgeInsets.all(20),
