@@ -23,17 +23,17 @@ const String kAboutText = "I'm a computer science graduate with a strong passion
 
 const String kHighlighted1 = "I’m currently developing my own game engine with the goal of creating a complete game that incorporates core features common to most games. Here's a brief overview of what’s been accomplished so far:\n\nCompleted Features:";
 
-const List<String> kBPAccomplished = [
-  "Entities & Components System: A flexible architecture for managing game entities and their components, along with an asset manager for loading/unloading scenes and assets.",
-  "3D Graphics with OpenGL: World and relative transformations on entities, lighting, and rendering of 3D graphics.",
-  "Reflection System: Used for reading and writing YAML scene data, and editing entity components through an editor.",
-  "Reflection System: Used for reading and writing YAML scene data, and editing entity components through an editor.",
-  "Simple Physics: Gravity and basic collision reactions.",
-  "Player Controller: Free camera mode for the editor and in-game movement, along with an input manager for player interactions.",
-  "2D Graphics with OpenGL: Text rendering and UI elements for in-game and editor interfaces.",
-  "Debugging Tools: Options for both 2D and 3D debugging.",
-  "Built with CMake: Engine infrastructure set up for cross-platform development.",
-  "Mini-Game: A prototype showcasing core features such as graphics, UI, collisions, and user input."
+const List<List<String>> kBPAccomplished = [
+  ["Entities & Components System:", " A flexible architecture for managing game entities and their components, along with an asset manager for loading/unloading scenes and assets."],
+  ["3D Graphics with OpenGL:"," World and relative transformations on entities, lighting, and rendering of 3D graphics."],
+  ["Reflection System:"," Used for reading and writing YAML scene data, and editing entity components through an editor."],
+  ["Reflection System:"," Used for reading and writing YAML scene data, and editing entity components through an editor."],
+  ["Simple Physics:"," Gravity and basic collision reactions."],
+  ["Player Controller:"," Free camera mode for the editor and in-game movement, along with an input manager for player interactions."],
+  ["2D Graphics with OpenGL:"," Text rendering and UI elements for in-game and editor interfaces."],
+  ["Debugging Tools:"," Options for both 2D and 3D debugging."],
+  ["Built with CMake:"," Engine infrastructure set up for cross-platform development."],
+  ["Mini-Game:"," A prototype showcasing core features such as graphics, UI, collisions, and user input."]
 ]; 
 
 const String kUpcoming = "Upcoming Features";
@@ -114,3 +114,17 @@ const String kDesc2EOL = "Designing the AI to work within such a complex, non-Eu
 const String kDesc3EOL = "I developed the game’s UI entirely in C++, leveraging Unreal’s built-in UI classes, widgets, and delegate system for dynamic interaction. My work included implementing the HUD — with animated elements like the health bar and player feedback — as well as designing and coding menus for the main interface, pause screens, and transitions. The UI was built to be responsive and clean, with behavior tightly integrated into the game’s underlying systems.";
 
 const String kDesc4EOL = "As Producer, I led and coordinated a 19-person multidisciplinary team, managing tasks across programming, design, and art. Using a Kanban workflow in Jira, I handled task planning, prioritization, and deadline tracking, ensuring smooth progression and timely deliveries. My responsibilities included facilitating team communication, supporting key project decisions, and continuously adjusting scope and priorities based on progress and feedback. I worked to align technical and creative goals, keeping the team focused and the project cohesive.";
+
+
+
+const String kDescNTR1 = "Developed as a final bachelor’s project (TFG) at a Spanish university, this solo project was created in Unity for Android mobile VR with controller support. The game is a first-person horror experience where the player must explore a dark, zombie-infested house and find three keys to escape./nThe project received a perfect score (10/10) for its technical and design execution.";
+
+const List<List<String>> kDescNTR2 = [
+  ["VR Implementation: ", "Android VR integration with controller input and head tracking"],
+  ["Game Design: ", "Level layout, objective structure, pacing, and horror atmosphere"],
+  ["AI Programming: ", "Simple enemy AI for zombie detection, chasing, spawning and attacking"],
+  ["Gameplay Programming: ","Player movement, item collection, world interaction and animations programming"],
+  ["UI Design & Programming: ","Menus and In-world and overlay UI for objectives and player feedback"],
+  ["Audio: ","Ambient sound, music cues, and SFX for horror immersion"],
+  ["Performance Optimization: ","Ensured stable performance on mobile VR hardware"],
+];

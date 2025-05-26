@@ -4,6 +4,7 @@ import 'package:veris744/project_pages/status.dart';
 import 'package:veris744/project_pages/youtube_video.dart';
 import 'package:veris744/sections/copyright.dart';
 import 'package:veris744/texts.dart';
+import 'package:veris744/widgets/bold_bulletpoint.dart';
 import 'package:veris744/widgets/top_bar.dart';
 import 'package:veris744/widgets/up_button.dart';
 
@@ -74,20 +75,31 @@ class _NowhereToRunState extends State<NowhereToRun> {
                       builder: (context, constraints) {
                         bool isSmallScreen = constraints.maxWidth < 600;
 
-                        final textWidget = Flexible(
-                          child: Text(
-                            kDesc1EOL,
-                            style: TextStyle(fontSize: 16),
+                        final textWidget = Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(kDescNTR1, style: TextStyle(fontSize: 16)),
+                              SizedBox(height: 8),
+                              ...kDescNTR2.map(
+                                (point) => BoldBulletpoint(
+                                  point: point[1],
+                                  title: point[0],
+                                ),
+                              ),
+                            ],
                           ),
                         );
 
                         final mediaWidget = SizedBox(
-                          width: 600,
-                          child: YoutubeVideo(video: 'waJktW4Bhzg'), // or Image.asset(...)
+                          width: isSmallScreen ? double.infinity : 600,
+                          child: YoutubeVideo(
+                            video: 'waJktW4Bhzg',
+                          ), // Or Image.asset(...)
                         );
 
                         if (isSmallScreen) {
-                          // Stack vertically, text comes first
+                          // Stack vertically, text first
                           return Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -97,7 +109,7 @@ class _NowhereToRunState extends State<NowhereToRun> {
                             ],
                           );
                         } else {
-                          // Row layout, image/video on the left
+                          // Side-by-side layout
                           return Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -109,44 +121,21 @@ class _NowhereToRunState extends State<NowhereToRun> {
                         }
                       },
                     ),
-                    SizedBox(
-                      width: double.infinity,
-                      child: Text(
-                        "Team Management",
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        textAlign: TextAlign.left,
-                      ),
-                    ),
-                    SizedBox(
-                      width: double.infinity,
-                      child: Text(
-                        kDesc3EOL,
-                        style: TextStyle(fontSize: 16),
-                        textAlign: TextAlign.left,
-                      ),
-                    ),
-                    SizedBox(
-                      width: double.infinity,
-                      child: Text(
-                        "AI",
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        textAlign: TextAlign.left,
-                      ),
-                    ),
-                    SizedBox(
-                      width: double.infinity,
-                      child: Text(
-                        kDesc2EOL,
-                        style: TextStyle(fontSize: 16),
-                        textAlign: TextAlign.left,
-                      ),
-                    ),
+                    // SizedBox(
+                    //   width: double.infinity,
+                    //   child: Text(
+                    //     "Characteristics",
+                    //     style: TextStyle(
+                    //       fontSize: 20,
+                    //       fontWeight: FontWeight.bold,
+                    //     ),
+                    //     textAlign: TextAlign.left,
+                    //   ),
+                    // ),
+                    // ...kDescNTR2.map(
+                    //   (point) =>
+                    //       BoldBulletpoint(point: point[1], title: point[0]),
+                    // ),
                     kBlankSeparator,
                     Copyright(),
                   ],

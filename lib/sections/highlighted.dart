@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:veris744/constants.dart';
 import 'package:veris744/texts.dart';
+import 'package:veris744/widgets/bold_bulletpoint.dart';
 import 'package:veris744/widgets/carousel.dart';
 
 class HighlightedSection extends StatelessWidget {
@@ -44,24 +45,7 @@ class HighlightedSection extends StatelessWidget {
               children: [
                 Text(kHighlighted1),
                 ...kBPAccomplished.map(
-                  (point) => Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.done,
-                        color: const Color.fromARGB(255, 0, 0, 0),
-                      ),
-                      SizedBox(width: 5),
-                      Flexible(
-                        child: Text(
-                          point,
-                          style: TextStyle(
-                            color: const Color.fromARGB(255, 0, 0, 0),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                  (point) => BoldBulletpoint(point: point[1], title: point[0])
                 ),
                 kBlankSeparator,Text(kUpcoming),
                 ...kBPUpcoming.map(
