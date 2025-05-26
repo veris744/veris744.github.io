@@ -8,14 +8,14 @@ import 'package:veris744/widgets/bold_bulletpoint.dart';
 import 'package:veris744/widgets/top_bar.dart';
 import 'package:veris744/widgets/up_button.dart';
 
-class NowhereToRun extends StatefulWidget {
-  const NowhereToRun({super.key});
+class SocialMatchUp extends StatefulWidget {
+  const SocialMatchUp({super.key});
 
   @override
-  State<NowhereToRun> createState() => _NowhereToRunState();
+  State<SocialMatchUp> createState() => _SocialMatchUpState();
 }
 
-class _NowhereToRunState extends State<NowhereToRun> {
+class _SocialMatchUpState extends State<SocialMatchUp> {
   final ScrollController _scrollController = ScrollController();
   bool _showUpButton = false;
 
@@ -62,13 +62,13 @@ class _NowhereToRunState extends State<NowhereToRun> {
                 child: Column(
                   spacing: 15,
                   children: [
-                    Text("NOWHERE TO RUN", style: kHeader1Style),
+                    Text("Social MatchUp", style: kHeader1Style),
                     Status(
                       isDone: true,
-                      duration: "6 months",
+                      duration: "3 months",
                       language: "C#",
-                      software: "Unity, Android VR",
-                      role: "Solo project",
+                      software: "Unity, Oculus VR",
+                      role: "Programmer",
                     ),
                     kBlankSeparator,
                     LayoutBuilder(
@@ -79,9 +79,9 @@ class _NowhereToRunState extends State<NowhereToRun> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(kDescNTR1, style: TextStyle(fontSize: 16)),
+                              Text(kDescSMU1, style: TextStyle(fontSize: 16)),
                               SizedBox(height: 8),
-                              ...kDescNTR2.map(
+                              ...kDescSMU2.map(
                                 (point) => BoldBulletpoint(
                                   point: point[1],
                                   title: point[0],

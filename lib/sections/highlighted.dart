@@ -15,9 +15,6 @@ class HighlightedSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final isWideScreen = screenWidth > 1400;
-
     return Container(
       decoration: BoxDecoration(color: Colors.grey),
       child: Column(

@@ -116,6 +116,9 @@ const String kDesc3EOL = "I developed the game’s UI entirely in C++, leveragin
 const String kDesc4EOL = "As Producer, I led and coordinated a 19-person multidisciplinary team, managing tasks across programming, design, and art. Using a Kanban workflow in Jira, I handled task planning, prioritization, and deadline tracking, ensuring smooth progression and timely deliveries. My responsibilities included facilitating team communication, supporting key project decisions, and continuously adjusting scope and priorities based on progress and feedback. I worked to align technical and creative goals, keeping the team focused and the project cohesive.";
 
 
+//////////////////////////////
+// PROJECT - NOWHERE TO RUN //
+//////////////////////////////
 
 const String kDescNTR1 = "Developed as a final bachelor’s project (TFG) at a Spanish university, this solo project was created in Unity for Android mobile VR with controller support. The game is a first-person horror experience where the player must explore a dark, zombie-infested house and find three keys to escape./nThe project received a perfect score (10/10) for its technical and design execution.";
 
@@ -128,3 +131,19 @@ const List<List<String>> kDescNTR2 = [
   ["Audio: ","Ambient sound, music cues, and SFX for horror immersion"],
   ["Performance Optimization: ","Ensured stable performance on mobile VR hardware"],
 ];
+
+
+//////////////////////////////
+// PROJECT - SOCIAL MATCHUP //
+//////////////////////////////
+
+const String kDescSMU1 = "Developed as part of a User Experience (UX) course at Politecnico di Milano, this VR game was created for Oculus headsets using Unity and Photon for online multiplayer functionality.\n\nIt was a collaborative project developed in partnership with a designer, who was responsible for the game's visual design and artistic direction, while I focused on the technical implementation.\nThe game is intended for neurodivergent children and their parents, teachers, or therapists, offering a cooperative minigame where two children communicate to describe and match emojis representing emotions. An optional adult participant can join as a passive observer and offer guidance via voice chat.";
+
+const List<List<String>> kDescSMU2 = [
+  ["VR Implementation: ","Full Oculus VR integration including hand/controller input and headset tracking"],
+  ["Multiplayer Networking: ","Full Oculus VR integration including hand/controller input and headset tracking."],
+  ["UI & Feedback Systems: ","Created intuitive, VR-optimized UI and feedback for emoji selection, voice activity, and session state"],
+  ["Session Management: ","Created intuitive, VR-optimized UI and feedback for emoji selection, voice activity, and session state"],
+  ["Prototyping & Iteration: ","Developed and tested gameplay through multiple UX-centered iterations to ensure clarity and comfort in VR"],
+];
+

@@ -4,6 +4,7 @@ import 'package:veris744/project_pages/eol/end_of_life.dart';
 import 'package:veris744/project_pages/ntr/nowhere_to_run.dart';
 import 'package:veris744/project_pages/project_content.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
+import 'package:veris744/project_pages/smu/SocialMatchUp.dart';
 
 void main() {
   setUrlStrategy(PathUrlStrategy());
@@ -21,7 +22,7 @@ class MyPortfolio extends StatelessWidget {
       routes: {
         '/EndOfLife': (context) => EndOfLife(),
         '/NowhereToRun': (context) => NowhereToRun(),
-        '/SocialMatchUp': (context) => ProjectAPage(),
+        '/SocialMatchUp': (context) => SocialMatchUp(),
         '/Engine': (context) => ProjectAPage(),
         '/Flocking': (context) => ProjectAPage(),
         '/Cofrade': (context) => ProjectAPage(),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:veris744/constants.dart';
 
 class BoldBulletpoint extends StatelessWidget {
   const BoldBulletpoint({super.key, required this.point, required this.title});
