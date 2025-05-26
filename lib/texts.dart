@@ -147,3 +147,13 @@ const List<List<String>> kDescSMU2 = [
   ["Prototyping & Iteration: ","Developed and tested gameplay through multiple UX-centered iterations to ensure clarity and comfort in VR"],
 ];
 
+
+////////////////////////
+// PROJECT - FLOCKING //
+////////////////////////
+
+const String kDescFlock1 = "This solo project was developed in Unreal Engine 5 as a personal exploration of flocking algorithms in a real-time 3D environment. The game is a simple first-person shooter where the player must shoot birds flying around tall buildings. The primary focus was on simulating realistic group movement and behavior among AI agents in a dynamic urban space.";
+
+const String kDescFlock2 = "The birds’ movement is driven by a classic flocking behavior system, combining the three core principles of cohesion, alignment, and separation. Cohesion encourages birds to steer toward the center of nearby flockmates, alignment synchronizes their velocity with neighbors, and separation ensures they avoid overcrowding by maintaining personal space. These forces are calculated per frame and weighted to produce smooth, lifelike movement as the flock navigates around obstacles and adjusts to the environment in real time.";
+
+const String kDescFlock3 = "In addition to the AI system, the project includes basic player controls, a first-person shooter setup, and a minimal UI for feedback and game state. While simple in scope, the project was a valuable testbed for working with autonomous agents and reactive group behavior in a 3D space.";

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:veris744/home_content.dart';
 import 'package:veris744/project_pages/eol/end_of_life.dart';
+import 'package:veris744/project_pages/flocking/flocking.dart';
 import 'package:veris744/project_pages/ntr/nowhere_to_run.dart';
 import 'package:veris744/project_pages/project_content.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
-import 'package:veris744/project_pages/smu/SocialMatchUp.dart';
+import 'package:veris744/project_pages/smu/social_matchup.dart';
 
 void main() {
   setUrlStrategy(PathUrlStrategy());
@@ -24,7 +25,7 @@ class MyPortfolio extends StatelessWidget {
         '/NowhereToRun': (context) => NowhereToRun(),
         '/SocialMatchUp': (context) => SocialMatchUp(),
         '/Engine': (context) => ProjectAPage(),
-        '/Flocking': (context) => ProjectAPage(),
+        '/Flocking': (context) => Flocking(),
         '/Cofrade': (context) => ProjectAPage(),
       },
     );
