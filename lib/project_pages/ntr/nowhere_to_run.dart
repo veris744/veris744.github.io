@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:veris744/constants.dart';
 import 'package:veris744/project_pages/status.dart';
 import 'package:veris744/project_pages/youtube_video.dart';
+import 'package:veris744/projects/link_button.dart';
 import 'package:veris744/sections/copyright.dart';
 import 'package:veris744/texts.dart';
 import 'package:veris744/widgets/bold_bulletpoint.dart';
 import 'package:veris744/widgets/top_bar.dart';
 import 'package:veris744/widgets/up_button.dart';
+
 
 class NowhereToRun extends StatefulWidget {
   const NowhereToRun({super.key});
@@ -38,7 +40,7 @@ class _NowhereToRunState extends State<NowhereToRun> {
 
   @override
   void dispose() {
-    _scrollController.dispose(); // always dispose controllers!
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -63,12 +65,40 @@ class _NowhereToRunState extends State<NowhereToRun> {
                   spacing: 15,
                   children: [
                     Text("NOWHERE TO RUN", style: kHeader1Style),
-                    Status(
-                      isDone: true,
-                      duration: "6 months",
-                      language: "C#",
-                      software: "Unity, Android VR",
-                      role: "Solo project",
+                    Row(
+                      spacing: 20,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Status(
+                          isDone: true,
+                          duration: "6 months",
+                          language: "C#",
+                          software: "Unity, Android VR",
+                          role: "Solo project",
+                        ),
+                        SizedBox(
+                          height: 100,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              LinkButton(
+                                link: 'https://veris744.itch.io/nowhere-to-run',
+                                platform:  Utils.checkLink(
+                                  'https://veris744.itch.io/nowhere-to-run',
+                                ),
+                              ),
+                              LinkButton(
+                                link:
+                                    'https://github.com/veris744/NowhereToRun',
+                                platform: Utils.checkLink(
+                                  'https://github.com/veris744/NowhereToRun',
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
                     kBlankSeparator,
                     LayoutBuilder(

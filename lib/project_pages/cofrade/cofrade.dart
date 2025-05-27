@@ -9,14 +9,14 @@ import 'package:veris744/widgets/bold_bulletpoint.dart';
 import 'package:veris744/widgets/top_bar.dart';
 import 'package:veris744/widgets/up_button.dart';
 
-class SocialMatchUp extends StatefulWidget {
-  const SocialMatchUp({super.key});
+class Cofrade extends StatefulWidget {
+  const Cofrade({super.key});
 
   @override
-  State<SocialMatchUp> createState() => _SocialMatchUpState();
+  State<Cofrade> createState() => _CofradeState();
 }
 
-class _SocialMatchUpState extends State<SocialMatchUp> {
+class _CofradeState extends State<Cofrade> {
   final ScrollController _scrollController = ScrollController();
   bool _showUpButton = false;
 
@@ -63,7 +63,7 @@ class _SocialMatchUpState extends State<SocialMatchUp> {
                 child: Column(
                   spacing: 15,
                   children: [
-                    Text("Social MatchUp", style: kHeader1Style),
+                    Text("COFRADE RUSH", style: kHeader1Style),
                     Row(
                       spacing: 20,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -71,9 +71,9 @@ class _SocialMatchUpState extends State<SocialMatchUp> {
                       children: [
                         Status(
                           isDone: true,
-                          duration: "3 months",
+                          duration: "1 week",
                           language: "C#",
-                          software: "Unity, Oculus VR",
+                          software: "Unity",
                           role: "Programmer",
                         ),
                         SizedBox(
@@ -82,10 +82,9 @@ class _SocialMatchUpState extends State<SocialMatchUp> {
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               LinkButton(
-                                link:
-                                    'https://github.com/veris744/Social-Matchup',
+                                link: 'https://drive.google.com/file/d/1A2k6cqOauVtco13eBbCf0lCLFkUT1Jl_/view?usp=drive_link',
                                 platform: Utils.checkLink(
-                                  'https://github.com/veris744/Social-Matchup',
+                                  'https://drive.google.com/file/d/1A2k6cqOauVtco13eBbCf0lCLFkUT1Jl_/view?usp=drive_link',
                                 ),
                               ),
                             ],
@@ -102,9 +101,9 @@ class _SocialMatchUpState extends State<SocialMatchUp> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(kDescSMU1, style: TextStyle(fontSize: 16)),
+                              Text(kDescCofr1, style: TextStyle(fontSize: 16)),
                               SizedBox(height: 8),
-                              ...kDescSMU2.map(
+                              ...kDescCofr2.map(
                                 (point) => BoldBulletpoint(
                                   point: point[1],
                                   title: point[0],

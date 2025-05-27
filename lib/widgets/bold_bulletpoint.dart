@@ -17,7 +17,7 @@ class BoldBulletpoint extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.all(2),
         child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Icon(Icons.done, color: Colors.green),
             SizedBox(width: 5),

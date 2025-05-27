@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:veris744/home_content.dart';
+import 'package:veris744/project_pages/cofrade/cofrade.dart';
 import 'package:veris744/project_pages/eol/end_of_life.dart';
 import 'package:veris744/project_pages/flocking/flocking.dart';
 import 'package:veris744/project_pages/ntr/nowhere_to_run.dart';
@@ -26,7 +27,7 @@ class MyPortfolio extends StatelessWidget {
         '/SocialMatchUp': (context) => SocialMatchUp(),
         '/Engine': (context) => ProjectAPage(),
         '/Flocking': (context) => Flocking(),
-        '/Cofrade': (context) => ProjectAPage(),
+        '/Cofrade': (context) => Cofrade(),
       },
     );
   }

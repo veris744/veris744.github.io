@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:veris744/constants.dart';
 import 'package:veris744/project_pages/image_legend.dart';
 import 'package:veris744/project_pages/status.dart';
-import 'package:veris744/project_pages/youtube_video.dart';
+import 'package:veris744/projects/link_button.dart';
 import 'package:veris744/sections/copyright.dart';
 import 'package:veris744/texts.dart';
-import 'package:veris744/widgets/bold_bulletpoint.dart';
 import 'package:veris744/widgets/top_bar.dart';
 import 'package:veris744/widgets/up_button.dart';
 
@@ -39,7 +38,7 @@ class _FlockingState extends State<Flocking> {
 
   @override
   void dispose() {
-    _scrollController.dispose(); // always dispose controllers!
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -63,13 +62,42 @@ class _FlockingState extends State<Flocking> {
                 child: Column(
                   spacing: 15,
                   children: [
-                    Text("Social MatchUp", style: kHeader1Style),
-                    Status(
-                      isDone: true,
-                      duration: "1 week",
-                      language: "C++",
-                      software: "Unreal Engine 5",
-                      role: "Solo project",
+                    Text("Flocking Project", style: kHeader1Style),
+                    Row(
+                      spacing: 20,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Status(
+                          isDone: true,
+                          duration: "1 week",
+                          language: "C++",
+                          software: "Unreal Engine 5",
+                          role: "Solo project",
+                        ),
+                        SizedBox(
+                          height: 100,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              LinkButton(
+                                link:
+                                    'https://github.com/veris744/FlockingProject',
+                                platform: Utils.checkLink(
+                                  'https://github.com/veris744/FlockingProject',
+                                ),
+                              ),
+                              LinkButton(
+                                link:
+                                    'https://github.com/veris744/FlockingProject/releases',
+                                platform: Utils.checkLink(
+                                  'https://github.com/veris744/FlockingProject/releases',
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
                     kBlankSeparator,
                     SizedBox(
@@ -82,9 +110,11 @@ class _FlockingState extends State<Flocking> {
                     ),
                     SizedBox(
                       width: 1000,
-                      child: ImageLegend(path:
-                        'assets/images/eolEditor.png', legend: "Screenshot from the Editor showing multi-gravity world and Navmesh",
-                      ), // or Image.asset(...)
+                      child: ImageLegend(
+                        path: 'assets/images/eolEditor.png',
+                        legend:
+                            "Screenshot from the Editor showing multi-gravity world and Navmesh",
+                      ),
                     ),
                     SizedBox(
                       width: 1000,

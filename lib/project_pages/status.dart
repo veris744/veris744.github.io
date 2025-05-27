@@ -27,6 +27,7 @@ class Status extends StatelessWidget {
         color: const Color.fromARGB(255, 195, 197, 199),
         borderRadius: BorderRadius.circular(10),
       ),
+      height: 160,
       child: Text(
         text,
         style: TextStyle(

@@ -3,6 +3,7 @@ import 'package:veris744/constants.dart';
 import 'package:veris744/project_pages/image_legend.dart';
 import 'package:veris744/project_pages/status.dart';
 import 'package:veris744/project_pages/youtube_video.dart';
+import 'package:veris744/projects/link_button.dart';
 import 'package:veris744/sections/copyright.dart';
 import 'package:veris744/texts.dart';
 import 'package:veris744/widgets/top_bar.dart';
@@ -38,7 +39,7 @@ class _EndOfLifeState extends State<EndOfLife> {
 
   @override
   void dispose() {
-    _scrollController.dispose(); // always dispose controllers!
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -63,12 +64,34 @@ class _EndOfLifeState extends State<EndOfLife> {
                   spacing: 15,
                   children: [
                     Text("End Of Life", style: kHeader1Style),
-                    Status(
-                      isDone: true,
-                      duration: "1 year",
-                      language: "C++",
-                      software: "Unreal Engine 5",
-                      role: "AI and UI programmer, producer",
+                    Row(
+                      spacing: 20,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Status(
+                          isDone: true,
+                          duration: "1 year",
+                          language: "C++",
+                          software: "Unreal Engine 5",
+                          role: "AI and UI programmer, producer",
+                        ),
+                        SizedBox(
+                          height: 100,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              LinkButton(
+                                link:
+                                    'https://store.steampowered.com/app/2666520/End_Of_Life/',
+                                platform: Utils.checkLink(
+                                  'https://store.steampowered.com/app/2666520/End_Of_Life/',
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
                     Container(
                       width: 400,
@@ -168,8 +191,10 @@ class _EndOfLifeState extends State<EndOfLife> {
                     ),
                     SizedBox(
                       width: 1000,
-                      child: ImageLegend(path:
-                        'assets/images/eolEditor.png', legend: "Screenshot from the Editor showing multi-gravity world and Navmesh",
+                      child: ImageLegend(
+                        path: 'assets/images/eolEditor.png',
+                        legend:
+                            "Screenshot from the Editor showing multi-gravity world and Navmesh",
                       ), // or Image.asset(...)
                     ),
                     SizedBox(

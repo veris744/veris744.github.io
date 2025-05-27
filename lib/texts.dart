@@ -157,3 +157,16 @@ const String kDescFlock1 = "This solo project was developed in Unreal Engine 5 a
 const String kDescFlock2 = "The birds’ movement is driven by a classic flocking behavior system, combining the three core principles of cohesion, alignment, and separation. Cohesion encourages birds to steer toward the center of nearby flockmates, alignment synchronizes their velocity with neighbors, and separation ensures they avoid overcrowding by maintaining personal space. These forces are calculated per frame and weighted to produce smooth, lifelike movement as the flock navigates around obstacles and adjusts to the environment in real time.";
 
 const String kDescFlock3 = "In addition to the AI system, the project includes basic player controls, a first-person shooter setup, and a minimal UI for feedback and game state. While simple in scope, the project was a valuable testbed for working with autonomous agents and reactive group behavior in a 3D space.";
+
+
+///////////////////////////
+// PROJECT - COFRADE JAM //
+///////////////////////////
+
+const String kDescCofr1 = 'Created during a game jam by a small team of 2 programmers, designers, and artists, this game is a 2D, pixel-art tower defense inspired by Spain’s Semana Santa (Holy Week) traditions. Players must purchase and position "Nazarenos" — hooded religious figures — to navigate ceremonial routes and complete the level, blending strategy with cultural references in a lighthearted, stylized setting.';
+
+const List<List<String>> kDescCofr2 = [
+  ["UI: ", "Designed and implemented all user interface elements, including menus, shop, and in-game HUD"],
+  ["Shop & Inventory Systems: ", "Programmed the shop logic, money economy, and inventory handling, with systems built to allow designers to tweak values like resource costs and NPC attributes directly from the Unity editor"],
+  ["Gameplay & Integration: ", "Contributed to general gameplay features such as audio integration, trigger-based map interactions, and level construction, as well as implementing pause, run, restart, and timer systems to manage session flow and pacing."]
+];
