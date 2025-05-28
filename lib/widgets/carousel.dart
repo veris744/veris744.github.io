@@ -66,6 +66,7 @@ class _CarouselWithButtonsState extends State<CarouselWithButtons> {
               aspectRatio: 16 / 9, // Adjust this ratio to match your image set
               child: PageView.builder(
                 controller: _pageController,
+                physics: NeverScrollableScrollPhysics(),
                 onPageChanged: _onPageChanged,
                 itemCount: _loopedImages.length,
                 itemBuilder: (context, index) {

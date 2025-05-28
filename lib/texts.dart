@@ -24,11 +24,10 @@ const String kAboutText = "I'm a computer science graduate with a strong passion
 const String kHighlighted1 = "I’m currently developing my own game engine with the goal of creating a complete game that incorporates core features common to most games. Here's a brief overview of what’s been accomplished so far:\n\nCompleted Features:";
 
 const List<List<String>> kBPAccomplished = [
-  ["Entities & Components System:", " A flexible architecture for managing game entities and their components, along with an asset manager for loading/unloading scenes and assets."],
+  ["Entities & Components System:", " A flexible architecture for managing game entities and their components."],
   ["3D Graphics with OpenGL:"," World and relative transformations on entities, lighting, and rendering of 3D graphics."],
   ["Reflection System:"," Used for reading and writing YAML scene data, and editing entity components through an editor."],
-  ["Reflection System:"," Used for reading and writing YAML scene data, and editing entity components through an editor."],
-  ["Simple Physics:"," Gravity and basic collision reactions."],
+  ["Simple Physics:"," Collisions, gravity and basic physics reactions."],
   ["Player Controller:"," Free camera mode for the editor and in-game movement, along with an input manager for player interactions."],
   ["2D Graphics with OpenGL:"," Text rendering and UI elements for in-game and editor interfaces."],
   ["Debugging Tools:"," Options for both 2D and 3D debugging."],
@@ -168,3 +167,34 @@ const List<List<String>> kDescCofr2 = [
   ["Shop & Inventory Systems: ", "Programmed the shop logic, money economy, and inventory handling, with systems built to allow designers to tweak values like resource costs and NPC attributes directly from the Unity editor"],
   ["Gameplay & Integration: ", "Contributed to general gameplay features such as audio integration, trigger-based map interactions, and level construction, as well as implementing pause, run, restart, and timer systems to manage session flow and pacing."]
 ];
+
+
+//////////////////////
+// PROJECT - ENGINE //
+//////////////////////
+
+const String kDescEng1 = "This is a solo game engine project developed in C++ using CMake, with the long-term goal of building a complete game entirely on top of this custom engine. The engine is designed to support both 2D and 3D games, and aims to balance performance, modularity, and usability — with editor tools and data-driven workflows to make development smoother. It is a work in progress and continues to grow as features are added.";
+
+const String kEngGraphics = "Built with OpenGL, the engine supports both 2D and 3D rendering. It includes lighting shaders (ambient, diffuse, specular), material support (color or texture-based), and a system for adding custom shaders like a neon-glow effect. Entity transformations support world and relative positioning. Models are loaded via Assimp (.obj), with full texture support.";
+
+const String kEngECS = "A flexible ECS framework allows defining game logic through components attached to entities. Entities are centrally managed and dynamically created or modified during runtime or scene loading.";
+
+const String kEngUI = "Custom-built UI framework featuring a hierarchical widget system. Widgets (such as images, buttons, text, dropdowns, and input boxes) support 2D layout, relative positioning, text alignment, and font loading (.ttf). UI elements can be nested and styled, enabling interactive menus and HUDs.";
+
+const String kEngRefl = "The engine features a custom reflection system to parse scene definitions from YAML files, instantiating all entities and components at runtime.\nA built-in Editor Mode (toggle with F1) provides:";
+
+const String kEngPhysics = "Includes collision detection for basic shapes (planes, cubes, spheres, capsules, slopes) and a movement component supporting velocity, acceleration, and physics reactions like gravity, friction, and bounciness.";
+
+const String kEngPlayer = "A configurable first-person player controller supports camera movement and player navigation. Input is fully customizable for gameplay interactions.";
+
+const String kEngDebug = "Debugging tools include 2D and 3D overlays for visualizing entities, components, and physics interactions. The engine supports real-time debugging and profiling.";
+
+const String kEngDelivery = "The engine is built with CMake with a focus on modularity and extensibility.";
+
+const List<String> kEngUpcoming = [
+  "Advanced physics (ragdoll, constraints, etc.)", 
+  "Basic AI using Behavior Trees", 
+  "Animation system with interpolation and transformation sequences",
+  "A full playable game showcasing all systems"
+];
+

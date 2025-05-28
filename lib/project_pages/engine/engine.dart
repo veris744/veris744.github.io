@@ -11,14 +11,14 @@ import 'package:veris744/texts.dart';
 import 'package:veris744/widgets/top_bar.dart';
 import 'package:veris744/widgets/up_button.dart';
 
-class EndOfLife extends StatefulWidget {
-  const EndOfLife({super.key});
+class Engine extends StatefulWidget {
+  const Engine({super.key});
 
   @override
-  State<EndOfLife> createState() => _EndOfLifeState();
+  State<Engine> createState() => _EngineState();
 }
 
-class _EndOfLifeState extends State<EndOfLife> {
+class _EngineState extends State<Engine> {
   final ScrollController _scrollController = ScrollController();
   bool _showUpButton = false;
 
@@ -84,11 +84,11 @@ class _EndOfLifeState extends State<EndOfLife> {
                         alignment: WrapAlignment.center,
                         children: [
                           Status(
-                            isDone: true,
-                            duration: "1 year",
-                            language: "C++",
-                            software: "Unreal Engine 5",
-                            role: "AI and UI programmer, producer",
+                            isDone: false,
+                            duration: "",
+                            language: "C++, glsl",
+                            software: "CMake, OpenGL",
+                            role: "Solo project",
                           ),
                           SizedBox(
                             height: 100,
@@ -97,9 +97,9 @@ class _EndOfLifeState extends State<EndOfLife> {
                               children: [
                                 LinkButton(
                                   link:
-                                      'https://store.steampowered.com/app/2666520/End_Of_Life/',
+                                      'https://github.com/veris744/WHYNOT',
                                   platform: Utils.checkLink(
-                                    'https://store.steampowered.com/app/2666520/End_Of_Life/',
+                                    'https://github.com/veris744/WHYNOT',
                                   ),
                                 ),
                               ],
@@ -107,23 +107,6 @@ class _EndOfLifeState extends State<EndOfLife> {
                           ),
                         ],
                       ),
-                      Container(
-                        width: 400,
-                        padding: EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                          color: Colors.amber,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Text(
-                          awardEOL,
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                      kBlankSeparator,
                       LayoutBuilder(
                         builder: (context, constraints) {
                           bool isSmallScreen = constraints.maxWidth < 1200;
@@ -131,13 +114,13 @@ class _EndOfLifeState extends State<EndOfLife> {
                           final textWidget = SizedBox(
                             width: double.infinity,
                             child: Text(
-                              kDesc1EOL,
+                              kDescEng1,
                               style: TextStyle(fontSize: 16),
                             ),
                           );
                           final textWidgetFlex = Flexible(
                             child: Text(
-                              kDesc1EOL,
+                              kDescEng1,
                               style: TextStyle(fontSize: 16),
                             ),
                           );
@@ -171,7 +154,7 @@ class _EndOfLifeState extends State<EndOfLife> {
                       SizedBox(
                         width: double.infinity,
                         child: Text(
-                          "Team Management",
+                          "Graphics and Model Loading",
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -182,7 +165,7 @@ class _EndOfLifeState extends State<EndOfLife> {
                       SizedBox(
                         width: double.infinity,
                         child: Text(
-                          kDesc3EOL,
+                          "",
                           style: TextStyle(fontSize: 16),
                           textAlign: TextAlign.left,
                         ),
@@ -190,7 +173,7 @@ class _EndOfLifeState extends State<EndOfLife> {
                       SizedBox(
                         width: double.infinity,
                         child: Text(
-                          "AI",
+                          "Entities and Components System",
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -201,7 +184,7 @@ class _EndOfLifeState extends State<EndOfLife> {
                       SizedBox(
                         width: double.infinity,
                         child: Text(
-                          kDesc2EOL,
+                          "",
                           style: TextStyle(fontSize: 16),
                           textAlign: TextAlign.left,
                         ),
@@ -217,7 +200,7 @@ class _EndOfLifeState extends State<EndOfLife> {
                       SizedBox(
                         width: double.infinity,
                         child: Text(
-                          "UI",
+                          "UI system",
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -228,8 +211,74 @@ class _EndOfLifeState extends State<EndOfLife> {
                       SizedBox(
                         width: double.infinity,
                         child: Text(
-                          kDesc4EOL,
+                          "",
                           style: TextStyle(fontSize: 16),
+                          textAlign: TextAlign.left,
+                        ),
+                      ),
+                      SizedBox(
+                        width: double.infinity,
+                        child: Text(
+                          "Scene Loading and Editor Tools",
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          textAlign: TextAlign.left,
+                        ),
+                      ),
+                      SizedBox(
+                        width: double.infinity,
+                        child: Text(
+                          "Physics System",
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          textAlign: TextAlign.left,
+                        ),
+                      ),
+                      SizedBox(
+                        width: double.infinity,
+                        child: Text(
+                          "Input and Player Control",
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          textAlign: TextAlign.left,
+                        ),
+                      ),
+                      SizedBox(
+                        width: double.infinity,
+                        child: Text(
+                          "Debugging Tools",
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          textAlign: TextAlign.left,
+                        ),
+                      ),
+                      SizedBox(
+                        width: double.infinity,
+                        child: Text(
+                          "Build and Delivery",
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          textAlign: TextAlign.left,
+                        ),
+                      ),
+                      SizedBox(
+                        width: double.infinity,
+                        child: Text(
+                          "Upcoming features",
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
                           textAlign: TextAlign.left,
                         ),
                       ),

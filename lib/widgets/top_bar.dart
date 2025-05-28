@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/link.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:veris744/constants.dart';
 import 'package:veris744/widgets/bar_button.dart';
@@ -33,22 +34,21 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       automaticallyImplyLeading: false,
-      title: Builder(
-        builder:
-            (navContext) => TextButton(
-              onPressed: () {
-                Navigator.of(navContext).pushNamed('/');
-              },
-              child: Text(
-                'Isabel de Vergara',
-                style: TextStyle(color: kTextColor),
-              ),
-            ),
-      ),
+      title: 
+          Link(
+            uri: Uri.parse('/'), // e.g. '/about'
+            target: LinkTarget.self, // Opens in same tab
+            builder: (context, followLink) {
+              return TextButton(
+                onPressed: followLink,
+                child: Text("Isabel de Vergara", style: TextStyle(color: kTextColor)),
+              );
+            },
+          ),
       elevation: 4,
       backgroundColor: kPrimaryColor,
       actions:
-          MediaQuery.of(context).size.width > 600
+          MediaQuery.of(context).size.width > 700
               ? [
                 BarButton(scrollTo: scrollToResume, text: "Résumé"),
                 BarButton(scrollTo: scrollToHihlighted, text: "Highlighted"),
@@ -63,21 +63,4 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize => Size.fromHeight(kToolbarHeight);
-
-  void debugRoutes(BuildContext context) {
-    // 1. Check MaterialApp routes
-    final materialApp = context.findAncestorWidgetOfExactType<MaterialApp>();
-    print('=== MaterialApp Routes ===');
-    materialApp?.routes?.forEach((key, _) => print('- $key'));
-
-    // 2. Check current route stack
-    print('\n=== Current Route Stack ===');
-    Navigator.of(context).widget.pages.forEach((page) {
-      print('- ${page.name ?? 'Unnamed page'}');
-    });
-
-    // 3. Check current route
-    print('\n=== Current Route ===');
-    print(ModalRoute.of(context)?.settings.name ?? 'Unnamed route');
-  }
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:footer/footer.dart';
+import 'package:footer/footer_view.dart';
 import 'package:veris744/constants.dart';
 import 'package:veris744/project_pages/image_legend.dart';
 import 'package:veris744/project_pages/status.dart';
@@ -55,115 +57,120 @@ class _FlockingState extends State<Flocking> {
       ),
       body: Stack(
         children: [
-          SingleChildScrollView(
-            child: Container(
-              alignment: Alignment.center,
-              padding: EdgeInsets.all(20),
-              child: SizedBox(
-                width: 1400,
-                child: Column(
-                  spacing: 15,
-                  children: [
-                    Text("Flocking Project", style: kHeader1Style),
-                    Wrap(
-                      spacing: 20,
-                      runSpacing: 20,
-                      runAlignment: WrapAlignment.center,
-                      alignment: WrapAlignment.center,
-                      children: [
-                        Status(
-                          isDone: true,
-                          duration: "1 week",
-                          language: "C++",
-                          software: "Unreal Engine 5",
-                          role: "Solo project",
-                        ),
-                        SizedBox(
-                          height: 100,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              LinkButton(
-                                link:
-                                    'https://github.com/veris744/FlockingProject',
-                                platform: Utils.checkLink(
-                                  'https://github.com/veris744/FlockingProject',
-                                ),
-                              ),
-                              LinkButton(
-                                link:
-                                    'https://github.com/veris744/FlockingProject/releases',
-                                platform: Utils.checkLink(
-                                  'https://github.com/veris744/FlockingProject/releases',
-                                ),
-                              ),
-                            ],
+          FooterView(
+            footer: Footer(
+              backgroundColor: Colors.deepPurple[200],
+              padding: EdgeInsets.all(0),
+              child: Copyright(),
+            ),
+            children: [
+              Container(
+                alignment: Alignment.center,
+                padding: EdgeInsets.all(20),
+                child: SizedBox(
+                  width: 1400,
+                  child: Column(
+                    spacing: 15,
+                    children: [
+                      Text("Flocking Project", style: kHeader1Style),
+                      Wrap(
+                        spacing: 20,
+                        runSpacing: 20,
+                        runAlignment: WrapAlignment.center,
+                        alignment: WrapAlignment.center,
+                        children: [
+                          Status(
+                            isDone: true,
+                            duration: "1 week",
+                            language: "C++",
+                            software: "Unreal Engine 5",
+                            role: "Solo project",
                           ),
+                          SizedBox(
+                            height: 100,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                LinkButton(
+                                  link:
+                                      'https://github.com/veris744/FlockingProject',
+                                  platform: Utils.checkLink(
+                                    'https://github.com/veris744/FlockingProject',
+                                  ),
+                                ),
+                                LinkButton(
+                                  link:
+                                      'https://github.com/veris744/FlockingProject/releases',
+                                  platform: Utils.checkLink(
+                                    'https://github.com/veris744/FlockingProject/releases',
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                      kBlankSeparator,
+                      SizedBox(
+                        width: 1000,
+                        child: Text(
+                          kDescFlock1,
+                          style: TextStyle(fontSize: 16),
+                          textAlign: TextAlign.left,
                         ),
-                      ],
-                    ),
-                    kBlankSeparator,
-                    SizedBox(
-                      width: 1000,
-                      child: Text(
-                        kDescFlock1,
-                        style: TextStyle(fontSize: 16),
-                        textAlign: TextAlign.left,
                       ),
-                    ),
-                    SizedBox(
-                      width: 1000,
-                      child: ImageLegend(
-                        path: 'assets/images/eolEditor.png',
-                        legend:
-                            "Screenshot from the Editor showing multi-gravity world and Navmesh",
-                      ),
-                    ),
-                    SizedBox(
-                      width: 1000,
-                      child: Text(
-                        "AI",
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
+                      SizedBox(
+                        width: 1000,
+                        child: ImageLegend(
+                          path: 'assets/images/eolEditor.png',
+                          legend:
+                              "Screenshot from the Editor showing multi-gravity world and Navmesh",
                         ),
-                        textAlign: TextAlign.left,
                       ),
-                    ),
-                    SizedBox(
-                      width: 1000,
-                      child: Text(
-                        kDescFlock2,
-                        style: TextStyle(fontSize: 16),
-                        textAlign: TextAlign.left,
-                      ),
-                    ),
-                    kBlankSeparator,
-                    SizedBox(
-                      width: 1000,
-                      child: Text(
-                        "Other Implementations",
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
+                      SizedBox(
+                        width: 1000,
+                        child: Text(
+                          "AI",
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          textAlign: TextAlign.left,
                         ),
-                        textAlign: TextAlign.left,
                       ),
-                    ),
-                    SizedBox(
-                      width: 1000,
-                      child: Text(
-                        kDescFlock3,
-                        style: TextStyle(fontSize: 16),
-                        textAlign: TextAlign.left,
+                      SizedBox(
+                        width: 1000,
+                        child: Text(
+                          kDescFlock2,
+                          style: TextStyle(fontSize: 16),
+                          textAlign: TextAlign.left,
+                        ),
                       ),
-                    ),
-                    kBlankSeparator,
-                    Copyright(),
-                  ],
+                      kBlankSeparator,
+                      SizedBox(
+                        width: 1000,
+                        child: Text(
+                          "Other Implementations",
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          textAlign: TextAlign.left,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 1000,
+                        child: Text(
+                          kDescFlock3,
+                          style: TextStyle(fontSize: 16),
+                          textAlign: TextAlign.left,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
+            ],
           ),
           if (_showUpButton)
             Positioned(

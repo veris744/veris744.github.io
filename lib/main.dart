@@ -1,63 +1,37 @@
 import 'package:flutter/material.dart';
-import 'package:veris744/home_content.dart';
-import 'package:veris744/project_pages/cofrade/cofrade.dart';
-import 'package:veris744/project_pages/eol/end_of_life.dart';
-import 'package:veris744/project_pages/flocking/flocking.dart';
-import 'package:veris744/project_pages/ntr/nowhere_to_run.dart';
-import 'package:veris744/project_pages/project_content.dart';
-import 'package:flutter_web_plugins/flutter_web_plugins.dart';
-import 'package:veris744/project_pages/smu/social_matchup.dart';
+import 'package:veris744/router_delegate.dart';
 
 void main() {
-  setUrlStrategy(PathUrlStrategy());
-  runApp(const MyPortfolio());
+  runApp(MyPortfolio());
 }
 
 class MyPortfolio extends StatelessWidget {
-  const MyPortfolio({super.key});
+
+  static Map<int, Color> color = {
+    50: Color.fromRGBO(127, 4, 184, 0.1),
+    100: Color.fromRGBO(127, 4, 184, .2),
+    200: Color.fromRGBO(127, 4, 184, .3),
+    300: Color.fromRGBO(127, 4, 184, .4),
+    400: Color.fromRGBO(127, 4, 184, .5),
+    500: Color.fromRGBO(127, 4, 184, .6),
+    600: Color.fromRGBO(127, 4, 184, .7),
+    700: Color.fromRGBO(127, 4, 184, .8),
+    800: Color.fromRGBO(127, 4, 184, .9),
+    900: Color.fromRGBO(127, 4, 184, 1),
+  };
+
+  final _routerDelegate = MyRouterDelegate();
+  final _routeInformationParser = MyRouteInformationParser();
+
+  MyPortfolio({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      theme: ThemeData(scaffoldBackgroundColor: Colors.deepPurple[200]),
       debugShowCheckedModeBanner: false,
-      home: HomeContent(),
-      routes: {
-        '/EndOfLife': (context) => EndOfLife(),
-        '/NowhereToRun': (context) => NowhereToRun(),
-        '/SocialMatchUp': (context) => SocialMatchUp(),
-        '/Engine': (context) => ProjectAPage(),
-        '/Flocking': (context) => Flocking(),
-        '/Cofrade': (context) => Cofrade(),
-      },
+      routerDelegate: _routerDelegate,
+      routeInformationParser: _routeInformationParser,
     );
   }
 }
-
-
-// class HomePage extends StatelessWidget {
-//   const HomePage({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(title: const Text('My Portfolio')),
-//       body: Center(
-//         child: Column(
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           children: [
-//             const Text('Hello World!', style: TextStyle(fontSize: 24)),
-//             const SizedBox(height: 20),
-//             ElevatedButton(
-//               onPressed: () {
-//                 Navigator.pushNamed(context, '/projectA');
-//               },
-//               child: const Text('View Project A'),
-//             ),
-//             UpButton()
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
-

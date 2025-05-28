@@ -45,27 +45,27 @@ class HighlightedSection extends StatelessWidget {
                 ...kBPAccomplished.map(
                   (point) => BoldBulletpoint(point: point[1], title: point[0])
                 ),
-                kBlankSeparator,Text(kUpcoming),
-                ...kBPUpcoming.map(
-                  (point) => Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.done,
-                        color: const Color.fromARGB(255, 0, 0, 0),
-                      ),
-                      SizedBox(width: 5),
-                      Flexible(
-                        child: Text(
-                          point,
-                          style: TextStyle(
-                            color: const Color.fromARGB(255, 0, 0, 0),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                // kBlankSeparator,Text(kUpcoming),
+                // ...kBPUpcoming.map(
+                //   (point) => Row(
+                //     crossAxisAlignment: CrossAxisAlignment.center,
+                //     children: [
+                //       Icon(
+                //         Icons.done,
+                //         color: const Color.fromARGB(255, 0, 0, 0),
+                //       ),
+                //       SizedBox(width: 5),
+                //       Flexible(
+                //         child: Text(
+                //           point,
+                //           style: TextStyle(
+                //             color: const Color.fromARGB(255, 0, 0, 0),
+                //           ),
+                //         ),
+                //       ),
+                //     ],
+                //   ),
+                // ),
               ],
             ),
           ),

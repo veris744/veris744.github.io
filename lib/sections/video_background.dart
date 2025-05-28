@@ -63,9 +63,20 @@ class _VideoBackgroundState extends State<VideoBackground> {
     if (!_isInitialized) {
       return Container(
         height: containerHeight,
+        width: double.infinity,
         color: Colors.black,
-        child: Stack(children: [Image.network("assets/images/eolmenu.png"),
-        Center(child: CircularProgressIndicator())]),
+        child: Stack(
+          children: [
+            SizedBox(
+              height: double.infinity,
+              child: Image.network(
+                "assets/images/eolmenu.png",
+                fit: BoxFit.cover,
+              ),
+            ),
+            Center(child: CircularProgressIndicator()),
+          ],
+        ),
       );
     }
 
@@ -73,7 +84,7 @@ class _VideoBackgroundState extends State<VideoBackground> {
       height: containerHeight,
       width: double.infinity,
       child: FittedBox(
-        fit: BoxFit.cover, // Ensures the video covers the container
+        fit: BoxFit.cover,
         clipBehavior: Clip.hardEdge,
         child: SizedBox(
           width: _controller.value.size.width,
