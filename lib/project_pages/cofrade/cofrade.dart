@@ -57,17 +57,20 @@ class _CofradeState extends State<Cofrade> {
       body: Stack(
         children: [
           SingleChildScrollView(
-            child: Center(
+            child: Container(
+              alignment: Alignment.center,
+              padding: EdgeInsets.all(20),
               child: SizedBox(
                 width: 1400,
                 child: Column(
                   spacing: 15,
                   children: [
                     Text("COFRADE RUSH", style: kHeader1Style),
-                    Row(
+                    Wrap(
                       spacing: 20,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
+                      runSpacing: 20,
+                      runAlignment: WrapAlignment.center,
+                      alignment: WrapAlignment.center,
                       children: [
                         Status(
                           isDone: true,
@@ -97,7 +100,24 @@ class _CofradeState extends State<Cofrade> {
                       builder: (context, constraints) {
                         bool isSmallScreen = constraints.maxWidth < 600;
 
-                        final textWidget = Expanded(
+                        final textWidget = SizedBox(
+                          width: double.infinity,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(kDescCofr1, style: TextStyle(fontSize: 16)),
+                              SizedBox(height: 8),
+                              ...kDescCofr2.map(
+                                (point) => BoldBulletpoint(
+                                  point: point[1],
+                                  title: point[0],
+                                ),
+                              ),
+                            ],
+                          ),
+                        );
+
+                        final textWidgetFlex = Expanded(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -117,25 +137,23 @@ class _CofradeState extends State<Cofrade> {
                           width: isSmallScreen ? double.infinity : 600,
                           child: YoutubeVideo(
                             video: 'waJktW4Bhzg',
-                          ), // Or Image.asset(...)
+                          ),
                         );
 
                         if (isSmallScreen) {
-                          // Stack vertically, text first
                           return Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              textWidget,
-                              SizedBox(height: 16),
                               mediaWidget,
+                              SizedBox(height: 16),
+                              textWidget,
                             ],
                           );
                         } else {
-                          // Side-by-side layout
                           return Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              textWidget,
+                              textWidgetFlex,
                               SizedBox(width: 20),
                               mediaWidget,
                             ],

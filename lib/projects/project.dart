@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:url_launcher/link.dart';
 import 'package:veris744/constants.dart';
 import 'package:veris744/projects/link_button.dart';
 import 'package:veris744/widgets/bulletpoint.dart';
@@ -75,7 +76,10 @@ class Project extends StatelessWidget {
                 ),
                 child: Text(
                   award,
-                  style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
                   textAlign: TextAlign.center,
                 ),
               )
@@ -155,11 +159,15 @@ class Project extends StatelessWidget {
                       .toList(),
             ),
           ),
-          TextButton(
-            onPressed: () {
-              Navigator.of(context).pushNamed('/$pageName');
+          Link(
+            uri: Uri.parse('/$pageName'), // e.g. '/about'
+            target: LinkTarget.self, // Opens in same tab
+            builder: (context, followLink) {
+              return TextButton(
+                onPressed: followLink,
+                child: Text("See More", style: TextStyle(color: kTextColor)),
+              );
             },
-            child: Text("See More", style: TextStyle(color: kTextColor)),
           ),
         ],
       ),

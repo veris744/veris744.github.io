@@ -57,17 +57,20 @@ class _SocialMatchUpState extends State<SocialMatchUp> {
       body: Stack(
         children: [
           SingleChildScrollView(
-            child: Center(
+            child: Container(
+              alignment: Alignment.center,
+              padding: EdgeInsets.all(20),
               child: SizedBox(
                 width: 1400,
                 child: Column(
                   spacing: 15,
                   children: [
                     Text("Social MatchUp", style: kHeader1Style),
-                    Row(
+                    Wrap(
                       spacing: 20,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
+                      runSpacing: 20,
+                      runAlignment: WrapAlignment.center,
+                      alignment: WrapAlignment.center,
                       children: [
                         Status(
                           isDone: true,
@@ -98,7 +101,24 @@ class _SocialMatchUpState extends State<SocialMatchUp> {
                       builder: (context, constraints) {
                         bool isSmallScreen = constraints.maxWidth < 600;
 
-                        final textWidget = Expanded(
+                        final textWidget = SizedBox(
+                          width: double.infinity,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(kDescSMU1, style: TextStyle(fontSize: 16)),
+                              SizedBox(height: 8),
+                              ...kDescSMU2.map(
+                                (point) => BoldBulletpoint(
+                                  point: point[1],
+                                  title: point[0],
+                                ),
+                              ),
+                            ],
+                          ),
+                        );
+
+                        final textWidgetFlex = Expanded(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -118,11 +138,10 @@ class _SocialMatchUpState extends State<SocialMatchUp> {
                           width: isSmallScreen ? double.infinity : 600,
                           child: YoutubeVideo(
                             video: 'waJktW4Bhzg',
-                          ), // Or Image.asset(...)
+                          ),
                         );
 
                         if (isSmallScreen) {
-                          // Stack vertically, text first
                           return Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -132,11 +151,10 @@ class _SocialMatchUpState extends State<SocialMatchUp> {
                             ],
                           );
                         } else {
-                          // Side-by-side layout
                           return Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              textWidget,
+                              textWidgetFlex,
                               SizedBox(width: 20),
                               mediaWidget,
                             ],

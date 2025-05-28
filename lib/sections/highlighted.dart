@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/link.dart';
 import 'package:veris744/constants.dart';
 import 'package:veris744/texts.dart';
 import 'package:veris744/widgets/bold_bulletpoint.dart';
@@ -69,11 +70,15 @@ class HighlightedSection extends StatelessWidget {
             ),
           ),
           kBlankSeparator,
-          TextButton(
-            onPressed: () {
-              Navigator.of(context).pushNamed('/Engine');
+          Link(
+            uri: Uri.parse('/Engine'), // e.g. '/about'
+            target: LinkTarget.self, // Opens in same tab
+            builder: (context, followLink) {
+              return TextButton(
+                onPressed: followLink,
+                child: Text("See More", style: TextStyle(color: kTextColor)),
+              );
             },
-            child: Text("See More", style: TextStyle(color: kTextColor)),
           ),
         ],
       ),

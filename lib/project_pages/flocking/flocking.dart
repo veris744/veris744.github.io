@@ -56,17 +56,20 @@ class _FlockingState extends State<Flocking> {
       body: Stack(
         children: [
           SingleChildScrollView(
-            child: Center(
+            child: Container(
+              alignment: Alignment.center,
+              padding: EdgeInsets.all(20),
               child: SizedBox(
                 width: 1400,
                 child: Column(
                   spacing: 15,
                   children: [
                     Text("Flocking Project", style: kHeader1Style),
-                    Row(
+                    Wrap(
                       spacing: 20,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
+                      runSpacing: 20,
+                      runAlignment: WrapAlignment.center,
+                      alignment: WrapAlignment.center,
                       children: [
                         Status(
                           isDone: true,

@@ -45,6 +45,10 @@ class _EndOfLifeState extends State<EndOfLife> {
 
   @override
   Widget build(BuildContext context) {
+
+    double screenWidth = MediaQuery.of(context).size.width;
+    double widgetWidth = screenWidth < 600 ? (screenWidth - 10 ) : 600;
+
     return Scaffold(
       backgroundColor: Colors.deepPurple[200],
       appBar: TopBar(
@@ -57,17 +61,20 @@ class _EndOfLifeState extends State<EndOfLife> {
       body: Stack(
         children: [
           SingleChildScrollView(
-            child: Center(
+            child: Container(
+              alignment: Alignment.center,
+              padding: EdgeInsets.all(20),
               child: SizedBox(
                 width: 1400,
                 child: Column(
                   spacing: 15,
                   children: [
                     Text("End Of Life", style: kHeader1Style),
-                    Row(
+                    Wrap(
                       spacing: 20,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
+                      runSpacing: 20,
+                      runAlignment: WrapAlignment.center,
+                      alignment: WrapAlignment.center,
                       children: [
                         Status(
                           isDone: true,
@@ -112,9 +119,16 @@ class _EndOfLifeState extends State<EndOfLife> {
                     kBlankSeparator,
                     LayoutBuilder(
                       builder: (context, constraints) {
-                        bool isSmallScreen = constraints.maxWidth < 600;
+                        bool isSmallScreen = constraints.maxWidth < 1200;
 
-                        final textWidget = Flexible(
+                        final textWidget = SizedBox(
+                          width: double.infinity,
+                          child: Text(
+                            kDesc1EOL,
+                            style: TextStyle(fontSize: 16),
+                          ),
+                        );
+                        final textWidgetFlex = Flexible(
                           child: Text(
                             kDesc1EOL,
                             style: TextStyle(fontSize: 16),
@@ -122,14 +136,13 @@ class _EndOfLifeState extends State<EndOfLife> {
                         );
 
                         final mediaWidget = SizedBox(
-                          width: 600,
+                          width: widgetWidth,
                           child: YoutubeVideo(
                             video: 'MCdZHNheqqQ',
-                          ), // or Image.asset(...)
+                          ),
                         );
 
                         if (isSmallScreen) {
-                          // Stack vertically, text comes first
                           return Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -139,11 +152,10 @@ class _EndOfLifeState extends State<EndOfLife> {
                             ],
                           );
                         } else {
-                          // Row layout, image/video on the left
                           return Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              textWidget,
+                              textWidgetFlex,
                               SizedBox(width: 20),
                               mediaWidget,
                             ],
@@ -195,7 +207,7 @@ class _EndOfLifeState extends State<EndOfLife> {
                         path: 'assets/images/eolEditor.png',
                         legend:
                             "Screenshot from the Editor showing multi-gravity world and Navmesh",
-                      ), // or Image.asset(...)
+                      ),
                     ),
                     SizedBox(
                       width: double.infinity,

@@ -78,11 +78,9 @@ const String kEngineShortDesc =
 "Small C++ game engine, this is still a work in progress.\n\nKey Aspects (already implemented):";
 const List<String> kBPEngine = [
   "Game Editor and showcase mini-game"
-  "Graphics with OpenGL",
+  "2D and 3D Graphics with OpenGL",
   "Reflection system for deserialization/serialization",
-  "User Interface",
   "Collisions and Physics",
-  "Built with CMake"
 ];
 
 const String kFlockShortDesc =
