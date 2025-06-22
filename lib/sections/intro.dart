@@ -6,6 +6,6 @@ class IntroSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return VideoBackground(videoAssetPath: 'assets/videos/test.mp4');
+    return VideoBackground(videoAssetPath: 'assets/videos/intro2.mp4');
   }
 }

@@ -4,8 +4,8 @@ import 'package:footer/footer_view.dart';
 import 'package:veris744/constants.dart';
 import 'package:veris744/project_pages/image_legend.dart';
 import 'package:veris744/project_pages/status.dart';
-import 'package:veris744/project_pages/youtube_video.dart';
 import 'package:veris744/projects/link_button.dart';
+import 'package:veris744/project_pages/eol/youtube_video_eol.dart';
 import 'package:veris744/sections/copyright.dart';
 import 'package:veris744/texts.dart';
 import 'package:veris744/widgets/top_bar.dart';
@@ -141,11 +141,11 @@ class _EndOfLifeState extends State<EndOfLife> {
                               style: TextStyle(fontSize: 16),
                             ),
                           );
-
-                          final mediaWidget = SizedBox(
-                            width: widgetWidth,
-                            child: YoutubeVideo(video: 'MCdZHNheqqQ'),
-                          );
+                          
+                        final mediaWidget = SizedBox(
+                          width: 600,
+                          child: YoutubeVideoEol(),
+                        );
 
                           if (isSmallScreen) {
                             return Column(
@@ -187,17 +187,16 @@ class _EndOfLifeState extends State<EndOfLife> {
                           textAlign: TextAlign.left,
                         ),
                       ),
-                      SizedBox(
-                        width: double.infinity,
-                        child: Text(
-                          "AI",
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          textAlign: TextAlign.left,
+                    
+                    SizedBox(
+                      width: double.infinity,
+                      child: Text(
+                        "AI",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
                         ),
-                      ),
+                      )),
                       SizedBox(
                         width: double.infinity,
                         child: Text(

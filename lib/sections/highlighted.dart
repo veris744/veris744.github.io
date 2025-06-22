@@ -9,9 +9,9 @@ class HighlightedSection extends StatelessWidget {
   HighlightedSection({super.key});
 
   final List<String> imageUrls = [
-    'assets/images/editorMenu.png',
+    'assets/images/gameshot.png',
+    'assets/images/editor2.png',
     'assets/images/editorEdi.png',
-    'assets/images/editorAliens.png',
   ];
 
   @override

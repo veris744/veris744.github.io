@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:footer/footer.dart';
 import 'package:footer/footer_view.dart';
 import 'package:veris744/constants.dart';
+import 'package:veris744/project_pages/eol/youtube_video_eol.dart';
 import 'package:veris744/project_pages/status.dart';
-import 'package:veris744/project_pages/youtube_video.dart';
 import 'package:veris744/projects/link_button.dart';
 import 'package:veris744/sections/copyright.dart';
 import 'package:veris744/texts.dart';
@@ -142,10 +142,11 @@ class _SocialMatchUpState extends State<SocialMatchUp> {
                             ),
                           );
 
-                          final mediaWidget = SizedBox(
-                            width: isSmallScreen ? double.infinity : 600,
-                            child: YoutubeVideo(video: 'waJktW4Bhzg'),
-                          );
+                          
+                        final mediaWidget = SizedBox(
+                          width: 600,
+                          child: YoutubeVideoEol(),
+                        );
 
                           if (isSmallScreen) {
                             return Column(

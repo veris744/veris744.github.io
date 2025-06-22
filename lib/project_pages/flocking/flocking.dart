@@ -6,6 +6,7 @@ import 'package:veris744/project_pages/image_legend.dart';
 import 'package:veris744/project_pages/status.dart';
 import 'package:veris744/projects/link_button.dart';
 import 'package:veris744/sections/copyright.dart';
+import 'package:veris744/sections/video.dart';
 import 'package:veris744/texts.dart';
 import 'package:veris744/widgets/top_bar.dart';
 import 'package:veris744/widgets/up_button.dart';
@@ -121,10 +122,9 @@ class _FlockingState extends State<Flocking> {
                       ),
                       SizedBox(
                         width: 1000,
-                        child: ImageLegend(
-                          path: 'assets/images/eolEditor.png',
-                          legend:
-                              "Screenshot from the Editor showing multi-gravity world and Navmesh",
+                        child: Video(
+                          videoAssetPath: 'assets/videos/flock.mp4',
+                          imagePath: 'assets/images/flock.png',
                         ),
                       ),
                       SizedBox(

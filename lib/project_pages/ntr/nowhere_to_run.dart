@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:footer/footer.dart';
 import 'package:footer/footer_view.dart';
 import 'package:veris744/constants.dart';
+import 'package:veris744/project_pages/ntr/youtube_video_ntr.dart';
 import 'package:veris744/project_pages/status.dart';
-import 'package:veris744/project_pages/youtube_video.dart';
 import 'package:veris744/projects/link_button.dart';
 import 'package:veris744/sections/copyright.dart';
 import 'package:veris744/texts.dart';
@@ -131,6 +131,10 @@ class _NowhereToRunState extends State<NowhereToRun> {
                               ],
                             ),
                           );
+                        final mediaWidget = SizedBox(
+                          width: 600,
+                          child: YoutubeVideoNtr(),
+                        );
 
                           final textWidgetFlex = Expanded(
                             child: Column(
@@ -146,11 +150,6 @@ class _NowhereToRunState extends State<NowhereToRun> {
                                 ),
                               ],
                             ),
-                          );
-
-                          final mediaWidget = SizedBox(
-                            width: isSmallScreen ? double.infinity : 600,
-                            child: YoutubeVideo(video: 'waJktW4Bhzg'),
                           );
 
                           if (isSmallScreen) {

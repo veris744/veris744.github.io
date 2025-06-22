@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:footer/footer.dart';
 import 'package:footer/footer_view.dart';
 import 'package:veris744/constants.dart';
+import 'package:veris744/project_pages/eol/youtube_video_eol.dart';
 import 'package:veris744/project_pages/status.dart';
-import 'package:veris744/project_pages/youtube_video.dart';
 import 'package:veris744/projects/link_button.dart';
 import 'package:veris744/sections/copyright.dart';
+import 'package:veris744/sections/video.dart';
 import 'package:veris744/texts.dart';
 import 'package:veris744/widgets/bold_bulletpoint.dart';
 import 'package:veris744/widgets/top_bar.dart';
@@ -148,10 +149,14 @@ class _CofradeState extends State<Cofrade> {
                             ),
                           );
 
-                          final mediaWidget = SizedBox(
-                            width: isSmallScreen ? double.infinity : 600,
-                            child: YoutubeVideo(video: 'waJktW4Bhzg'),
-                          );
+                        final mediaWidget = SizedBox(
+                          width: 600,
+                          height: 300,
+                          child: Video(
+                          videoAssetPath: 'assets/videos/cofrade.mp4',
+                          imagePath: 'assets/images/CJ.png',
+                        ),
+                        );
 
                           if (isSmallScreen) {
                             return Column(
