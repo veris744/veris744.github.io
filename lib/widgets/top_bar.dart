@@ -33,6 +33,7 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      toolbarHeight: 100,
       automaticallyImplyLeading: false,
       title: 
           Link(
@@ -41,12 +42,12 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
             builder: (context, followLink) {
               return TextButton(
                 onPressed: followLink,
-                child: Text("Isabel de Vergara", style: TextStyle(color: kTextColor)),
+                child: Text("Isabel de Vergara", style: TextStyle(color: kTextColor, fontSize: 26)),
               );
             },
           ),
       elevation: 4,
-      backgroundColor: kPrimaryColor,
+      backgroundColor: Color.fromARGB(255, 58, 62, 108),
       actions:
           MediaQuery.of(context).size.width > 700
               ? [
@@ -54,7 +55,6 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
                 BarButton(scrollTo: scrollToHihlighted, text: "Highlighted"),
                 BarButton(scrollTo: scrollToProjects, text: "Projects"),
                 BarButton(scrollTo: scrollToSkills, text: "Skills"),
-                BarButton(scrollTo: scrollToAbout, text: "About"),
                 BarButton(scrollTo: scrollToContact, text: "Contact"),
               ]
               : [BarButton(scrollTo: scrollToResume, text: "Résumé")],

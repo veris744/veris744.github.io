@@ -48,7 +48,7 @@ class _EndOfLifeState extends State<EndOfLife> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple[200],
+      backgroundColor: kBackgroundColor,
       appBar: TopBar(
         scrollToHihlighted: () => Navigator.of(context).pushNamed('/'),
         scrollToProjects: () => Navigator.of(context).pushNamed('/'),
@@ -67,13 +67,18 @@ class _EndOfLifeState extends State<EndOfLife> {
             children: [
               Container(
                 alignment: Alignment.center,
-                padding: EdgeInsets.all(20),
+                padding: EdgeInsets.all(0),
                 child: SizedBox(
                   width: 1400,
                   child: Column(
                     spacing: 15,
                     children: [
-                      Text("End Of Life", style: kHeader1Style),
+                      Container(
+                        width: double.infinity,
+                        padding: EdgeInsets.all(20),
+                        decoration: BoxDecoration(color: kTitleColor),
+                        child: Text("End Of Life", style: kHeader1Style, textAlign: TextAlign.center,),
+                      ),
                       Wrap(
                         spacing: 20,
                         runSpacing: 20,
@@ -129,20 +134,22 @@ class _EndOfLifeState extends State<EndOfLife> {
                             width: double.infinity,
                             child: Text(
                               kDesc1EOL,
-                              style: TextStyle(fontSize: 16),
+                              style: kBodyTextStyle,
+                              textAlign: TextAlign.justify,
                             ),
                           );
                           final textWidgetFlex = Flexible(
                             child: Text(
                               kDesc1EOL,
-                              style: TextStyle(fontSize: 16),
+                              style: kBodyTextStyle,
+                              textAlign: TextAlign.justify,
                             ),
                           );
-                          
-                        final mediaWidget = SizedBox(
-                          width: 600,
-                          child: YoutubeVideoEol(),
-                        );
+
+                          final mediaWidget = SizedBox(
+                            width: 600,
+                            child: YoutubeVideoEol(),
+                          );
 
                           if (isSmallScreen) {
                             return Column(
@@ -169,37 +176,34 @@ class _EndOfLifeState extends State<EndOfLife> {
                         width: double.infinity,
                         child: Text(
                           "Team Management",
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          textAlign: TextAlign.left,
+                          style: kHeader2Style,
+                          textAlign: TextAlign.center,
                         ),
                       ),
                       SizedBox(
                         width: double.infinity,
                         child: Text(
                           kDesc3EOL,
-                          style: TextStyle(fontSize: 16),
-                          textAlign: TextAlign.left,
+                          style: kBodyTextStyle,
+                          textAlign: TextAlign.justify,
                         ),
                       ),
-                    
-                    SizedBox(
-                      width: double.infinity,
-                      child: Text(
-                        "AI",
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
+                      kBlankSeparator,
+                      kBlankSeparator,
+                      SizedBox(
+                        width: double.infinity,
+                        child: Text(
+                          "AI",
+                          style: kHeader2Style,
+                          textAlign: TextAlign.center,
                         ),
-                      )),
+                      ),
                       SizedBox(
                         width: double.infinity,
                         child: Text(
                           kDesc2EOL,
-                          style: TextStyle(fontSize: 16),
-                          textAlign: TextAlign.left,
+                          style: kBodyTextStyle,
+                          textAlign: TextAlign.justify,
                         ),
                       ),
                       SizedBox(
@@ -210,23 +214,22 @@ class _EndOfLifeState extends State<EndOfLife> {
                               "Screenshot from the Editor showing multi-gravity world and Navmesh",
                         ),
                       ),
+                      kBlankSeparator,
+                      kBlankSeparator,
                       SizedBox(
                         width: double.infinity,
                         child: Text(
                           "UI",
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          textAlign: TextAlign.left,
+                          style: kHeader2Style,
+                          textAlign: TextAlign.center,
                         ),
                       ),
                       SizedBox(
                         width: double.infinity,
                         child: Text(
                           kDesc4EOL,
-                          style: TextStyle(fontSize: 16),
-                          textAlign: TextAlign.left,
+                          style: kBodyTextStyle,
+                          textAlign: TextAlign.justify,
                         ),
                       ),
                     ],

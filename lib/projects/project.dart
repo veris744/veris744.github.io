@@ -52,7 +52,7 @@ class Project extends StatelessWidget {
     bool isMobile = screenWidth < 800;
 
     return Container(
-      height: 700,
+      height: ((isMobile && award != '') ? 730 : 700),
       width: 450,
       decoration: BoxDecoration(
         color: kPrimaryColor,
@@ -61,7 +61,7 @@ class Project extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 5, horizontal: 20),
       child: Column(
         mainAxisSize: MainAxisSize.min,
-        spacing: 8,
+        spacing: isMobile ? 4 : 6,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(name, style: kHeader2Style, textAlign: TextAlign.center),
@@ -84,20 +84,25 @@ class Project extends StatelessWidget {
                 ),
               )
               : (!isMobile ? SizedBox(height: 30) : SizedBox.shrink()),
-          SizedBox(
-            height: 180,
+          ConstrainedBox(
+            constraints: BoxConstraints(
+              minWidth: double.infinity,
+              maxWidth: double.infinity,
+              minHeight: 0,
+              maxHeight: 180,
+            ),
             child: Image.network(imagePath, fit: BoxFit.contain),
           ),
+          SizedBox(height: 3),
           Center(
-            child: Container(
-              margin: EdgeInsets.symmetric(vertical: 8),
-              child: Wrap(
-                spacing: 8,
-                runSpacing: 4,
-                children: tags.map((tag) => Tag(name: tag)).toList(),
-              ),
+            child: Wrap(
+              alignment: WrapAlignment.spaceAround,
+              spacing: 8,
+              runSpacing: 4,
+              children: tags.map((tag) => Tag(name: tag)).toList(),
             ),
           ),
+          SizedBox(height: 3),
           ConstrainedBox(
             constraints: BoxConstraints(
               minWidth: double.infinity, // Full width
@@ -107,13 +112,13 @@ class Project extends StatelessWidget {
             child: Text(
               description,
               textAlign: TextAlign.left,
-              style: TextStyle(color: kTextColor),
+              style: TextStyle(color: kTextSecond, fontSize: 16),
             ),
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children:
-                bulletPoints.map((point) => Bulletpoint(point: point)).toList(),
+                bulletPoints.map((point) => Bulletpoint(point: point, textColor: kTextSecond,)).toList(),
           ),
           Spacer(),
           Row(
@@ -122,7 +127,7 @@ class Project extends StatelessWidget {
             spacing: 10,
             children: [
               Flexible(
-                child: Text("Platforms:", style: TextStyle(color: kTextColor)),
+                child: Text("Platforms:", style: TextStyle(color: kTextSecond, fontSize: 16)),
               ),
               ...platforms.map(
                 (platform) => Padding(
@@ -140,34 +145,51 @@ class Project extends StatelessWidget {
             ],
           ),
           kBlankSeparator,
-          ConstrainedBox(
-            constraints: BoxConstraints(
-              minWidth: double.infinity,
-              maxWidth: double.infinity,
-              minHeight: 0,
-            ),
-            child: Wrap(
-              alignment: WrapAlignment.start,
-              spacing: 8,
-              runSpacing: 5,
-              children:
-                  links
-                      .map(
-                        (link) =>
-                            LinkButton(link: link, platform: _checkLink(link)),
-                      )
-                      .toList(),
+          Container(
+            decoration: BoxDecoration(color: kAccentColor),
+            padding: EdgeInsets.symmetric(vertical: 6, horizontal: 12),
+            child: Link(
+              uri: Uri.parse('/$pageName'),
+              target: LinkTarget.self,
+              builder: (context, followLink) {
+                return TextButton(
+                  onPressed: followLink,
+                  child: Text(
+                    "See More",
+                    style: TextStyle(
+                      color: kTextColor,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                );
+              },
             ),
           ),
-          Link(
-            uri: Uri.parse('/$pageName'), // e.g. '/about'
-            target: LinkTarget.self, // Opens in same tab
-            builder: (context, followLink) {
-              return TextButton(
-                onPressed: followLink,
-                child: Text("See More", style: TextStyle(color: kTextColor)),
-              );
-            },
+          SizedBox(height: 4),
+          Padding(
+            padding: EdgeInsets.only(bottom: 10),
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                minWidth: double.infinity,
+                maxWidth: double.infinity,
+                minHeight: 0,
+              ),
+              child: Wrap(
+                alignment: WrapAlignment.center,
+                spacing: 8,
+                runSpacing: 5,
+                children:
+                    links
+                        .map(
+                          (link) => LinkButton(
+                            link: link,
+                            platform: _checkLink(link),
+                          ),
+                        )
+                        .toList(),
+              ),
+            ),
           ),
         ],
       ),

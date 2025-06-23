@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:veris744/constants.dart';
 
 class BoldBulletpoint extends StatelessWidget {
   const BoldBulletpoint({super.key, required this.point, required this.title});
@@ -28,9 +29,9 @@ class BoldBulletpoint extends StatelessWidget {
                   children: <TextSpan>[
                     TextSpan(
                       text: title,
-                      style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0, height: 1.5,),
+                      style: kBodyBoldTextStyle,
                     ),
-                    TextSpan(text: point),
+                    TextSpan(text: point, style: kBodyTextStyle),
                   ],
                 ),
               ),

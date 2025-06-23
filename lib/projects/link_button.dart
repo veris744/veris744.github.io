@@ -17,7 +17,7 @@ class LinkButton extends StatelessWidget {
         return InkWell(
           onTap: followLink,
           child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+            padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
             decoration: BoxDecoration(
               color: Colors.grey,
               borderRadius: BorderRadius.circular(12),
@@ -28,19 +28,19 @@ class LinkButton extends StatelessWidget {
                 platformsImages.containsKey(platform)
                     ? Image.network(
                       platformsImages[platform]!,
-                      height: 24,
-                      width: 24,
+                      height: 18,
+                      width: 18,
                     )
                     : SizedBox.shrink(),
-                SizedBox(width: 8),
+                SizedBox(width: 4),
                 Text(
                   platformsNames.containsKey(platform)
                       ? platformsNames[platform]!
                       : "Download",
                   style: TextStyle(color: Colors.white),
                 ),
-                SizedBox(width: 8),
-                Icon(Icons.launch, color: Colors.white),
+                SizedBox(width: 4),
+                Icon(Icons.launch, color: Colors.white, size: 18,),
               ],
             ),
           ),

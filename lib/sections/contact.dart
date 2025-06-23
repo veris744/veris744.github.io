@@ -12,7 +12,9 @@ class ContactSection extends StatelessWidget {
       padding: EdgeInsets.all(32),
       child: Column(
         children: [
-          Text('Contact', style: Theme.of(context).textTheme.headlineMedium),
+          Text('Contact Me', style: kHeader1Style),
+          kBlankSeparator,
+          Text('Feel free to contact me on:', style: kHeader2Style),
           kBlankSeparator,
           SizedBox(
             height: 75,
@@ -22,7 +24,7 @@ class ContactSection extends StatelessWidget {
               children: [
                 IconButton(
                   constraints: BoxConstraints.tight(Size.fromWidth(75)),
-                  icon: SvgPicture.network("assets/icons/github.svg"),
+                  icon: SvgPicture.network("assets/icons/github.svg", color: kTextColor,),
                   onPressed: () async {
                     const url =
                         'https://github.com/veris744';
@@ -52,7 +54,7 @@ class ContactSection extends StatelessWidget {
                 ),
                 IconButton(
                   constraints: BoxConstraints.tight(Size.fromWidth(75)),
-                  icon: SvgPicture.network("assets/icons/email.svg"),
+                  icon: SvgPicture.network("assets/icons/email.svg", color: kTextColor,),
                   onPressed: () async {
                     const url =
                         'mailto:isaverore@hotmail.com';

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:veris744/constants.dart';
 
 class UpButton extends StatefulWidget {
   final VoidCallback onPressed;
@@ -16,7 +17,7 @@ class UpButtonState extends State<UpButton> {
     return FloatingActionButton(
         onPressed: widget.onPressed,
         foregroundColor: Colors.white,
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: kAccentColor,
         shape: CircleBorder(),
         child: const Icon(Icons.arrow_upward),
     );

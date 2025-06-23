@@ -16,11 +16,15 @@ class HighlightedSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(color: Colors.grey),
+    return SizedBox(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          Container(
+            width: double.infinity,
+            padding: EdgeInsets.symmetric(vertical: 15),
+            decoration: BoxDecoration(color: kPrimaryColor),
+          child: Column(children: [
           Text(
             'Current Project',
             style: kHeader1Style,
@@ -30,7 +34,7 @@ class HighlightedSection extends StatelessWidget {
             'C++ Game Engine',
             style: kHeader2Style,
             textAlign: TextAlign.center,
-          ),
+          )])),
           kBlankSeparator,
           CarouselWithButtons(imagePaths: imageUrls),
           kBlankSeparator,
@@ -41,7 +45,7 @@ class HighlightedSection extends StatelessWidget {
               spacing: 5,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(kHighlighted1),
+                Text(kHighlighted1, style: kBodyTextStyle,),
                 ...kBPAccomplished.map(
                   (point) => BoldBulletpoint(point: point[1], title: point[0])
                 ),
@@ -70,16 +74,24 @@ class HighlightedSection extends StatelessWidget {
             ),
           ),
           kBlankSeparator,
+          Container(
+            decoration: BoxDecoration(
+              color: kAccentColor
+            ),
+            padding: EdgeInsets.symmetric(vertical: 6, horizontal: 12),
+            child:
           Link(
-            uri: Uri.parse('/Engine'), // e.g. '/about'
-            target: LinkTarget.self, // Opens in same tab
+            uri: Uri.parse('/Engine'),
+            target: LinkTarget.self,
             builder: (context, followLink) {
               return TextButton(
                 onPressed: followLink,
-                child: Text("See More", style: TextStyle(color: kTextColor)),
+                child: Text("See More", style: TextStyle(color: kTextColor, fontSize: 18, fontWeight: FontWeight.bold)),
               );
             },
-          ),
+          )),
+          kBlankSeparator,
+          kBlankSeparator
         ],
       ),
     );

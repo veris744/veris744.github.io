@@ -14,65 +14,78 @@ class ProjectsSection extends StatelessWidget {
         maxWidth: double.infinity,
         minHeight: 0, // Flexible height
       ),
-      child: Container(
+      child: SizedBox(
         width: double.infinity,
-        decoration: BoxDecoration(
-          border: Border(bottom: BorderSide(color: Colors.grey[200]!)),
-          color: Color.fromRGBO(173, 173, 173, 1),
-        ),
-        padding: EdgeInsets.all(32),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Academic Projects', style: kHeader1Style),
-            Wrap(
-              spacing: 20,
-              runSpacing: 10,
-              alignment: WrapAlignment.center,
-              children: [
-                Project(
-                  name: "End of Life",
-                  imagePath: "assets/images/eolCover.jpg",
-                  tags: ["C++", "UE5", "AI", "UI", "Team Management"],
-                  description: kEOLShortDesc,
-                  bulletPoints: kBPEOL,
-                  pageName: "EndOfLife",
-                  links: [
-                    'https://store.steampowered.com/app/2666520/End_Of_Life/',
-                  ],
-                  platforms: [Platforms.windows, Platforms.steam],
-                  award: 'PlayStation Talents Finalist',
-                ),
-                Project(
-                  name: "Nowhere To Run",
-                  imagePath: "assets/images/NTR.png",
-                  tags: ["C#", "Unity", "VR"],
-                  description: kNTRShortDesc,
-                  bulletPoints: kBPNTR,
-                  pageName: "NowhereToRun",
-                  platforms: [Platforms.vr, Platforms.android, Platforms.itch],
-                  links: [
-                    'https://veris744.itch.io/nowhere-to-run',
-                    'https://github.com/veris744/NowhereToRun',
-                  ],
-                ),
-                Project(
-                  name: "Social MatchUp",
-                  imagePath: "assets/images/test.png",
-                  tags: ["C#", "Unity", "Oculus", "VR", "Multiplayer"],
-                  description: kSMUShortDesc,
-                  bulletPoints: kBPSMU,
-                  pageName: "SocialMatchUp",
-                  platforms: [Platforms.vr, Platforms.oculus, Platforms.itch],
-                  links: ['https://github.com/veris744/Social-Matchup'],
-                ),
-              ],
+            Container(
+              width: double.infinity,
+              decoration: BoxDecoration(color: kTitleColor),
+              padding: EdgeInsets.symmetric(vertical: 15),
+              child: Text('Academic Projects', style: kHeader1Style, textAlign: TextAlign.center,),
             ),
             kBlankSeparator,
             kBlankSeparator,
             kBlankSeparator,
+              Wrap(
+                spacing: 20,
+                runSpacing: 10,
+                alignment: WrapAlignment.center,
+                children: [
+                  Project(
+                    name: "End of Life",
+                    imagePath: "assets/images/eolCover.jpg",
+                    tags: ["C++", "UE5", "AI", "UI", "Team Management"],
+                    description: kEOLShortDesc,
+                    bulletPoints: kBPEOL,
+                    pageName: "EndOfLife",
+                    links: [
+                      'https://store.steampowered.com/app/2666520/End_Of_Life/',
+                    ],
+                    platforms: [Platforms.windows, Platforms.steam],
+                    award: 'Play Station Talents Finalist 2023',
+                  ),
+                  Project(
+                    name: "Nowhere To Run",
+                    imagePath: "assets/images/NTR.png",
+                    tags: ["C#", "Unity", "VR"],
+                    description: kNTRShortDesc,
+                    bulletPoints: kBPNTR,
+                    pageName: "NowhereToRun",
+                    platforms: [
+                      Platforms.vr,
+                      Platforms.android,
+                      Platforms.itch,
+                    ],
+                    links: [
+                      'https://veris744.itch.io/nowhere-to-run',
+                      'https://github.com/veris744/NowhereToRun',
+                    ],
+                  ),
+                  Project(
+                    name: "Social MatchUp",
+                    imagePath: "assets/images/test.png",
+                    tags: ["C#", "Unity", "Oculus", "VR", "Multiplayer"],
+                    description: kSMUShortDesc,
+                    bulletPoints: kBPSMU,
+                    pageName: "SocialMatchUp",
+                    platforms: [Platforms.vr, Platforms.oculus, Platforms.itch],
+                    links: ['https://github.com/veris744/Social-Matchup'],
+                  ),
+                ],
+              ),
+            
+            SizedBox(height: 30),
+            Container(
+              width: double.infinity,
+              decoration: BoxDecoration(color: kTitleColor),
+              padding: EdgeInsets.symmetric(vertical: 15),
+              child: Text('Personal Projects', style: kHeader1Style, textAlign: TextAlign.center,),
+            ),
             kBlankSeparator,
-            Text('Personal Projects', style: kHeader1Style),
+            kBlankSeparator,
+            kBlankSeparator,
             Wrap(
               alignment: WrapAlignment.center,
               spacing: 20,

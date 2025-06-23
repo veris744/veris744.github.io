@@ -93,8 +93,6 @@ class _HomeContentState extends State<HomeContent> {
                   return ProjectsSection();
                 case 4:
                   return SkillsSection();
-                case 5:
-                  return AboutSection();
                 case 6:
                   return ContactSection();
                 case 7:

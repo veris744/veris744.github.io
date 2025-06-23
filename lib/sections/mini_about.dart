@@ -18,24 +18,24 @@ class MiniAbout extends StatelessWidget {
       ),
       child: Container(
         padding: EdgeInsets.symmetric(
-          horizontal: isWideScreen ? 100 : 10,
+          horizontal: isWideScreen ? 300 : 10,
           vertical: 20,
         ),
-        decoration: BoxDecoration(color: Colors.blueGrey),
         child: Column(
           children: [
             Text(
-              kAboutMiniHeader,
-              style: kHeader2Style,
+              "About Me",
+              style: kHeader1Style,
               textAlign: TextAlign.center,
             ),
             kBlankSeparator,
             kBlankSeparator,
             Text(
-              kAboutMini,
-              style: TextStyle(color: kTextColor, fontSize: 18),
-              textAlign: TextAlign.center,
+              kAboutText,
+              style: kBodyTextStyle,
+              textAlign: TextAlign.justify,
             ),
+            kBlankSeparator
           ],
         ),
       ),

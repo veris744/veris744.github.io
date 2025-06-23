@@ -19,13 +19,15 @@ class Utils {
 }
 
 // ================ Colors ================
-const Color kPrimaryColor = Color.fromARGB(202, 99, 0, 238);
-const Color kBackgroundColor = Color.fromARGB(255, 0, 0, 0);
-const Color kTextColor = Color.fromARGB(255, 255, 255, 255);
-const Color kAccentColor = Color.fromARGB(255, 206, 34, 169); // Pink
+const Color kPrimaryColor = Color.fromARGB(255, 149, 155, 181);
+const Color kBackgroundColor = Color.fromARGB(255, 10, 17, 35);
+const Color kTextColor = Color.fromARGB(255, 217, 218, 180);
+const Color kTextSecond = Color.fromARGB(255, 19, 20, 39);
+const Color kAccentColor = Color.fromARGB(255, 131, 135, 195); // Pink
+const Color kTitleColor = Color.fromARGB(255, 58, 62, 108); 
 
 Map<String, Color> tags = {
-  "Unity": Color.fromARGB(201, 255, 81, 0),
+  "Unity": Color.fromARGB(200, 158, 145, 139),
   "C++": Color.fromARGB(200, 0, 225, 255),
   "UE5": Color.fromARGB(199, 255, 85, 178),
   "C#": Color.fromARGB(200, 72, 255, 0),
@@ -76,13 +78,20 @@ TextStyle kHeader1Style = TextStyle(
 TextStyle kHeader2Style = TextStyle(
   fontSize: 28.0,
   fontWeight: FontWeight.w600,
-  color: kTextColor,
+  color: kTextSecond,
 );
 
 TextStyle kBodyTextStyle = TextStyle(
-  fontSize: 16.0,
+  fontSize: 20.0,
   height: 1.5,
   color: kTextColor,
+);
+TextStyle kBodyBoldTextStyle = TextStyle(
+  fontSize: 20.0,
+  height: 1.5,
+  color: kTextColor,
+  fontWeight: FontWeight.bold,
+  
 );
 
 // ================ Spacing/Padding ================

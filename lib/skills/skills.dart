@@ -11,7 +11,6 @@ class SkillsSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(32),
-      color: Color.fromARGB(255, 117, 117, 117),
       child: Column(
         children: [
           Text('Skills', style: kHeader1Style),
@@ -19,7 +18,7 @@ class SkillsSection extends StatelessWidget {
             spacing: 10,
             runSpacing: 10,
             runAlignment: WrapAlignment.center,
-            children: [LanguagesSkills(), ToolsSkills(), SoftSkills()],
+            children: [LanguagesSkills(), ToolsSkills()],
           ),
         ],
       ),

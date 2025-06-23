@@ -20,9 +20,9 @@ class Bulletpoint extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Icon(Icons.done, color: Colors.green),
+            Icon(Icons.done, color: const Color.fromARGB(255, 9, 102, 14)),
             SizedBox(width: 5,),
-            Flexible(child: Text(point, style: TextStyle(color: textColor))),
+            Flexible(child: Text(point, style: TextStyle(color: textColor, fontSize: 16))),
           ],
         ),
       ),

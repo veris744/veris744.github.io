@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:veris744/constants.dart';
 import 'package:veris744/router_delegate.dart';
 
 void main() {
@@ -28,7 +29,7 @@ class MyPortfolio extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      theme: ThemeData(scaffoldBackgroundColor: Colors.deepPurple[200]),
+      theme: ThemeData(scaffoldBackgroundColor: kBackgroundColor),
       debugShowCheckedModeBanner: false,
       routerDelegate: _routerDelegate,
       routeInformationParser: _routeInformationParser,
