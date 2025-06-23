@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:footer/footer.dart';
 import 'package:footer/footer_view.dart';
 import 'package:veris744/constants.dart';
-import 'package:veris744/project_pages/image_legend.dart';
 import 'package:veris744/project_pages/status.dart';
 import 'package:veris744/projects/link_button.dart';
 import 'package:veris744/sections/copyright.dart';

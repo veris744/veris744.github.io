@@ -192,9 +192,9 @@ const String kEngDebug = "Debugging tools include 2D and 3D overlays for visuali
 const String kEngDelivery = "The engine is built with CMake with a focus on modularity and extensibility.";
 
 const List<String> kEngUpcoming = [
-  "Advanced physics (ragdoll, constraints, etc.)", 
+  "Improved graphics and shadows", 
   "Basic AI using Behavior Trees", 
-  "Animation system with interpolation and transformation sequences",
+  "Memory Management and Partitioning",
   "A full playable game showcasing all systems"
 ];
 

@@ -7,7 +7,10 @@ import 'package:veris744/project_pages/image_legend.dart';
 import 'package:veris744/project_pages/status.dart';
 import 'package:veris744/projects/link_button.dart';
 import 'package:veris744/sections/copyright.dart';
+import 'package:veris744/sections/video.dart';
 import 'package:veris744/texts.dart';
+import 'package:veris744/widgets/bold_bulletpoint.dart';
+import 'package:veris744/widgets/bulletpoint.dart';
 import 'package:veris744/widgets/top_bar.dart';
 import 'package:veris744/widgets/up_button.dart';
 
@@ -96,8 +99,7 @@ class _EngineState extends State<Engine> {
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
                                 LinkButton(
-                                  link:
-                                      'https://github.com/veris744/WHYNOT',
+                                  link: 'https://github.com/veris744/WHYNOT',
                                   platform: Utils.checkLink(
                                     'https://github.com/veris744/WHYNOT',
                                   ),
@@ -125,10 +127,14 @@ class _EngineState extends State<Engine> {
                             ),
                           );
 
-                        final mediaWidget = SizedBox(
-                          width: 600,
-                          child: YoutubeVideoEol(),
-                        );
+                          final mediaWidget = SizedBox(
+                            width: 600,
+                            height: 300,
+                            child: Video(
+                              videoAssetPath: 'assets/videos/enginegame.mp4',
+                              imagePath: 'assets/images/editorMenu.png',
+                            ),
+                          );
 
                           if (isSmallScreen) {
                             return Column(
@@ -165,7 +171,7 @@ class _EngineState extends State<Engine> {
                       SizedBox(
                         width: double.infinity,
                         child: Text(
-                          "",
+                          kEngGraphics,
                           style: TextStyle(fontSize: 16),
                           textAlign: TextAlign.left,
                         ),
@@ -184,17 +190,9 @@ class _EngineState extends State<Engine> {
                       SizedBox(
                         width: double.infinity,
                         child: Text(
-                          "",
+                          kEngECS,
                           style: TextStyle(fontSize: 16),
                           textAlign: TextAlign.left,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 1000,
-                        child: ImageLegend(
-                          path: 'assets/images/eolEditor.png',
-                          legend:
-                              "Screenshot from the Editor showing multi-gravity world and Navmesh",
                         ),
                       ),
                       SizedBox(
@@ -211,7 +209,7 @@ class _EngineState extends State<Engine> {
                       SizedBox(
                         width: double.infinity,
                         child: Text(
-                          "",
+                          kEngUI,
                           style: TextStyle(fontSize: 16),
                           textAlign: TextAlign.left,
                         ),
@@ -230,11 +228,35 @@ class _EngineState extends State<Engine> {
                       SizedBox(
                         width: double.infinity,
                         child: Text(
+                          kEngRefl,
+                          style: TextStyle(fontSize: 16),
+                          textAlign: TextAlign.left,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 600,
+                        height: 350,
+                        child: Video(
+                              videoAssetPath: 'assets/videos/editor.mp4',
+                              imagePath: 'assets/images/editorMenu.png',
+                            ),
+                      ),
+                      SizedBox(
+                        width: double.infinity,
+                        child: Text(
                           "Physics System",
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                           ),
+                          textAlign: TextAlign.left,
+                        ),
+                      ),
+                      SizedBox(
+                        width: double.infinity,
+                        child: Text(
+                          kEngPhysics,
+                          style: TextStyle(fontSize: 16),
                           textAlign: TextAlign.left,
                         ),
                       ),
@@ -252,12 +274,36 @@ class _EngineState extends State<Engine> {
                       SizedBox(
                         width: double.infinity,
                         child: Text(
+                          kEngPlayer,
+                          style: TextStyle(fontSize: 16),
+                          textAlign: TextAlign.left,
+                        ),
+                      ),
+                      SizedBox(
+                        width: double.infinity,
+                        child: Text(
                           "Debugging Tools",
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                           ),
                           textAlign: TextAlign.left,
+                        ),
+                      ),
+                      SizedBox(
+                        width: double.infinity,
+                        child: Text(
+                          kEngDebug,
+                          style: TextStyle(fontSize: 16),
+                          textAlign: TextAlign.left,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 600,
+                        child: ImageLegend(
+                          path: 'assets/images/debugengine.png',
+                          legend:
+                              "Screenshot showing debugging options on transforms",
                         ),
                       ),
                       SizedBox(
@@ -274,6 +320,14 @@ class _EngineState extends State<Engine> {
                       SizedBox(
                         width: double.infinity,
                         child: Text(
+                          kEngDelivery,
+                          style: TextStyle(fontSize: 16),
+                          textAlign: TextAlign.left,
+                        ),
+                      ),
+                      SizedBox(
+                        width: double.infinity,
+                        child: Text(
                           "Upcoming features",
                           style: TextStyle(
                             fontSize: 20,
@@ -281,6 +335,17 @@ class _EngineState extends State<Engine> {
                           ),
                           textAlign: TextAlign.left,
                         ),
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ...kEngUpcoming.map(
+                            (point) => Bulletpoint(
+                              point: point,
+                              textColor: Colors.black,
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),

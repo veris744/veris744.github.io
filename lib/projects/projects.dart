@@ -80,7 +80,7 @@ class ProjectsSection extends StatelessWidget {
               children: [
                 Project(
                   name: "C++ Game Engine",
-                  imagePath: "assets/images/editor.png",
+                  imagePath: "assets/images/editorMenu.png",
                   tags: ["C++", "Tools", "AI", "UI", "OpenGL"],
                   description: kEngineShortDesc,
                   bulletPoints: kBPEngine,
