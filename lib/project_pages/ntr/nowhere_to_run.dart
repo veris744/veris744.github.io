@@ -8,6 +8,8 @@ import 'package:veris744/projects/link_button.dart';
 import 'package:veris744/sections/copyright.dart';
 import 'package:veris744/texts.dart';
 import 'package:veris744/widgets/bold_bulletpoint.dart';
+import 'package:veris744/widgets/columns_layout.dart';
+import 'package:veris744/widgets/header.dart';
 import 'package:veris744/widgets/top_bar.dart';
 import 'package:veris744/widgets/up_button.dart';
 
@@ -64,20 +66,16 @@ class _NowhereToRunState extends State<NowhereToRun> {
               child: Copyright(),
             ),
             children: [
-              Container(
-                alignment: Alignment.center,
-                padding: EdgeInsets.all(20),
-                child: SizedBox(
-                  width: 1400,
-                  child: Column(
-                    spacing: 15,
-                    children: [
-                      Text("NOWHERE TO RUN", style: kHeader1Style),
-                      Wrap(
-                        spacing: 20,
-                        runSpacing: 20,
-                        runAlignment: WrapAlignment.center,
-                        alignment: WrapAlignment.center,
+              Column(
+                children: [
+                  Header(text: "Nowhere To Run"),
+                  Container(
+                    alignment: Alignment.center,
+                    padding: EdgeInsets.all(20),
+                    child: SizedBox(
+                      width: 1400,
+                      child: Column(
+                        spacing: 15,
                         children: [
                           Status(
                             isDone: true,
@@ -86,106 +84,61 @@ class _NowhereToRunState extends State<NowhereToRun> {
                             software: "Unity, Android VR",
                             role: "Solo project",
                           ),
-                          SizedBox(
-                            height: 160,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                LinkButton(
-                                  link:
-                                      'https://veris744.itch.io/nowhere-to-run',
-                                  platform: Utils.checkLink(
-                                    'https://veris744.itch.io/nowhere-to-run',
-                                  ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            spacing: 10,
+                            children: [
+                              LinkButton(
+                                link: 'https://veris744.itch.io/nowhere-to-run',
+                                platform: Utils.checkLink(
+                                  'https://veris744.itch.io/nowhere-to-run',
                                 ),
-                                LinkButton(
-                                  link:
-                                      'https://github.com/veris744/NowhereToRun',
-                                  platform: Utils.checkLink(
+                              ),
+                              LinkButton(
+                                link:
                                     'https://github.com/veris744/NowhereToRun',
+                                platform: Utils.checkLink(
+                                  'https://github.com/veris744/NowhereToRun',
+                                ),
+                              ),
+                            ],
+                          ),
+                          kBlankSeparator,
+                          ColumnsLayout(
+                            text: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              spacing: 5,
+                              children: [
+                                Text(kDescNTR1, style: kBodyTextStyle),
+                                SizedBox(height: 8),
+                                ...kDescNTR2.map(
+                                  (point) => BoldBulletpoint(
+                                    point: point[1],
+                                    title: point[0],
                                   ),
                                 ),
                               ],
+                            ),
+                            imageWidget: SizedBox(
+                              width: 600,
+                              child: YoutubeVideoNtr(),
                             ),
                           ),
                         ],
                       ),
-                      kBlankSeparator,
-                      LayoutBuilder(
-                        builder: (context, constraints) {
-                          bool isSmallScreen = constraints.maxWidth < 600;
-
-                          final textWidget = SizedBox(
-                            width: double.infinity,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(kDescNTR1, style: TextStyle(fontSize: 16)),
-                                SizedBox(height: 8),
-                                ...kDescNTR2.map(
-                                  (point) => BoldBulletpoint(
-                                    point: point[1],
-                                    title: point[0],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          );
-                        final mediaWidget = SizedBox(
-                          width: 600,
-                          child: YoutubeVideoNtr(),
-                        );
-
-                          final textWidgetFlex = Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(kDescNTR1, style: TextStyle(fontSize: 16)),
-                                SizedBox(height: 8),
-                                ...kDescNTR2.map(
-                                  (point) => BoldBulletpoint(
-                                    point: point[1],
-                                    title: point[0],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          );
-
-                          if (isSmallScreen) {
-                            return Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                mediaWidget,
-                                SizedBox(height: 16),
-                                textWidget,
-                              ],
-                            );
-                          } else {
-                            return Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                textWidgetFlex,
-                                SizedBox(width: 20),
-                                mediaWidget,
-                              ],
-                            );
-                          }
-                        },
-                      ),
-                    ],
+                    ),
                   ),
-                ),
+                ],
               ),
+
+              if (_showUpButton)
+                Positioned(
+                  bottom: 20,
+                  right: 20,
+                  child: UpButton(onPressed: _scrollToTop),
+                ),
             ],
           ),
-
-          if (_showUpButton)
-            Positioned(
-              bottom: 20,
-              right: 20,
-              child: UpButton(onPressed: _scrollToTop),
-            ),
         ],
       ),
     );

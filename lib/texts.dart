@@ -23,16 +23,16 @@ const String kAboutText = "I'm a computer science graduate with a strong passion
 
 const String kHighlighted1 = "I’m currently developing my own game engine with the goal of creating a complete game that incorporates core features common to most games. Here's a brief overview of what’s been accomplished so far:\n\nCompleted Features:";
 
-const List<List<String>> kBPAccomplished = [
-  ["Entities & Components System:", " A flexible architecture for managing game entities and their components."],
-  ["3D Graphics with OpenGL:"," World and relative transformations on entities, lighting, and rendering of 3D graphics."],
-  ["Reflection System:"," Used for reading and writing YAML scene data, and editing entity components through an editor."],
-  ["Simple Physics:"," Collisions, gravity and basic physics reactions."],
-  ["Player Controller:"," Free camera mode for the editor and in-game movement, along with an input manager for player interactions."],
-  ["2D Graphics with OpenGL:"," Text rendering and UI elements for in-game and editor interfaces."],
-  ["Debugging Tools:"," Options for both 2D and 3D debugging."],
-  ["Built with CMake:"," Engine infrastructure set up for cross-platform development."],
-  ["Mini-Game:"," A prototype showcasing core features such as graphics, UI, collisions, and user input."]
+const List<String> kBPAccomplished = [
+  "Entities & Components System",
+  "3D Graphics with OpenGL"
+  "Reflection System",
+  "Simple Physics",
+  "Player Controller",
+  "2D Graphics with OpenGL",
+  "Debugging Tools",
+  "Built with CMake",
+  "Mini-Game",
 ]; 
 
 const String kUpcoming = "Upcoming Features";
@@ -66,7 +66,7 @@ const List<String> kBPNTR = [
 ];
 
 const String kSMUShortDesc =
-"Oculus VR Multiplayer Minigame aimed at neurodivergent children during Covid.\n\nContributions:";
+"Oculus VR Multiplayer Minigame aimed at neurodivergent children during Covid.\n\nMy contributions:";
 const List<String> kBPSMU = [
   "Online Programming using Photon",
   "Gameplay and UI Programming",
@@ -91,7 +91,7 @@ const List<String> kBPFlock = [
 ];
 
 const String kCJShortDesc =
-"2D Tower Defense game created for a Game Jam.\n\nContributions:";
+"2D Tower Defense game created for a Game Jam.\n\nMy contributions:";
 const List<String> kBPCJ = [
   "UI programming",
   "Gameplay programming",
@@ -103,9 +103,10 @@ const List<String> kBPCJ = [
 // PROJECT - END OF LIFE //
 ///////////////////////////
 
-const String awardEOL = "PLAY STATION TALENTS FINALIST 2023\nCATEGORY: BEST DESIGN\n www.link.com/playsation";
+const String awardEOL = "PLAY STATION TALENTS FINALIST 2023\nCATEGORY: BEST DESIGN\n\nCheck the entry in the Play Station Talents website:";
 
-const String kDesc1EOL = "End of Life is a third-person action shooter created as the final project for my master’s in game programming. Developed over several months using Unreal Engine 5 and C++, the game was a multidisciplinary collaboration involving artists, designers, and programmers. As Lead AI Programmer, UI Programmer and Producer, I was responsible for major technical systems and project coordination across the team.\n\nIn End of Life, players step into the role of Nashla, a demi-goddess fighting to restore her fading power. The game’s world is its standout feature: a rotating, fragmented environment inspired by a Rubik’s Cube, where gravity changes dynamically based on orientation. Nashla must traverse this ever-shifting terrain using her weapons — lethal magical needles — and her divine powers, including time manipulation and world rotation.\n\nThe game blends fast-paced shooting mechanics with spatial puzzle-solving, set in a mystic, surreal landscape. Read more on  el portal de prensa de videojuegos HobbyConsolas: rempalazaesto.com\n";
+const String kDesc1EOL = "End of Life is a third-person action shooter created as the final project for my master’s in game programming. Developed over several months using Unreal Engine 5 and C++, the game was a multidisciplinary collaboration involving artists, designers, and programmers. As Lead AI Programmer, UI Programmer and Producer, I was responsible for major technical systems and project coordination across the team.\n\nIn End of Life, players step into the role of Nashla, a demi-goddess fighting to restore her fading power. The game’s world is its standout feature: a rotating, fragmented environment inspired by a Rubik’s Cube, where gravity changes dynamically based on orientation. Nashla must traverse this ever-shifting terrain using her weapons — lethal magical needles — and her divine powers, including time manipulation and world rotation.";
+const String kDesc1_5EOL = "The game blends fast-paced shooting mechanics with spatial puzzle-solving, set in a mystic, surreal landscape. Read more about it on the video game news site Vandal:\n";
 
 const String kDesc2EOL = "Designing the AI to work within such a complex, non-Euclidean environment posed unique challenges.\nMy main responsibilities included:\nEnvironment Query System (EQS): Developed a system to dynamically evaluate the environment and inform NPC tactical decisions. The algorithm scanned points across a grid and scored them based on several contextual factors — including the player’s position, the NPC’s current location, and the positions of other nearby enemies. These evaluations were used to classify potential destinations and determine optimal positioning for flanking or regrouping behavior.\nMovement and Path Following: I developed the NPC movement and path-following logic for our team’s custom navmesh system, enabling characters to navigate a world with rotating geometry and variable gravity directions. Enemies could also dynamically use a hook mechanic, similar to the player’s, to jump between platforms and traverse vertical spaces, allowing for fast repositioning and more dynamic encounters.\nBehavior Trees & State Machines: Used Unreal Engine’s built-in AI tools to design and implement flexible Behavior Trees, combining high-level strategies with reactive, moment-to-moment decision-making. I integrated our custom systems — including the navmesh, path-following, and Environment Query System (EQS) — into Unreal’s AI framework. Core strategy values such as proximity thresholds, separation distances, and reach radii were exposed to the editor, giving designers direct control over AI behavior tuning.\nOptimization & Profiling: Analyzed performance bottlenecks related to AI perception and navigation, implementing profiling tools and improving CPU usage under load.";
 const String kDesc3EOL = "I developed the game’s UI entirely in C++, leveraging Unreal’s built-in UI classes, widgets, and delegate system for dynamic interaction. My work included implementing the HUD — with animated elements like the health bar and player feedback — as well as designing and coding menus for the main interface, pause screens, and transitions. The UI was built to be responsive and clean, with behavior tightly integrated into the game’s underlying systems.";
@@ -117,7 +118,7 @@ const String kDesc4EOL = "As Producer, I led and coordinated a 19-person multidi
 // PROJECT - NOWHERE TO RUN //
 //////////////////////////////
 
-const String kDescNTR1 = "Developed as a final bachelor’s project (TFG) at a Spanish university, this solo project was created in Unity for Android mobile VR with controller support. The game is a first-person horror experience where the player must explore a dark, zombie-infested house and find three keys to escape./nThe project received a perfect score (10/10) for its technical and design execution.";
+const String kDescNTR1 = "Developed as a final bachelor’s project (TFG) at a Spanish university, this solo project was created in Unity for Android mobile VR with controller support. The game is a first-person horror experience where the player must explore a dark, zombie-infested house and find three keys to escape.\nThe project received a perfect score (10/10) for its technical and design execution.";
 
 const List<List<String>> kDescNTR2 = [
   ["VR Implementation: ", "Android VR integration with controller input and head tracking"],
@@ -173,7 +174,7 @@ const List<List<String>> kDescCofr2 = [
 // PROJECT - ENGINE //
 //////////////////////
 
-const String kDescEng1 = "This is a solo game engine project developed in C++ using CMake, with the long-term goal of building a complete game entirely on top of this custom engine. The engine is designed to support both 2D and 3D games, and aims to balance performance, modularity, and usability — with editor tools and data-driven workflows to make development smoother. It is a work in progress and continues to grow as features are added.";
+const String kDescEng1 = "This is a solo game engine project developed in C++ using CMake, with the long-term goal of building a complete game entirely on top of this custom engine. The engine is designed to support both 2D and 3D games, and aims to balance performance, modularity, and usability — with editor tools and data-driven workflows to make development smoother.\n\nIt is a work in progress and continues to grow as features are added.";
 
 const String kEngGraphics = "Built with OpenGL, the engine supports both 2D and 3D rendering. It includes lighting shaders (ambient, diffuse, specular), material support (color or texture-based), and a system for adding custom shaders like a neon-glow effect. Entity transformations support world and relative positioning. Models are loaded via Assimp (.obj), with full texture support.";
 
@@ -181,7 +182,7 @@ const String kEngECS = "A flexible ECS framework allows defining game logic thro
 
 const String kEngUI = "Custom-built UI framework featuring a hierarchical widget system. Widgets (such as images, buttons, text, dropdowns, and input boxes) support 2D layout, relative positioning, text alignment, and font loading (.ttf). UI elements can be nested and styled, enabling interactive menus and HUDs.";
 
-const String kEngRefl = "The engine features a custom reflection system to parse scene definitions from YAML files, instantiating all entities and components at runtime.\nA built-in Editor Mode (toggle with F1) provides:";
+const String kEngRefl = "The engine features a custom reflection system to parse scene definitions from YAML files, instantiating all entities and components at runtime. A built-in Editor Mode (toggle with F1) provides:";
 
 const String kEngPhysics = "Includes collision detection for basic shapes (planes, cubes, spheres, capsules, slopes) and a movement component supporting velocity, acceleration, and physics reactions like gravity, friction, and bounciness.";
 
@@ -192,7 +193,7 @@ const String kEngDebug = "Debugging tools include 2D and 3D overlays for visuali
 const String kEngDelivery = "The engine is built with CMake with a focus on modularity and extensibility.";
 
 const List<String> kEngUpcoming = [
-  "Improved graphics and shadows", 
+  "Improved illumination and shadows", 
   "Basic AI using Behavior Trees", 
   "Memory Management and Partitioning",
   "A full playable game showcasing all systems"

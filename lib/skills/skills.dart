@@ -9,11 +9,21 @@ class SkillsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(32),
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 30),
       child: Column(
         children: [
-          Text('Skills', style: kHeader1Style),
+          Container(
+            width: double.infinity,
+            decoration: BoxDecoration(color: kAccentColor),
+            padding: EdgeInsets.symmetric(vertical: 15),
+            child: Text(
+              'Skills',
+              style: kHeader1Style,
+              textAlign: TextAlign.center,
+            ),
+          ),
+          kBlankSeparatorBig,
           Wrap(
             spacing: 10,
             runSpacing: 10,

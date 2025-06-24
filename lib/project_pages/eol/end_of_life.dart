@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:footer/footer.dart';
 import 'package:footer/footer_view.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:veris744/constants.dart';
 import 'package:veris744/project_pages/image_legend.dart';
 import 'package:veris744/project_pages/status.dart';
@@ -8,7 +9,10 @@ import 'package:veris744/projects/link_button.dart';
 import 'package:veris744/project_pages/eol/youtube_video_eol.dart';
 import 'package:veris744/sections/copyright.dart';
 import 'package:veris744/texts.dart';
+import 'package:veris744/widgets/columns_layout.dart';
+import 'package:veris744/widgets/header.dart';
 import 'package:veris744/widgets/top_bar.dart';
+import 'package:veris744/widgets/top_bar_project.dart';
 import 'package:veris744/widgets/up_button.dart';
 
 class EndOfLife extends StatefulWidget {
@@ -49,42 +53,28 @@ class _EndOfLifeState extends State<EndOfLife> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kBackgroundColor,
-      appBar: TopBar(
-        scrollToHihlighted: () => Navigator.of(context).pushNamed('/'),
-        scrollToProjects: () => Navigator.of(context).pushNamed('/'),
-        scrollToSkills: () => Navigator.of(context).pushNamed('/'),
-        scrollToAbout: () => Navigator.of(context).pushNamed('/'),
-        scrollToContact: () => Navigator.of(context).pushNamed('/'),
-      ),
+      appBar: TopBarProject(),
       body: Stack(
         children: [
           FooterView(
             footer: Footer(
-              backgroundColor: Colors.deepPurple[200],
+              backgroundColor: kBackgroundColor,
               padding: EdgeInsets.all(0),
               child: Copyright(),
             ),
             children: [
-              Container(
-                alignment: Alignment.center,
-                padding: EdgeInsets.all(0),
-                child: SizedBox(
-                  width: 1400,
-                  child: Column(
-                    spacing: 15,
-                    children: [
-                      Container(
-                        width: double.infinity,
-                        padding: EdgeInsets.all(20),
-                        decoration: BoxDecoration(color: kTitleColor),
-                        child: Text("End Of Life", style: kHeader1Style, textAlign: TextAlign.center,),
-                      ),
-                      Wrap(
-                        spacing: 20,
-                        runSpacing: 20,
-                        runAlignment: WrapAlignment.center,
-                        alignment: WrapAlignment.center,
+              Column(
+                children: [
+                  Header(text: "End Of Life"),
+                  Container(
+                    alignment: Alignment.center,
+                    padding: EdgeInsets.all(0),
+                    child: Container(
+                      padding: EdgeInsets.all(30),
+                      width: 1400,
+                      child: Column(
                         children: [
+                          kBlankSeparator,
                           Status(
                             isDone: true,
                             duration: "1 year",
@@ -92,158 +82,188 @@ class _EndOfLifeState extends State<EndOfLife> {
                             software: "Unreal Engine 5",
                             role: "AI and UI programmer, producer",
                           ),
-                          SizedBox(
-                            height: 100,
+                          kBlankSeparator,
+                          kBlankSeparator,
+                          Container(
+                            width: 400,
+                            padding: EdgeInsets.all(8),
+                            decoration: BoxDecoration(
+                              color: Colors.amber[600],
+                              borderRadius: BorderRadius.circular(10),
+                            ),
                             child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                LinkButton(
-                                  link:
-                                      'https://store.steampowered.com/app/2666520/End_Of_Life/',
-                                  platform: Utils.checkLink(
-                                    'https://store.steampowered.com/app/2666520/End_Of_Life/',
+                                Text(
+                                  awardEOL,
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                                InkWell(
+                                  onTap: () async {
+                                    final Uri url = Uri.parse(
+                                      'https://playstationtalents.es/finalistas-end-of-life/',
+                                    );
+                                    if (await canLaunchUrl(url)) {
+                                      await launchUrl(url);
+                                    }
+                                  },
+                                  child: Text(
+                                    'https://playstationtalents.es/finalistas-end-of-life/',
+                                    style: TextStyle(
+                                      color: Colors.blue,
+                                      decoration: TextDecoration.underline,
+                                    ),
                                   ),
                                 ),
                               ],
                             ),
                           ),
+                          kBlankSeparator,
+                          kBlankSeparator,
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            spacing: 10,
+                            children: [
+                              LinkButton(
+                                link:
+                                    'https://store.steampowered.com/app/2666520/End_Of_Life/',
+                                platform: Utils.checkLink(
+                                  'https://store.steampowered.com/app/2666520/End_Of_Life/',
+                                ),
+                              ),
+                            ],
+                          ),
+                          kBlankSeparatorBig,
+                          ColumnsLayout(
+                            text: Text(
+                              kDesc1EOL,
+                              style: kBodyTextStyle,
+                              textAlign: TextAlign.justify,
+                            ),
+                            imageWidget: SizedBox(
+                              width: 600,
+                              child: YoutubeVideoEol(),
+                            ),
+                          ),
+                          kBlankSeparatorBig,
+                          kBlankSeparatorBig,
+                          Text(kDesc1_5EOL, style: kBodyTextStyle),
+                          Align(
+                            alignment: Alignment.centerLeft,
+                            child: InkWell(
+                              onTap: () async {
+                                final Uri url = Uri.parse(
+                                  'https://vandal.elespanol.com/noticia/1350762654/un-mundo-fragmentado-define-la-jugabilidad-del-shooter-end-of-life/',
+                                );
+                                if (await canLaunchUrl(url)) {
+                                  await launchUrl(url);
+                                }
+                              },
+                              child: Text(
+                                'https://vandal.elespanol.com/noticia/1350762654/un-mundo-fragmentado-define-la-jugabilidad-del-shooter-end-of-life/',
+                                style: TextStyle(
+                                  color: Colors.blue,
+                                  fontSize: 20.0,
+                                  decoration: TextDecoration.underline,
+                                ),
+                              ),
+                            ),
+                          ),
+                          kBlankSeparatorBig,
+                          ExpansionTile(
+                            backgroundColor: kPrimaryColor,
+                            collapsedBackgroundColor: kPrimaryColor,
+                            title: Text(
+                              "Team Management",
+                              style: kHeader2Style,
+                              textAlign: TextAlign.left,
+                            ),
+                            trailing: Icon(Icons.arrow_drop_down),
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: Text(
+                                  kDesc3EOL,
+                                  style: kBodyTextStyleDark,
+                                  textAlign: TextAlign.justify,
+                                ),
+                              ),
+                            ],
+                          ),
+                          kBlankSeparatorBig,
+                          ExpansionTile(
+                            backgroundColor: kPrimaryColor,
+                            collapsedBackgroundColor: kPrimaryColor,
+                            title: Text(
+                              "AI",
+                              style: kHeader2Style,
+                              textAlign: TextAlign.left,
+                            ),
+                            trailing: Icon(Icons.arrow_drop_down),
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: Text(
+                                  kDesc2EOL,
+                                  style: kBodyTextStyleDark,
+                                  textAlign: TextAlign.justify,
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  vertical: 16.0,
+                                  horizontal: 32,
+                                ),
+                                child: SizedBox(
+                                  width: 800,
+                                  child: ImageLegend(
+                                    path: 'assets/images/eolEditor.png',
+                                    legend:
+                                        "Screenshot from the Editor showing multi-gravity world and Navmesh",
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          kBlankSeparator,
+                          kBlankSeparator,
+                          ExpansionTile(
+                            backgroundColor: kPrimaryColor,
+                            collapsedBackgroundColor: kPrimaryColor,
+                            title: Text(
+                              "UI",
+                              style: kHeader2Style,
+                              textAlign: TextAlign.left,
+                            ),
+                            trailing: Icon(Icons.arrow_drop_down),
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: Text(
+                                  kDesc4EOL,
+                                  style: kBodyTextStyleDark,
+                                  textAlign: TextAlign.justify,
+                                ),
+                              ),
+                            ],
+                          ),
                         ],
                       ),
-                      Container(
-                        width: 400,
-                        padding: EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                          color: Colors.amber,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Text(
-                          awardEOL,
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                      kBlankSeparator,
-                      LayoutBuilder(
-                        builder: (context, constraints) {
-                          bool isSmallScreen = constraints.maxWidth < 1200;
-
-                          final textWidget = SizedBox(
-                            width: double.infinity,
-                            child: Text(
-                              kDesc1EOL,
-                              style: kBodyTextStyle,
-                              textAlign: TextAlign.justify,
-                            ),
-                          );
-                          final textWidgetFlex = Flexible(
-                            child: Text(
-                              kDesc1EOL,
-                              style: kBodyTextStyle,
-                              textAlign: TextAlign.justify,
-                            ),
-                          );
-
-                          final mediaWidget = SizedBox(
-                            width: 600,
-                            child: YoutubeVideoEol(),
-                          );
-
-                          if (isSmallScreen) {
-                            return Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                textWidget,
-                                SizedBox(height: 16),
-                                mediaWidget,
-                              ],
-                            );
-                          } else {
-                            return Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                textWidgetFlex,
-                                SizedBox(width: 20),
-                                mediaWidget,
-                              ],
-                            );
-                          }
-                        },
-                      ),
-                      SizedBox(
-                        width: double.infinity,
-                        child: Text(
-                          "Team Management",
-                          style: kHeader2Style,
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                      SizedBox(
-                        width: double.infinity,
-                        child: Text(
-                          kDesc3EOL,
-                          style: kBodyTextStyle,
-                          textAlign: TextAlign.justify,
-                        ),
-                      ),
-                      kBlankSeparator,
-                      kBlankSeparator,
-                      SizedBox(
-                        width: double.infinity,
-                        child: Text(
-                          "AI",
-                          style: kHeader2Style,
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                      SizedBox(
-                        width: double.infinity,
-                        child: Text(
-                          kDesc2EOL,
-                          style: kBodyTextStyle,
-                          textAlign: TextAlign.justify,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 1000,
-                        child: ImageLegend(
-                          path: 'assets/images/eolEditor.png',
-                          legend:
-                              "Screenshot from the Editor showing multi-gravity world and Navmesh",
-                        ),
-                      ),
-                      kBlankSeparator,
-                      kBlankSeparator,
-                      SizedBox(
-                        width: double.infinity,
-                        child: Text(
-                          "UI",
-                          style: kHeader2Style,
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                      SizedBox(
-                        width: double.infinity,
-                        child: Text(
-                          kDesc4EOL,
-                          style: kBodyTextStyle,
-                          textAlign: TextAlign.justify,
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
-                ),
+                ],
               ),
+              if (_showUpButton)
+                Positioned(
+                  bottom: 20,
+                  right: 20,
+                  child: UpButton(onPressed: _scrollToTop),
+                ),
             ],
           ),
-          if (_showUpButton)
-            Positioned(
-              bottom: 20,
-              right: 20,
-              child: UpButton(onPressed: _scrollToTop),
-            ),
         ],
       ),
     );

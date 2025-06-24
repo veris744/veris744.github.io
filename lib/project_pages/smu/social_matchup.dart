@@ -8,6 +8,8 @@ import 'package:veris744/projects/link_button.dart';
 import 'package:veris744/sections/copyright.dart';
 import 'package:veris744/texts.dart';
 import 'package:veris744/widgets/bold_bulletpoint.dart';
+import 'package:veris744/widgets/columns_layout.dart';
+import 'package:veris744/widgets/header.dart';
 import 'package:veris744/widgets/top_bar.dart';
 import 'package:veris744/widgets/up_button.dart';
 
@@ -48,7 +50,7 @@ class _SocialMatchUpState extends State<SocialMatchUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple[200],
+      backgroundColor: kBackgroundColor,
       appBar: TopBar(
         scrollToHihlighted: () => Navigator.of(context).pushNamed('/'),
         scrollToProjects: () => Navigator.of(context).pushNamed('/'),
@@ -60,25 +62,21 @@ class _SocialMatchUpState extends State<SocialMatchUp> {
         children: [
           FooterView(
             footer: Footer(
-              backgroundColor: Colors.deepPurple[200],
+              backgroundColor: kBackgroundColor,
               padding: EdgeInsets.all(0),
               child: Copyright(),
             ),
             children: [
-              Container(
-                alignment: Alignment.center,
-                padding: EdgeInsets.all(20),
-                child: SizedBox(
-                  width: 1400,
-                  child: Column(
-                    spacing: 15,
-                    children: [
-                      Text("Social MatchUp", style: kHeader1Style),
-                      Wrap(
-                        spacing: 20,
-                        runSpacing: 20,
-                        runAlignment: WrapAlignment.center,
-                        alignment: WrapAlignment.center,
+              Column(
+                children: [
+                  Header(text: "Social MatchUp"),
+                  Container(
+                    alignment: Alignment.center,
+                    padding: EdgeInsets.all(20),
+                    child: SizedBox(
+                      width: 1400,
+                      child: Column(
+                        spacing: 15,
                         children: [
                           Status(
                             isDone: true,
@@ -87,100 +85,49 @@ class _SocialMatchUpState extends State<SocialMatchUp> {
                             software: "Unity, Oculus VR",
                             role: "Programmer",
                           ),
-                          SizedBox(
-                            height: 100,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                LinkButton(
-                                  link:
-                                      'https://github.com/veris744/Social-Matchup',
-                                  platform: Utils.checkLink(
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            spacing: 10,
+                            children: [
+                              LinkButton(
+                                link:
                                     'https://github.com/veris744/Social-Matchup',
-                                  ),
+                                platform: Utils.checkLink(
+                                  'https://github.com/veris744/Social-Matchup',
                                 ),
-                              ],
+                              ),
+                            ],
+                          ),
+                          kBlankSeparator,
+                          ColumnsLayout(
+                            text: Text(kDescSMU1, style: kBodyTextStyle),
+
+                            imageWidget: SizedBox(
+                              width: 600,
+                              child: YoutubeVideoEol(),
+                            ),
+                          ),
+                          kBlankSeparatorBig,
+                          ...kDescSMU2.map(
+                            (point) => BoldBulletpoint(
+                              point: point[1],
+                              title: point[0],
                             ),
                           ),
                         ],
                       ),
-                      kBlankSeparator,
-                      LayoutBuilder(
-                        builder: (context, constraints) {
-                          bool isSmallScreen = constraints.maxWidth < 600;
-
-                          final textWidget = SizedBox(
-                            width: double.infinity,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(kDescSMU1, style: TextStyle(fontSize: 16)),
-                                SizedBox(height: 8),
-                                ...kDescSMU2.map(
-                                  (point) => BoldBulletpoint(
-                                    point: point[1],
-                                    title: point[0],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          );
-
-                          final textWidgetFlex = Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(kDescSMU1, style: TextStyle(fontSize: 16)),
-                                SizedBox(height: 8),
-                                ...kDescSMU2.map(
-                                  (point) => BoldBulletpoint(
-                                    point: point[1],
-                                    title: point[0],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          );
-
-                          
-                        final mediaWidget = SizedBox(
-                          width: 600,
-                          child: YoutubeVideoEol(),
-                        );
-
-                          if (isSmallScreen) {
-                            return Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                textWidget,
-                                SizedBox(height: 16),
-                                mediaWidget,
-                              ],
-                            );
-                          } else {
-                            return Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                textWidgetFlex,
-                                SizedBox(width: 20),
-                                mediaWidget,
-                              ],
-                            );
-                          }
-                        },
-                      ),
-                    ],
+                    ),
                   ),
-                ),
+                ],
               ),
+              if (_showUpButton)
+                Positioned(
+                  bottom: 20,
+                  right: 20,
+                  child: UpButton(onPressed: _scrollToTop),
+                ),
             ],
           ),
-          if (_showUpButton)
-            Positioned(
-              bottom: 20,
-              right: 20,
-              child: UpButton(onPressed: _scrollToTop),
-            ),
         ],
       ),
     );

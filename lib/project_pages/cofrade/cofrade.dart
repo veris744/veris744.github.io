@@ -8,6 +8,7 @@ import 'package:veris744/sections/copyright.dart';
 import 'package:veris744/sections/video.dart';
 import 'package:veris744/texts.dart';
 import 'package:veris744/widgets/bold_bulletpoint.dart';
+import 'package:veris744/widgets/columns_layout.dart';
 import 'package:veris744/widgets/top_bar.dart';
 import 'package:veris744/widgets/up_button.dart';
 
@@ -48,7 +49,7 @@ class _CofradeState extends State<Cofrade> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple[200],
+      backgroundColor: kBackgroundColor,
       appBar: TopBar(
         scrollToHihlighted: () => Navigator.of(context).pushNamed('/'),
         scrollToProjects: () => Navigator.of(context).pushNamed('/'),
@@ -60,7 +61,7 @@ class _CofradeState extends State<Cofrade> {
         children: [
           FooterView(
             footer: Footer(
-              backgroundColor: Colors.deepPurple[200],
+              backgroundColor: kBackgroundColor,
               padding: EdgeInsets.all(0),
               child: Copyright(),
             ),
@@ -74,109 +75,54 @@ class _CofradeState extends State<Cofrade> {
                     spacing: 15,
                     children: [
                       Text("COFRADE RUSH", style: kHeader1Style),
-                      Wrap(
-                        spacing: 20,
-                        runSpacing: 20,
-                        runAlignment: WrapAlignment.center,
-                        alignment: WrapAlignment.center,
+                      Status(
+                        isDone: true,
+                        duration: "1 week",
+                        language: "C#",
+                        software: "Unity",
+                        role: "Programmer",
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        spacing: 10,
                         children: [
-                          Status(
-                            isDone: true,
-                            duration: "1 week",
-                            language: "C#",
-                            software: "Unity",
-                            role: "Programmer",
-                          ),
-                          SizedBox(
-                            height: 100,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                LinkButton(
-                                  link:
-                                      'https://drive.google.com/file/d/1A2k6cqOauVtco13eBbCf0lCLFkUT1Jl_/view?usp=drive_link',
-                                  platform: Utils.checkLink(
-                                    'https://drive.google.com/file/d/1A2k6cqOauVtco13eBbCf0lCLFkUT1Jl_/view?usp=drive_link',
-                                  ),
-                                ),
-                              ],
+                          LinkButton(
+                            link:
+                                'https://drive.google.com/file/d/1A2k6cqOauVtco13eBbCf0lCLFkUT1Jl_/view?usp=drive_link',
+                            platform: Utils.checkLink(
+                              'https://drive.google.com/file/d/1A2k6cqOauVtco13eBbCf0lCLFkUT1Jl_/view?usp=drive_link',
                             ),
                           ),
                         ],
                       ),
                       kBlankSeparator,
-                      LayoutBuilder(
-                        builder: (context, constraints) {
-                          bool isSmallScreen = constraints.maxWidth < 600;
-
-                          final textWidget = SizedBox(
-                            width: double.infinity,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  kDescCofr1,
-                                  style: TextStyle(fontSize: 16),
-                                ),
-                                SizedBox(height: 8),
-                                ...kDescCofr2.map(
-                                  (point) => BoldBulletpoint(
-                                    point: point[1],
-                                    title: point[0],
-                                  ),
-                                ),
-                              ],
+                      ColumnsLayout(
+                        text: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          spacing: 5,
+                          children: [
+                            Text(
+                              kDescCofr1,
+                              style: kBodyTextStyle,
+                              textAlign: TextAlign.justify,
                             ),
-                          );
-
-                          final textWidgetFlex = Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  kDescCofr1,
-                                  style: TextStyle(fontSize: 16),
-                                ),
-                                SizedBox(height: 8),
-                                ...kDescCofr2.map(
-                                  (point) => BoldBulletpoint(
-                                    point: point[1],
-                                    title: point[0],
-                                  ),
-                                ),
-                              ],
+                            kBlankSeparator,
+                            ...kDescCofr2.map(
+                              (point) => BoldBulletpoint(
+                                point: point[1],
+                                title: point[0],
+                              ),
                             ),
-                          );
-
-                        final mediaWidget = SizedBox(
-                          width: 600,
-                          height: 300,
-                          child: Video(
-                          videoAssetPath: 'assets/videos/cofrade.mp4',
-                          imagePath: 'assets/images/CJ.png',
+                          ],
                         ),
-                        );
-
-                          if (isSmallScreen) {
-                            return Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                mediaWidget,
-                                SizedBox(height: 16),
-                                textWidget,
-                              ],
-                            );
-                          } else {
-                            return Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                textWidgetFlex,
-                                SizedBox(width: 20),
-                                mediaWidget,
-                              ],
-                            );
-                          }
-                        },
+                        imageWidget: SizedBox(
+                          width: 600,
+                          height: 350,
+                          child: Video(
+                            videoAssetPath: 'assets/videos/cofrade.mp4',
+                            imagePath: 'assets/images/CJ.png',
+                          ),
+                        ),
                       ),
                     ],
                   ),

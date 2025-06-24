@@ -21,10 +21,11 @@ class Utils {
 // ================ Colors ================
 const Color kPrimaryColor = Color.fromARGB(255, 149, 155, 181);
 const Color kBackgroundColor = Color.fromARGB(255, 10, 17, 35);
-const Color kTextColor = Color.fromARGB(255, 217, 218, 180);
+const Color kTextColor = Color.fromARGB(255, 230, 231, 196);
 const Color kTextSecond = Color.fromARGB(255, 19, 20, 39);
-const Color kAccentColor = Color.fromARGB(255, 131, 135, 195); // Pink
+const Color kAccentColor = Color.fromARGB(255, 131, 135, 195); 
 const Color kTitleColor = Color.fromARGB(255, 58, 62, 108); 
+const Color kGreyColor = Color.fromARGB(255, 138, 140, 172); 
 
 Map<String, Color> tags = {
   "Unity": Color.fromARGB(200, 158, 145, 139),
@@ -74,6 +75,11 @@ TextStyle kHeader1Style = TextStyle(
   fontWeight: FontWeight.bold,
   color: kTextColor,
 );
+TextStyle kHeaderSubtitle = TextStyle(
+  fontSize: 28.0,
+  fontWeight: FontWeight.w600,
+  color: kTextColor,
+);
 
 TextStyle kHeader2Style = TextStyle(
   fontSize: 28.0,
@@ -85,6 +91,11 @@ TextStyle kBodyTextStyle = TextStyle(
   fontSize: 20.0,
   height: 1.5,
   color: kTextColor,
+);
+TextStyle kBodyTextStyleDark = TextStyle(
+  fontSize: 20.0,
+  height: 1.5,
+  color: kBackgroundColor,
 );
 TextStyle kBodyBoldTextStyle = TextStyle(
   fontSize: 20.0,
@@ -99,7 +110,11 @@ const double kDefaultPadding = 16.0;
 const double kSectionSpacing = 40.0;
 
 SizedBox kBlankSeparator = SizedBox(height: 10.0);
+SizedBox kBlankSeparatorBig = SizedBox(height: 30,);
 
 // ================ Animation Durations ================
 const Duration kHoverDuration = Duration(milliseconds: 200);
 const Duration kPageTransitionDuration = Duration(milliseconds: 400);
+
+const double kHorizontalPaddingMob = 10;
+const double kHorizontalPadding = 280;

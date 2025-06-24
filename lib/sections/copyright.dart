@@ -16,8 +16,8 @@ class Copyright extends StatelessWidget {
       child: Container(
         width: double.infinity,
         padding: EdgeInsets.all(5),
-        color: Colors.grey,
-        child: Text(kCopyright, style: TextStyle(fontSize: 13, color: kTextColor), textAlign: TextAlign.center,),
+        color: kPrimaryColor,
+        child: Text(kCopyright, style: TextStyle(fontSize: 13, color: kBackgroundColor), textAlign: TextAlign.center,),
       )
     );
   }

@@ -17,10 +17,11 @@ class LinkButton extends StatelessWidget {
         return InkWell(
           onTap: followLink,
           child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+            padding: EdgeInsets.symmetric(horizontal: 12, vertical: 5),
             decoration: BoxDecoration(
-              color: Colors.grey,
+              color: kGreyColor,
               borderRadius: BorderRadius.circular(12),
+              border: Border.all(color: kTitleColor)
             ),
             child: Row(
               mainAxisSize: MainAxisSize.min,

@@ -8,13 +8,22 @@ class ContactSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(32),
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 30),
       child: Column(
         children: [
-          Text('Contact Me', style: kHeader1Style),
+          Container(
+            width: double.infinity,
+            decoration: BoxDecoration(color: kAccentColor),
+            padding: EdgeInsets.symmetric(vertical: 15),
+            child: Text(
+              'Contact Me',
+              style: kHeader1Style,
+              textAlign: TextAlign.center,
+            ),
+          ),
           kBlankSeparator,
-          Text('Feel free to contact me on:', style: kHeader2Style),
+          Text('Feel free to contact me on:', style: kHeaderSubtitle),
           kBlankSeparator,
           SizedBox(
             height: 75,
@@ -24,14 +33,14 @@ class ContactSection extends StatelessWidget {
               children: [
                 IconButton(
                   constraints: BoxConstraints.tight(Size.fromWidth(75)),
-                  icon: SvgPicture.network("assets/icons/github.svg", color: kTextColor,),
+                  icon: SvgPicture.network(
+                    "assets/icons/github.svg",
+                    color: kTextColor,
+                  ),
                   onPressed: () async {
-                    const url =
-                        'https://github.com/veris744';
+                    const url = 'https://github.com/veris744';
                     if (await canLaunchUrl(Uri.parse(url))) {
-                      await launchUrl(
-                        Uri.parse(url),
-                      );
+                      await launchUrl(Uri.parse(url));
                     } else {
                       throw 'Could not launch $url';
                     }
@@ -41,12 +50,9 @@ class ContactSection extends StatelessWidget {
                   constraints: BoxConstraints.tight(Size.fromWidth(75)),
                   icon: SvgPicture.network("assets/icons/linkedin.svg"),
                   onPressed: () async {
-                    const url =
-                        'https://www.linkedin.com/in/isabel-de-vergara';
+                    const url = 'https://www.linkedin.com/in/isabel-de-vergara';
                     if (await canLaunchUrl(Uri.parse(url))) {
-                      await launchUrl(
-                        Uri.parse(url),
-                      );
+                      await launchUrl(Uri.parse(url));
                     } else {
                       throw 'Could not launch $url';
                     }
@@ -54,14 +60,14 @@ class ContactSection extends StatelessWidget {
                 ),
                 IconButton(
                   constraints: BoxConstraints.tight(Size.fromWidth(75)),
-                  icon: SvgPicture.network("assets/icons/email.svg", color: kTextColor,),
+                  icon: SvgPicture.network(
+                    "assets/icons/email.svg",
+                    color: kTextColor,
+                  ),
                   onPressed: () async {
-                    const url =
-                        'mailto:isaverore@hotmail.com';
+                    const url = 'mailto:isaverore@hotmail.com';
                     if (await canLaunchUrl(Uri.parse(url))) {
-                      await launchUrl(
-                        Uri.parse(url),
-                      );
+                      await launchUrl(Uri.parse(url));
                     } else {
                       throw 'Could not launch $url';
                     }

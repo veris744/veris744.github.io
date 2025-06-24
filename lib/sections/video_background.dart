@@ -100,15 +100,17 @@ class _VideoBackgroundState extends State<VideoBackground> {
         Container(
           height: containerHeight,
           width: double.infinity,
-          decoration: BoxDecoration(color: Color.fromARGB(76, 0, 0, 0)),
+          decoration: BoxDecoration(color: Color.fromARGB(80, 0, 0, 0)),
         ),
-        Positioned(
-          top: containerHeight / 2,
-          left: 500,
-          child: Text(
-            kAboutMiniHeader,
-            style: kHeader2Style,
-            textAlign: TextAlign.center,
+        SizedBox(
+          height: containerHeight,
+          width: double.infinity,
+          child: Center(
+            child: Text(
+              kAboutMiniHeader,
+              style: kHeaderSubtitle,
+              textAlign: TextAlign.center,
+            ),
           ),
         ),
       ],

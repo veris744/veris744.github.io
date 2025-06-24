@@ -93,7 +93,6 @@ class Project extends StatelessWidget {
             ),
             child: Image.network(imagePath, fit: BoxFit.contain),
           ),
-          SizedBox(height: 3),
           Center(
             child: Wrap(
               alignment: WrapAlignment.spaceAround,
@@ -102,7 +101,7 @@ class Project extends StatelessWidget {
               children: tags.map((tag) => Tag(name: tag)).toList(),
             ),
           ),
-          SizedBox(height: 3),
+          kBlankSeparator,
           ConstrainedBox(
             constraints: BoxConstraints(
               minWidth: double.infinity, // Full width
@@ -112,13 +111,24 @@ class Project extends StatelessWidget {
             child: Text(
               description,
               textAlign: TextAlign.left,
-              style: TextStyle(color: kTextSecond, fontSize: 16),
+              style: TextStyle(color: kTextSecond, fontSize: 16, height: 1.5),
             ),
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children:
-                bulletPoints.map((point) => Bulletpoint(point: point, textColor: kTextSecond,)).toList(),
+                bulletPoints
+                    .map(
+                      (point) => Bulletpoint(
+                        point: point,
+                        style: TextStyle(
+                          fontSize: 16.0,
+                          height: 1.2,
+                          color: kTextSecond,
+                        ),
+                      ),
+                    )
+                    .toList(),
           ),
           Spacer(),
           Row(
@@ -127,7 +137,10 @@ class Project extends StatelessWidget {
             spacing: 10,
             children: [
               Flexible(
-                child: Text("Platforms:", style: TextStyle(color: kTextSecond, fontSize: 16)),
+                child: Text(
+                  "Platforms:",
+                  style: TextStyle(color: kTextSecond, fontSize: 16),
+                ),
               ),
               ...platforms.map(
                 (platform) => Padding(
@@ -146,7 +159,11 @@ class Project extends StatelessWidget {
           ),
           kBlankSeparator,
           Container(
-            decoration: BoxDecoration(color: kAccentColor),
+            decoration: BoxDecoration(
+              color: kAccentColor,
+              borderRadius: BorderRadius.circular(18),
+              border: Border.all(color: kTitleColor),
+            ),
             padding: EdgeInsets.symmetric(vertical: 6, horizontal: 12),
             child: Link(
               uri: Uri.parse('/$pageName'),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:veris744/constants.dart';
 
 class Status extends StatelessWidget {
   const Status({
@@ -24,17 +25,13 @@ class Status extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: const Color.fromARGB(255, 195, 197, 199),
+        color: kPrimaryColor,
         borderRadius: BorderRadius.circular(10),
       ),
       height: 160,
       child: Text(
         text,
-        style: TextStyle(
-          fontSize: 15,
-          fontWeight: FontWeight.bold,
-          height: 2,
-        ),
+        style: TextStyle(color: kTextSecond, fontSize: 16, height: 1.5, fontWeight: FontWeight.w600),
       ),
     );
   }

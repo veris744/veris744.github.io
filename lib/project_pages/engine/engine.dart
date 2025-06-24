@@ -11,6 +11,8 @@ import 'package:veris744/sections/video.dart';
 import 'package:veris744/texts.dart';
 import 'package:veris744/widgets/bold_bulletpoint.dart';
 import 'package:veris744/widgets/bulletpoint.dart';
+import 'package:veris744/widgets/columns_layout.dart';
+import 'package:veris744/widgets/header.dart';
 import 'package:veris744/widgets/top_bar.dart';
 import 'package:veris744/widgets/up_button.dart';
 
@@ -54,7 +56,7 @@ class _EngineState extends State<Engine> {
     double widgetWidth = screenWidth < 600 ? (screenWidth - 10) : 600;
 
     return Scaffold(
-      backgroundColor: Colors.deepPurple[200],
+      backgroundColor: kBackgroundColor,
       appBar: TopBar(
         scrollToHihlighted: () => Navigator.of(context).pushNamed('/'),
         scrollToProjects: () => Navigator.of(context).pushNamed('/'),
@@ -66,25 +68,21 @@ class _EngineState extends State<Engine> {
         children: [
           FooterView(
             footer: Footer(
-              backgroundColor: Colors.deepPurple[200],
+              backgroundColor: kBackgroundColor,
               padding: EdgeInsets.all(0),
               child: Copyright(),
             ),
             children: [
-              Container(
-                alignment: Alignment.center,
-                padding: EdgeInsets.all(20),
-                child: SizedBox(
-                  width: 1400,
-                  child: Column(
-                    spacing: 15,
-                    children: [
-                      Text("End Of Life", style: kHeader1Style),
-                      Wrap(
-                        spacing: 20,
-                        runSpacing: 20,
-                        runAlignment: WrapAlignment.center,
-                        alignment: WrapAlignment.center,
+              Column(
+                children: [
+                  Header(text: "Game Engine"),
+                  Container(
+                    alignment: Alignment.center,
+                    padding: EdgeInsets.all(20),
+                    child: SizedBox(
+                      width: 1400,
+                      child: Column(
+                        spacing: 15,
                         children: [
                           Status(
                             isDone: false,
@@ -93,272 +91,257 @@ class _EngineState extends State<Engine> {
                             software: "CMake, OpenGL",
                             role: "Solo project",
                           ),
-                          SizedBox(
-                            height: 100,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                LinkButton(
-                                  link: 'https://github.com/veris744/WHYNOT',
-                                  platform: Utils.checkLink(
-                                    'https://github.com/veris744/WHYNOT',
-                                  ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              LinkButton(
+                                link: 'https://github.com/veris744/WHYNOT',
+                                platform: Utils.checkLink(
+                                  'https://github.com/veris744/WHYNOT',
                                 ),
-                              ],
+                              ),
+                            ],
+                          ),
+                          ColumnsLayout(
+                            text: Text(kDescEng1, style: kBodyTextStyle),
+                            imageWidget: SizedBox(
+                              width: 600,
+                              height: 350,
+                              child: Video(
+                                videoAssetPath: 'assets/videos/enginegame.mp4',
+                                imagePath: 'assets/images/editorMenu.png',
+                              ),
                             ),
+                          ),
+                          kBlankSeparatorBig,
+                          ExpansionTile(
+                            backgroundColor: kPrimaryColor,
+                            collapsedBackgroundColor: kPrimaryColor,
+                            title: Text(
+                              "Graphics",
+                              style: kHeader2Style,
+                              textAlign: TextAlign.left,
+                            ),
+                            trailing: Icon(Icons.arrow_drop_down),
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: Text(
+                                  kEngGraphics,
+                                  style: kBodyTextStyleDark,
+                                  textAlign: TextAlign.justify,
+                                ),
+                              ),
+                            ],
+                          ),
+                          kBlankSeparatorBig,
+                          ExpansionTile(
+                            backgroundColor: kPrimaryColor,
+                            collapsedBackgroundColor: kPrimaryColor,
+                            title: Text(
+                              "Entities and Components System",
+                              style: kHeader2Style,
+                              textAlign: TextAlign.left,
+                            ),
+                            trailing: Icon(Icons.arrow_drop_down),
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: Text(
+                                  kEngECS,
+                                  style: kBodyTextStyleDark,
+                                  textAlign: TextAlign.justify,
+                                ),
+                              ),
+                            ],
+                          ),
+                          kBlankSeparatorBig,
+                          ExpansionTile(
+                            backgroundColor: kPrimaryColor,
+                            collapsedBackgroundColor: kPrimaryColor,
+                            title: Text(
+                              "UI system",
+                              style: kHeader2Style,
+                              textAlign: TextAlign.left,
+                            ),
+                            trailing: Icon(Icons.arrow_drop_down),
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: Text(
+                                  kEngUI,
+                                  style: kBodyTextStyleDark,
+                                  textAlign: TextAlign.justify,
+                                ),
+                              ),
+                            ],
+                          ),
+                          kBlankSeparatorBig,
+                          ExpansionTile(
+                            backgroundColor: kPrimaryColor,
+                            collapsedBackgroundColor: kPrimaryColor,
+                            title: Text(
+                              "Scene Loading and Editor Tools",
+                              style: kHeader2Style,
+                              textAlign: TextAlign.left,
+                            ),
+                            trailing: Icon(Icons.arrow_drop_down),
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: Text(
+                                  kEngRefl,
+                                  style: kBodyTextStyleDark,
+                                  textAlign: TextAlign.justify,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 600,
+                                height: 350,
+                                child: Video(
+                                  videoAssetPath: 'assets/videos/editor.mp4',
+                                  imagePath: 'assets/images/editorMenu.png',
+                                ),
+                              ),
+                              kBlankSeparator,
+                            ],
+                          ),
+                          kBlankSeparatorBig,
+                          ExpansionTile(
+                            backgroundColor: kPrimaryColor,
+                            collapsedBackgroundColor: kPrimaryColor,
+                            title: Text(
+                              "Physics System",
+                              style: kHeader2Style,
+                              textAlign: TextAlign.left,
+                            ),
+                            trailing: Icon(Icons.arrow_drop_down),
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: Text(
+                                  kEngPhysics,
+                                  style: kBodyTextStyleDark,
+                                  textAlign: TextAlign.justify,
+                                ),
+                              ),
+                            ],
+                          ),
+                          kBlankSeparatorBig,
+                          ExpansionTile(
+                            backgroundColor: kPrimaryColor,
+                            collapsedBackgroundColor: kPrimaryColor,
+                            title: Text(
+                              "Input and Player Control",
+                              style: kHeader2Style,
+                              textAlign: TextAlign.left,
+                            ),
+                            trailing: Icon(Icons.arrow_drop_down),
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: Text(
+                                  kEngPlayer,
+                                  style: kBodyTextStyleDark,
+                                  textAlign: TextAlign.justify,
+                                ),
+                              ),
+                            ],
+                          ),
+                          kBlankSeparatorBig,
+                          ExpansionTile(
+                            backgroundColor: kPrimaryColor,
+                            collapsedBackgroundColor: kPrimaryColor,
+                            expandedAlignment: Alignment.topLeft,
+                            title: Text(
+                              "Debugging Tools",
+                              style: kHeader2Style,
+                              textAlign: TextAlign.left,
+                            ),
+                            trailing: Icon(Icons.arrow_drop_down),
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: Text(
+                                  kEngPlayer,
+                                  style: kBodyTextStyleDark,
+                                  textAlign: TextAlign.justify,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 600,
+                                child: ImageLegend(
+                                  path: 'assets/images/debugengine.png',
+                                  legend:
+                                      "Screenshot showing debugging options on transforms",
+                                ),
+                              ),
+                              kBlankSeparator,
+                            ],
+                          ),
+                          kBlankSeparatorBig,
+                          ExpansionTile(
+                            backgroundColor: kPrimaryColor,
+                            collapsedBackgroundColor: kPrimaryColor,
+                            expandedAlignment: Alignment.centerLeft,
+                            title: Text(
+                              "Build and Delivery",
+                              style: kHeader2Style,
+                              textAlign: TextAlign.justify,
+                            ),
+                            trailing: Icon(Icons.arrow_drop_down),
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: Text(
+                                  kEngDelivery,
+                                  style: kBodyTextStyleDark,
+                                  textAlign: TextAlign.left,
+                                ),
+                              ),
+                            ],
+                          ),
+                          kBlankSeparator,
+                          ExpansionTile(
+                            backgroundColor: kPrimaryColor,
+                            collapsedBackgroundColor: kPrimaryColor,
+                            title: Text(
+                              "Upcoming features",
+                              style: kHeader2Style,
+                              textAlign: TextAlign.justify,
+                            ),
+                            trailing: Icon(Icons.arrow_drop_down),
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    ...kEngUpcoming.map(
+                                      (point) => Bulletpoint(
+                                        point: point,
+                                        style: kBodyTextStyleDark,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
                           ),
                         ],
                       ),
-                      LayoutBuilder(
-                        builder: (context, constraints) {
-                          bool isSmallScreen = constraints.maxWidth < 1200;
-
-                          final textWidget = SizedBox(
-                            width: double.infinity,
-                            child: Text(
-                              kDescEng1,
-                              style: TextStyle(fontSize: 16),
-                            ),
-                          );
-                          final textWidgetFlex = Flexible(
-                            child: Text(
-                              kDescEng1,
-                              style: TextStyle(fontSize: 16),
-                            ),
-                          );
-
-                          final mediaWidget = SizedBox(
-                            width: 600,
-                            height: 300,
-                            child: Video(
-                              videoAssetPath: 'assets/videos/enginegame.mp4',
-                              imagePath: 'assets/images/editorMenu.png',
-                            ),
-                          );
-
-                          if (isSmallScreen) {
-                            return Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                textWidget,
-                                SizedBox(height: 16),
-                                mediaWidget,
-                              ],
-                            );
-                          } else {
-                            return Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                textWidgetFlex,
-                                SizedBox(width: 20),
-                                mediaWidget,
-                              ],
-                            );
-                          }
-                        },
-                      ),
-                      SizedBox(
-                        width: double.infinity,
-                        child: Text(
-                          "Graphics and Model Loading",
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          textAlign: TextAlign.left,
-                        ),
-                      ),
-                      SizedBox(
-                        width: double.infinity,
-                        child: Text(
-                          kEngGraphics,
-                          style: TextStyle(fontSize: 16),
-                          textAlign: TextAlign.left,
-                        ),
-                      ),
-                      SizedBox(
-                        width: double.infinity,
-                        child: Text(
-                          "Entities and Components System",
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          textAlign: TextAlign.left,
-                        ),
-                      ),
-                      SizedBox(
-                        width: double.infinity,
-                        child: Text(
-                          kEngECS,
-                          style: TextStyle(fontSize: 16),
-                          textAlign: TextAlign.left,
-                        ),
-                      ),
-                      SizedBox(
-                        width: double.infinity,
-                        child: Text(
-                          "UI system",
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          textAlign: TextAlign.left,
-                        ),
-                      ),
-                      SizedBox(
-                        width: double.infinity,
-                        child: Text(
-                          kEngUI,
-                          style: TextStyle(fontSize: 16),
-                          textAlign: TextAlign.left,
-                        ),
-                      ),
-                      SizedBox(
-                        width: double.infinity,
-                        child: Text(
-                          "Scene Loading and Editor Tools",
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          textAlign: TextAlign.left,
-                        ),
-                      ),
-                      SizedBox(
-                        width: double.infinity,
-                        child: Text(
-                          kEngRefl,
-                          style: TextStyle(fontSize: 16),
-                          textAlign: TextAlign.left,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 600,
-                        height: 350,
-                        child: Video(
-                              videoAssetPath: 'assets/videos/editor.mp4',
-                              imagePath: 'assets/images/editorMenu.png',
-                            ),
-                      ),
-                      SizedBox(
-                        width: double.infinity,
-                        child: Text(
-                          "Physics System",
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          textAlign: TextAlign.left,
-                        ),
-                      ),
-                      SizedBox(
-                        width: double.infinity,
-                        child: Text(
-                          kEngPhysics,
-                          style: TextStyle(fontSize: 16),
-                          textAlign: TextAlign.left,
-                        ),
-                      ),
-                      SizedBox(
-                        width: double.infinity,
-                        child: Text(
-                          "Input and Player Control",
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          textAlign: TextAlign.left,
-                        ),
-                      ),
-                      SizedBox(
-                        width: double.infinity,
-                        child: Text(
-                          kEngPlayer,
-                          style: TextStyle(fontSize: 16),
-                          textAlign: TextAlign.left,
-                        ),
-                      ),
-                      SizedBox(
-                        width: double.infinity,
-                        child: Text(
-                          "Debugging Tools",
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          textAlign: TextAlign.left,
-                        ),
-                      ),
-                      SizedBox(
-                        width: double.infinity,
-                        child: Text(
-                          kEngDebug,
-                          style: TextStyle(fontSize: 16),
-                          textAlign: TextAlign.left,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 600,
-                        child: ImageLegend(
-                          path: 'assets/images/debugengine.png',
-                          legend:
-                              "Screenshot showing debugging options on transforms",
-                        ),
-                      ),
-                      SizedBox(
-                        width: double.infinity,
-                        child: Text(
-                          "Build and Delivery",
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          textAlign: TextAlign.left,
-                        ),
-                      ),
-                      SizedBox(
-                        width: double.infinity,
-                        child: Text(
-                          kEngDelivery,
-                          style: TextStyle(fontSize: 16),
-                          textAlign: TextAlign.left,
-                        ),
-                      ),
-                      SizedBox(
-                        width: double.infinity,
-                        child: Text(
-                          "Upcoming features",
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          textAlign: TextAlign.left,
-                        ),
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          ...kEngUpcoming.map(
-                            (point) => Bulletpoint(
-                              point: point,
-                              textColor: Colors.black,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
+                    ),
                   ),
-                ),
+                ],
               ),
+              if (_showUpButton)
+                Positioned(
+                  bottom: 20,
+                  right: 20,
+                  child: UpButton(onPressed: _scrollToTop),
+                ),
             ],
           ),
-          if (_showUpButton)
-            Positioned(
-              bottom: 20,
-              right: 20,
-              child: UpButton(onPressed: _scrollToTop),
-            ),
         ],
       ),
     );

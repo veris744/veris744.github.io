@@ -7,6 +7,8 @@ import 'package:veris744/projects/link_button.dart';
 import 'package:veris744/sections/copyright.dart';
 import 'package:veris744/sections/video.dart';
 import 'package:veris744/texts.dart';
+import 'package:veris744/widgets/columns_layout.dart';
+import 'package:veris744/widgets/header.dart';
 import 'package:veris744/widgets/top_bar.dart';
 import 'package:veris744/widgets/up_button.dart';
 
@@ -47,7 +49,7 @@ class _FlockingState extends State<Flocking> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple[200],
+      backgroundColor: kBackgroundColor,
       appBar: TopBar(
         scrollToHihlighted: () => Navigator.of(context).pushNamed('/'),
         scrollToProjects: () => Navigator.of(context).pushNamed('/'),
@@ -59,25 +61,21 @@ class _FlockingState extends State<Flocking> {
         children: [
           FooterView(
             footer: Footer(
-              backgroundColor: Colors.deepPurple[200],
+              backgroundColor: kBackgroundColor,
               padding: EdgeInsets.all(0),
               child: Copyright(),
             ),
             children: [
-              Container(
-                alignment: Alignment.center,
-                padding: EdgeInsets.all(20),
-                child: SizedBox(
-                  width: 1400,
-                  child: Column(
-                    spacing: 15,
-                    children: [
-                      Text("Flocking Project", style: kHeader1Style),
-                      Wrap(
-                        spacing: 20,
-                        runSpacing: 20,
-                        runAlignment: WrapAlignment.center,
-                        alignment: WrapAlignment.center,
+              Column(
+                children: [
+                  Header(text: "Flocking Project"),
+                  Container(
+                    alignment: Alignment.center,
+                    padding: EdgeInsets.all(20),
+                    child: SizedBox(
+                      width: 1400,
+                      child: Column(
+                        spacing: 15,
                         children: [
                           Status(
                             isDone: true,
@@ -86,97 +84,60 @@ class _FlockingState extends State<Flocking> {
                             software: "Unreal Engine 5",
                             role: "Solo project",
                           ),
-                          SizedBox(
-                            height: 100,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                LinkButton(
-                                  link:
-                                      'https://github.com/veris744/FlockingProject',
-                                  platform: Utils.checkLink(
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            spacing: 10,
+                            children: [
+                              LinkButton(
+                                link:
                                     'https://github.com/veris744/FlockingProject',
-                                  ),
+                                platform: Utils.checkLink(
+                                  'https://github.com/veris744/FlockingProject',
                                 ),
-                                LinkButton(
-                                  link:
-                                      'https://github.com/veris744/FlockingProject/releases',
-                                  platform: Utils.checkLink(
+                              ),
+                              LinkButton(
+                                link:
                                     'https://github.com/veris744/FlockingProject/releases',
-                                  ),
+                                platform: Utils.checkLink(
+                                  'https://github.com/veris744/FlockingProject/releases',
                                 ),
+                              ),
+                            ],
+                          ),
+                          kBlankSeparator,
+                          ColumnsLayout(
+                            text: Column(
+                              children: [
+                                Text(kDescFlock1, style: kBodyTextStyle),
+                                kBlankSeparatorBig,
+                                Text(kDescFlock2, style: kBodyTextStyle),
                               ],
                             ),
+                            imageWidget: SizedBox(
+                              width: 600,
+                              height: 350,
+                              child: Video(
+                                videoAssetPath: 'assets/videos/flock.mp4',
+                                imagePath: 'assets/images/flock.png',
+                              ),
+                            ),
                           ),
+                          kBlankSeparatorBig,
+                          Text(kDescFlock3, style: kBodyTextStyle),
                         ],
                       ),
-                      kBlankSeparator,
-                      SizedBox(
-                        width: 1000,
-                        child: Text(
-                          kDescFlock1,
-                          style: TextStyle(fontSize: 16),
-                          textAlign: TextAlign.left,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 1000,
-                        child: Video(
-                          videoAssetPath: 'assets/videos/flock.mp4',
-                          imagePath: 'assets/images/flock.png',
-                        ),
-                      ),
-                      SizedBox(
-                        width: 1000,
-                        child: Text(
-                          "AI",
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          textAlign: TextAlign.left,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 1000,
-                        child: Text(
-                          kDescFlock2,
-                          style: TextStyle(fontSize: 16),
-                          textAlign: TextAlign.left,
-                        ),
-                      ),
-                      kBlankSeparator,
-                      SizedBox(
-                        width: 1000,
-                        child: Text(
-                          "Other Implementations",
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          textAlign: TextAlign.left,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 1000,
-                        child: Text(
-                          kDescFlock3,
-                          style: TextStyle(fontSize: 16),
-                          textAlign: TextAlign.left,
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
-                ),
+                ],
               ),
+              if (_showUpButton)
+                Positioned(
+                  bottom: 20,
+                  right: 20,
+                  child: UpButton(onPressed: _scrollToTop),
+                ),
             ],
           ),
-          if (_showUpButton)
-            Positioned(
-              bottom: 20,
-              right: 20,
-              child: UpButton(onPressed: _scrollToTop),
-            ),
         ],
       ),
     );

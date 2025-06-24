@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:veris744/constants.dart';
 
 class Bulletpoint extends StatelessWidget {
-  const Bulletpoint({super.key, required this.point, this.textColor = kTextColor});
+  const Bulletpoint({super.key, required this.point, required this.style});
 
   final String point;
-  final Color textColor;
+  final TextStyle style;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +21,7 @@ class Bulletpoint extends StatelessWidget {
           children: [
             Icon(Icons.done, color: const Color.fromARGB(255, 9, 102, 14)),
             SizedBox(width: 5,),
-            Flexible(child: Text(point, style: TextStyle(color: textColor, fontSize: 16))),
+            Flexible(child: Text(point, style: style)),
           ],
         ),
       ),

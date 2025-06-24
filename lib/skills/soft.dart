@@ -27,10 +27,10 @@ class SoftSkills extends StatelessWidget {
             runSpacing: 20,
             alignment: WrapAlignment.center,
             children: [
-              Bulletpoint(point: "lkmewr weslhef  wrkfé"),
-              Bulletpoint(point: "lkmewr weslhef  wrkfé"),
-              Bulletpoint(point: "lkmewr weslhef  wrkfé"),
-              Bulletpoint(point: "lkmewr weslhef  wrkfé"),
+              // Bulletpoint(point: "lkmewr weslhef  wrkfé"),
+              // Bulletpoint(point: "lkmewr weslhef  wrkfé"),
+              // Bulletpoint(point: "lkmewr weslhef  wrkfé"),
+              // Bulletpoint(point: "lkmewr weslhef  wrkfé"),
             ],
           )
         ]

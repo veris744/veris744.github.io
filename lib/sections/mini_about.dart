@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:veris744/constants.dart';
 import 'package:veris744/texts.dart';
+import 'package:veris744/widgets/header.dart';
 
 class MiniAbout extends StatelessWidget {
   const MiniAbout({super.key});
@@ -16,28 +17,24 @@ class MiniAbout extends StatelessWidget {
         maxWidth: double.infinity,
         minHeight: 0,
       ),
-      child: Container(
-        padding: EdgeInsets.symmetric(
-          horizontal: isWideScreen ? 300 : 10,
-          vertical: 20,
-        ),
-        child: Column(
-          children: [
-            Text(
-              "About Me",
-              style: kHeader1Style,
-              textAlign: TextAlign.center,
+      child: Column(
+        children: [
+          Header(text: "About Me"),
+          kBlankSeparatorBig,
+          Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal:
+                  isWideScreen ? kHorizontalPadding : kHorizontalPaddingMob,
             ),
-            kBlankSeparator,
-            kBlankSeparator,
-            Text(
+            child: Text(
               kAboutText,
               style: kBodyTextStyle,
               textAlign: TextAlign.justify,
             ),
-            kBlankSeparator
-          ],
-        ),
+          ),
+          kBlankSeparatorBig,
+          kBlankSeparatorBig,
+        ],
       ),
     );
   }
