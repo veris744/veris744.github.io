@@ -8,9 +8,7 @@ class ContactSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(vertical: 30),
-      child: Column(
+    return Column(
         children: [
           Container(
             width: double.infinity,
@@ -76,8 +74,9 @@ class ContactSection extends StatelessWidget {
               ],
             ),
           ),
+          kBlankSeparatorBig,
+          kBlankSeparatorBig,
         ],
-      ),
     );
   }
 }

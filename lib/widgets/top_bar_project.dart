@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/link.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:veris744/constants.dart';
-import 'package:veris744/widgets/bar_button.dart';
 
 class TopBarProject extends StatelessWidget implements PreferredSizeWidget {
   const TopBarProject({super.key});
@@ -23,8 +22,8 @@ class TopBarProject extends StatelessWidget implements PreferredSizeWidget {
       toolbarHeight: 100,
       automaticallyImplyLeading: false,
       title: Link(
-        uri: Uri.parse('/'), // e.g. '/about'
-        target: LinkTarget.self, // Opens in same tab
+        uri: Uri.parse('/'),
+        target: LinkTarget.self,
         builder: (context, followLink) {
           return TextButton(
             onPressed: followLink,
@@ -39,14 +38,17 @@ class TopBarProject extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: Color.fromARGB(255, 58, 62, 108),
       actions: [
         Link(
-          uri: Uri.parse('/'), // e.g. '/about'
-          target: LinkTarget.self, // Opens in same tab
+          uri: Uri.parse('/'),
+          target: LinkTarget.self,
           builder: (context, followLink) {
             return Padding(
               padding: EdgeInsets.only(right: 20),
-              child: IconButton(
-                onPressed: followLink,
-                icon: Icon(Icons.home, color: kTextColor),
+              child: Material(
+                color: Colors.transparent,
+                child: IconButton(
+                  onPressed: followLink,
+                  icon: Icon(Icons.home, color: kTextColor),
+                ),
               ),
             );
           },

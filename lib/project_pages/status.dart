@@ -29,9 +29,19 @@ class Status extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
       ),
       height: 160,
-      child: Text(
-        text,
-        style: TextStyle(color: kTextSecond, fontSize: 16, height: 1.5, fontWeight: FontWeight.w600),
+      child: IntrinsicWidth(
+        child: Center(
+          child: Text(
+            text,
+            textAlign: TextAlign.left,
+            style: TextStyle(
+              color: kTextSecond,
+              fontSize: 16,
+              height: 1.5,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ),
       ),
     );
   }

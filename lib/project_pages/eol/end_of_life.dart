@@ -256,14 +256,14 @@ class _EndOfLifeState extends State<EndOfLife> {
                   ),
                 ],
               ),
-              if (_showUpButton)
-                Positioned(
-                  bottom: 20,
-                  right: 20,
-                  child: UpButton(onPressed: _scrollToTop),
-                ),
             ],
           ),
+          if (_showUpButton)
+            Positioned(
+              bottom: 20,
+              right: 20,
+              child: UpButton(onPressed: _scrollToTop),
+            ),
         ],
       ),
     );
