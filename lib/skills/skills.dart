@@ -9,9 +9,7 @@ class SkillsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(vertical: 30),
-      child: Column(
+    return Column(
         children: [
           Container(
             width: double.infinity,
@@ -30,8 +28,9 @@ class SkillsSection extends StatelessWidget {
             runAlignment: WrapAlignment.center,
             children: [LanguagesSkills(), ToolsSkills()],
           ),
+          kBlankSeparatorBig,
+          kBlankSeparatorBig,
         ],
-      ),
     );
   }
 }

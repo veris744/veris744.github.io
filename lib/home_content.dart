@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
-import 'package:veris744/sections/about.dart';
+import 'package:veris744/projects/projects_pers.dart';
 import 'package:veris744/sections/contact.dart';
 import 'package:veris744/sections/copyright.dart';
 import 'package:veris744/sections/highlighted.dart';
 import 'package:veris744/sections/intro.dart';
-import 'package:veris744/projects/projects.dart';
+import 'package:veris744/projects/projects_ac.dart';
 import 'package:veris744/sections/mini_about.dart';
 import 'package:veris744/skills/skills.dart';
 import 'package:veris744/widgets/top_bar.dart';
@@ -70,9 +70,9 @@ class _HomeContentState extends State<HomeContent> {
     return Scaffold(
       appBar: TopBar(
         scrollToHihlighted: () => _scrollToSection(2),
-        scrollToProjects: () => _scrollToSection(3),
-        scrollToSkills: () => _scrollToSection(4),
-        scrollToAbout: () => _scrollToSection(5),
+        scrollToProjectsA: () => _scrollToSection(3),
+        scrollToProjectsP: () => _scrollToSection(4),
+        scrollToSkills: () => _scrollToSection(5),
         scrollToContact: () => _scrollToSection(6),
       ),
       body: Stack(
@@ -90,8 +90,10 @@ class _HomeContentState extends State<HomeContent> {
                 case 2:
                   return HighlightedSection();
                 case 3:
-                  return ProjectsSection();
+                  return ProjectsSectionAc();
                 case 4:
+                  return ProjectsSectionPers();
+                case 5:
                   return SkillsSection();
                 case 6:
                   return ContactSection();

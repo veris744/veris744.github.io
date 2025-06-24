@@ -3,20 +3,21 @@ import 'package:url_launcher/link.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:veris744/constants.dart';
 import 'package:veris744/widgets/bar_button.dart';
+import 'package:veris744/widgets/bar_button_drop.dart';
 
 class TopBar extends StatelessWidget implements PreferredSizeWidget {
-  final VoidCallback scrollToProjects;
+  final VoidCallback scrollToProjectsA;
+  final VoidCallback scrollToProjectsP;
   final VoidCallback scrollToHihlighted;
   final VoidCallback scrollToSkills;
-  final VoidCallback scrollToAbout;
   final VoidCallback scrollToContact;
 
   const TopBar({
     super.key,
-    required this.scrollToProjects,
+    required this.scrollToProjectsA,
+    required this.scrollToProjectsP,
     required this.scrollToHihlighted,
     required this.scrollToSkills,
-    required this.scrollToAbout,
     required this.scrollToContact,
   });
 
@@ -35,17 +36,19 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       toolbarHeight: 100,
       automaticallyImplyLeading: false,
-      title: 
-          Link(
-            uri: Uri.parse('/'), // e.g. '/about'
-            target: LinkTarget.self, // Opens in same tab
-            builder: (context, followLink) {
-              return TextButton(
-                onPressed: followLink,
-                child: Text("Isabel de Vergara", style: TextStyle(color: kTextColor, fontSize: 26)),
-              );
-            },
-          ),
+      title: Link(
+        uri: Uri.parse('/'), // e.g. '/about'
+        target: LinkTarget.self, // Opens in same tab
+        builder: (context, followLink) {
+          return TextButton(
+            onPressed: followLink,
+            child: Text(
+              "Isabel de Vergara",
+              style: TextStyle(color: kTextColor, fontSize: 26),
+            ),
+          );
+        },
+      ),
       elevation: 4,
       backgroundColor: Color.fromARGB(255, 58, 62, 108),
       actions:
@@ -53,7 +56,11 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
               ? [
                 BarButton(scrollTo: scrollToResume, text: "Résumé"),
                 BarButton(scrollTo: scrollToHihlighted, text: "Highlighted"),
-                BarButton(scrollTo: scrollToProjects, text: "Projects"),
+                BarButtonDrop(
+                  scrollTos: [scrollToProjectsA, scrollToProjectsP],
+                  text: "Projects",
+                  option: ["Academic", "Personal"],
+                ),
                 BarButton(scrollTo: scrollToSkills, text: "Skills"),
                 BarButton(scrollTo: scrollToContact, text: "Contact"),
               ]

@@ -10,6 +10,7 @@ import 'package:veris744/texts.dart';
 import 'package:veris744/widgets/bold_bulletpoint.dart';
 import 'package:veris744/widgets/columns_layout.dart';
 import 'package:veris744/widgets/top_bar.dart';
+import 'package:veris744/widgets/top_bar_project.dart';
 import 'package:veris744/widgets/up_button.dart';
 
 class Cofrade extends StatefulWidget {
@@ -50,13 +51,7 @@ class _CofradeState extends State<Cofrade> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kBackgroundColor,
-      appBar: TopBar(
-        scrollToHihlighted: () => Navigator.of(context).pushNamed('/'),
-        scrollToProjects: () => Navigator.of(context).pushNamed('/'),
-        scrollToSkills: () => Navigator.of(context).pushNamed('/'),
-        scrollToAbout: () => Navigator.of(context).pushNamed('/'),
-        scrollToContact: () => Navigator.of(context).pushNamed('/'),
-      ),
+      appBar: TopBarProject(),
       body: Stack(
         children: [
           FooterView(
