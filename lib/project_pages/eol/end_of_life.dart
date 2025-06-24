@@ -186,7 +186,7 @@ class _EndOfLifeState extends State<EndOfLife> {
                               Padding(
                                 padding: const EdgeInsets.all(16.0),
                                 child: Text(
-                                  kDesc3EOL,
+                                  kDesc4EOL,
                                   style: kBodyTextStyleDark,
                                   textAlign: TextAlign.justify,
                                 ),
@@ -243,7 +243,7 @@ class _EndOfLifeState extends State<EndOfLife> {
                               Padding(
                                 padding: const EdgeInsets.all(16.0),
                                 child: Text(
-                                  kDesc4EOL,
+                                  kDesc3EOL,
                                   style: kBodyTextStyleDark,
                                   textAlign: TextAlign.justify,
                                 ),

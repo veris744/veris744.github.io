@@ -44,7 +44,7 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
             onPressed: followLink,
             child: Text(
               "Isabel de Vergara",
-              style: TextStyle(color: kTextColor, fontSize: 26),
+              style: TextStyle(color: kTextColor, fontSize: MediaQuery.of(context).size.width > 700 ? 26 : 18),
             ),
           );
         },
@@ -64,7 +64,29 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
                 BarButton(scrollTo: scrollToSkills, text: "Skills"),
                 BarButton(scrollTo: scrollToContact, text: "Contact"),
               ]
-              : [BarButton(scrollTo: scrollToResume, text: "Résumé")],
+              : [
+                BarButtonDrop(
+                  option: [
+                    "Résumé",
+                    "Highlighted",
+                    "Academic Projects",
+                    "Personal Projects",
+                    "Skills",
+                    "Contact",
+                  ],
+                  text: "",
+                  scrollTos: [
+                    scrollToResume,
+                    scrollToHihlighted,
+                    scrollToProjectsA,
+                    scrollToProjectsP,
+                    scrollToSkills,
+                    scrollToContact,
+                  ],
+                ),
+              ],
+
+      //[BarButton(scrollTo: scrollToResume, text: "Résumé")],
     );
   }
 

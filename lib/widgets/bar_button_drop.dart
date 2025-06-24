@@ -45,32 +45,43 @@ class _BarButtonDropState extends State<BarButtonDrop> {
             dropdownColor: kAccentColor,
             isDense: true,
             isExpanded: false,
+            alignment: Alignment.centerRight,
             value: null,
             hint: GestureDetector(
               onTap: _resetHover, // reset hover on tap to open dropdown
-              child: Text(
-                widget.text,
-                style: TextStyle(
-                  color: kTextColor,
-                  fontSize: 26,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
+              child:
+                  widget.text != ""
+                      ? Text(
+                        widget.text,
+                        style: TextStyle(
+                          color: kTextColor,
+                          fontSize: 26,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      )
+                      : Icon(Icons.menu, color: kTextColor),
             ),
             icon: Icon(Icons.arrow_drop_down, color: kTextColor),
-            style: TextStyle(color: kTextColor, fontSize: 26),
+            style: TextStyle(
+              color: kTextColor,
+              fontSize: widget.text != "" ? 26 : 18,
+            ),
             items: [
               DropdownMenuItem<String>(
+                alignment: Alignment.centerRight,
                 enabled: false,
                 value: closeValue,
-                child: Text(
-                  "Projects",
-                  style: TextStyle(
-                    color: kTextColor,
-                    fontSize: 26,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+                child:
+                    widget.text != ""
+                        ? Text(
+                          widget.text,
+                          style: TextStyle(
+                            color: kTextColor,
+                            fontSize: 26,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        )
+                        : Icon(Icons.menu, color: kTextColor),
               ),
               ...List.generate(widget.option.length, (index) {
                 return DropdownMenuItem<String>(
