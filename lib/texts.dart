@@ -176,25 +176,25 @@ const List<List<String>> kDescCofr2 = [
 
 const String kDescEng1 = "This is a solo game engine project developed in C++ using CMake, with the long-term goal of building a complete game entirely on top of this custom engine. The engine is designed to support both 2D and 3D games, and aims to balance performance, modularity, and usability — with editor tools and data-driven workflows to make development smoother.\n\nIt is a work in progress and continues to grow as features are added.";
 
-const String kEngGraphics = "Built with OpenGL, the engine supports both 2D and 3D rendering. It includes lighting shaders (ambient, diffuse, specular), material support (color or texture-based), and a system for adding custom shaders like a neon-glow effect. Entity transformations support world and relative positioning. Models are loaded via Assimp (.obj), with full texture support.";
+const String kEngGraphics = "Built with OpenGL, the engine supports both 2D and 3D rendering, with entity transformations that handle both world and relative positioning. Models and their textures are loaded via Assimp. The engine includes lighting shaders based on the Phong model, as well as 2D shaders and texture rendering with support for repeat or scaled patterns. It also features custom shaders, such as a neon-glow effect. The shader library is designed to expand and improve over time.";
 
-const String kEngECS = "A flexible ECS framework allows defining game logic through components attached to entities. Entities are centrally managed and dynamically created or modified during runtime or scene loading.";
+const String kEngECS = "A flexible Entity-Component-System (ECS) framework enables game logic to be defined through modular components attached to entities. Entities are centrally managed and can be dynamically created or modified at runtime or during scene loading. The entity manager maintains references to all created entities and handles their lifecycle, including destruction through a deferred system: entities are first disabled and then removed at the end of the frame loop to optimize performance. Memory cleanup is handled automatically via smart pointers in C++, ensuring safe and efficient resource management. A factory-based architecture supports instantiation of entities and components from YAML-defined scenes. Components can be added or removed at runtime, enabling dynamic behavior changes. The system is designed with extensibility in mind, allowing easy integration of custom components and systems.";
 
-const String kEngUI = "Custom-built UI framework featuring a hierarchical widget system. Widgets (such as images, buttons, text, dropdowns, and input boxes) support 2D layout, relative positioning, text alignment, and font loading (.ttf). UI elements can be nested and styled, enabling interactive menus and HUDs.";
+const String kEngUI = "Custom-built UI framework featuring a hierarchical widget system. Widgets support 2D layout, relative positioning, text alignment, and TrueType font (.ttf) loading. UI elements can be nested and styled, enabling the creation of interactive menus and HUDs. The current toolkit includes images, buttons, text, dropdowns, and input boxes. Interaction and event handling are powered by a delegate system—supporting both single and multi-delegates—used across the UI and in-game logic for flexible and decoupled event binding. The system is designed to be extensible, with plans to expand the available widget set.";
 
-const String kEngRefl = "The engine features a custom reflection system to parse scene definitions from YAML files, instantiating all entities and components at runtime. A built-in Editor Mode (toggle with F1) provides:";
+const String kEngRefl = "The engine features a custom reflection system used to parse scene definitions from YAML files, instantiating entities and components at runtime via a Factory pattern. A built-in Editor Mode (toggleable with F1) provides a visual interface for inspecting all in-game entities, viewing their components and properties—including vectors, strings, enums, subclasses, and basic types—and editing them in real time. Additionally, a serialization feature allows the current game state to be saved as a YAML scene, enabling convenient scene saving and loading.\nThe reflection system is designed to be extensible, allowing developers to register custom types and properties using macros.";
 
-const String kEngPhysics = "Includes collision detection for basic shapes (planes, cubes, spheres, capsules, slopes) and a movement component supporting velocity, acceleration, and physics reactions like gravity, friction, and bounciness.";
+const String kEngPhysics = "The engine includes collision detection for basic shapes such as planes, cubes, spheres, capsules, and slopes. A dedicated movement component supports velocity, acceleration, and physical responses including gravity, friction, and bounciness. To optimize performance, the system uses an octree spatial partitioning algorithm for efficient collision detection. Collisions are calculated between both static and dynamic entities, including dynamic-to-dynamic interactions. Each entity can be assigned a configurable collision profile, enabling flexible behavior such as physical reactions, ray casting, and event triggering.";
 
-const String kEngPlayer = "A configurable first-person player controller supports camera movement and player navigation. Input is fully customizable for gameplay interactions.";
+const String kEngPlayer = "A configurable first-person player controller supports intuitive camera movement and player navigation, with fully customizable input bindings for gameplay interactions. Additionally, an editor-mode player controller provides free-movement controls tailored for scene editing and debugging";
 
-const String kEngDebug = "Debugging tools include 2D and 3D overlays for visualizing entities, components, and physics interactions. The engine supports real-time debugging and profiling.";
+const String kEngDebug = "Debugging tools include 2D and 3D overlays for visualizing entities, components, and physics interactions using lines and basic shapes. On-screen logging messages are also supported. The engine enables real-time debugging with both time-based and frame-by-frame visualization modes.";
 
 const String kEngDelivery = "The engine is built with CMake with a focus on modularity and extensibility.";
 
 const List<String> kEngUpcoming = [
   "Improved illumination and shadows", 
-  "Basic AI using Behavior Trees", 
+  "AI support using Behavior Trees",
   "Memory Management and Partitioning",
   "A full playable game showcasing all systems"
 ];

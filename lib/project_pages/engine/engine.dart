@@ -258,7 +258,7 @@ class _EngineState extends State<Engine> {
                               Padding(
                                 padding: const EdgeInsets.all(16.0),
                                 child: Text(
-                                  kEngPlayer,
+                                  kEngDebug,
                                   style: kBodyTextStyleDark,
                                   textAlign: TextAlign.justify,
                                 ),
