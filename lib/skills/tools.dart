@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:veris744/constants.dart';
 import 'package:veris744/skills/skill.dart';
@@ -20,7 +21,7 @@ class ToolsSkills extends StatelessWidget {
         spacing: 15,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text("DEV TOOL", style: kHeader2Style, textAlign: TextAlign.center),
+          Text("DEV TOOLS", style: kHeader2Style, textAlign: TextAlign.center),
           Expanded(
             child: Center(
               child: Wrap(
@@ -41,7 +42,7 @@ class ToolsSkills extends StatelessWidget {
                   Skill(iconPath: "assets/icons/unity.svg", name: "Unity"),
                   Skill(iconPath: "assets/icons/git.svg", name: "Git"),
                   Skill(iconPath: "assets/icons/argo.svg", name: "ArgoCD"),
-                  Skill(iconPath: "assets/icons/cmake.svg", name: "CMake"),
+                  Skill(iconPath: "assets/icons/kubernetes.svg", name: "Kubernetes"),
                   Skill(iconPath: "assets/icons/jenkins.svg", name: "Jenkins"),
                 ],
               ),

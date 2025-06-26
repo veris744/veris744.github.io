@@ -280,6 +280,28 @@ class _EngineState extends State<Engine> {
                             collapsedBackgroundColor: kPrimaryColor,
                             expandedAlignment: Alignment.centerLeft,
                             title: Text(
+                              "Audio",
+                              style: kHeader2Style,
+                              textAlign: TextAlign.justify,
+                            ),
+                            trailing: Icon(Icons.arrow_drop_down),
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: Text(
+                                  kEngAudio,
+                                  style: kBodyTextStyleDark,
+                                  textAlign: TextAlign.justify,
+                                ),
+                              ),
+                            ],
+                          ),
+                          kBlankSeparatorBig,
+                          ExpansionTile(
+                            backgroundColor: kPrimaryColor,
+                            collapsedBackgroundColor: kPrimaryColor,
+                            expandedAlignment: Alignment.centerLeft,
+                            title: Text(
                               "Build and Delivery",
                               style: kHeader2Style,
                               textAlign: TextAlign.justify,
@@ -291,11 +313,12 @@ class _EngineState extends State<Engine> {
                                 child: Text(
                                   kEngDelivery,
                                   style: kBodyTextStyleDark,
-                                  textAlign: TextAlign.left,
+                                  textAlign: TextAlign.justify,
                                 ),
                               ),
                             ],
                           ),
+                          kBlankSeparator,
                           kBlankSeparator,
                           ExpansionTile(
                             backgroundColor: kPrimaryColor,

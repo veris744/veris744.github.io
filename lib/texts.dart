@@ -76,10 +76,9 @@ const List<String> kBPSMU = [
 const String kEngineShortDesc =
 "Small C++ game engine, this is still a work in progress.\n\nKey Aspects (already implemented):";
 const List<String> kBPEngine = [
-  "Game Editor and showcase mini-game"
-  "2D and 3D Graphics with OpenGL",
+  "Game Editor and showcase mini-game",
   "Reflection system for deserialization/serialization",
-  "Collisions and Physics",
+  "3D Rendering, UI and simple physics",
 ];
 
 const String kFlockShortDesc =
@@ -103,7 +102,7 @@ const List<String> kBPCJ = [
 // PROJECT - END OF LIFE //
 ///////////////////////////
 
-const String awardEOL = "PLAY STATION TALENTS FINALIST 2023\nCATEGORY: BEST DESIGN\n\nCheck the entry in the Play Station Talents website:";
+const String awardEOL = "PLAY STATION TALENTS FINALIST 2023\nCATEGORY: BEST DESIGN\n\nCheck the entry in the Play Station website:";
 
 const String kDesc1EOL = "End of Life is a third-person action shooter created as the final project for my master’s in game programming. Developed over several months using Unreal Engine 5 and C++, the game was a multidisciplinary collaboration involving artists, designers, and programmers. As Lead AI Programmer, UI Programmer and Producer, I was responsible for major technical systems and project coordination across the team.\n\nIn End of Life, players step into the role of Nashla, a demi-goddess fighting to restore her fading power. The game’s world is its standout feature: a rotating, fragmented environment inspired by a Rubik’s Cube, where gravity changes dynamically based on orientation. Nashla must traverse this ever-shifting terrain using her weapons — lethal magical needles — and her divine powers, including time manipulation and world rotation.";
 const String kDesc1_5EOL = "The game blends fast-paced shooting mechanics with spatial puzzle-solving, set in a mystic, surreal landscape. Read more about it on the video game news site Vandal:\n";
@@ -182,7 +181,7 @@ const String kEngECS = "A flexible Entity-Component-System (ECS) framework enabl
 
 const String kEngUI = "Custom-built UI framework featuring a hierarchical widget system. Widgets support 2D layout, relative positioning, text alignment, and TrueType font (.ttf) loading. UI elements can be nested and styled, enabling the creation of interactive menus and HUDs. The current toolkit includes images, buttons, text, dropdowns, and input boxes. Interaction and event handling are powered by a delegate system—supporting both single and multi-delegates—used across the UI and in-game logic for flexible and decoupled event binding. The system is designed to be extensible, with plans to expand the available widget set.";
 
-const String kEngRefl = "The engine features a custom reflection system used to parse scene definitions from YAML files, instantiating entities and components at runtime via a Factory pattern. A built-in Editor Mode (toggleable with F1) provides a visual interface for inspecting all in-game entities, viewing their components and properties—including vectors, strings, enums, subclasses, and basic types—and editing them in real time. Additionally, a serialization feature allows the current game state to be saved as a YAML scene, enabling convenient scene saving and loading.\nThe reflection system is designed to be extensible, allowing developers to register custom types and properties using macros.";
+const String kEngRefl = "The engine features a custom reflection system used to parse scene definitions from YAML files, instantiating entities and components at runtime via a Factory pattern. A built-in Editor Mode (toggleable with F1) provides a visual interface for inspecting all in-game entities, viewing their components and properties—including vectors, strings, enums, subclasses, and basic types—and editing them in real time. Additionally, a serialization feature allows the current game state to be saved as a YAML scene, enabling convenient scene saving and loading.\nThe reflection system is designed to be extensible, allowing to register custom types and properties using macros.";
 
 const String kEngPhysics = "The engine includes collision detection for basic shapes such as planes, cubes, spheres, capsules, and slopes. A dedicated movement component supports velocity, acceleration, and physical responses including gravity, friction, and bounciness. To optimize performance, the system uses an octree spatial partitioning algorithm for efficient collision detection. Collisions are calculated between both static and dynamic entities, including dynamic-to-dynamic interactions. Each entity can be assigned a configurable collision profile, enabling flexible behavior such as physical reactions, ray casting, and event triggering.";
 
@@ -192,9 +191,11 @@ const String kEngDebug = "Debugging tools include 2D and 3D overlays for visuali
 
 const String kEngDelivery = "The engine is built with CMake with a focus on modularity and extensibility.";
 
+const String kEngAudio = "Audio and sound playback is handled through an Audio Component attached to entities, supporting spatial positioning via the OpenAL library.";
+
 const List<String> kEngUpcoming = [
   "Improved illumination and shadows", 
-  "AI support using Behavior Trees",
+  "AI features using Behavior Trees",
   "Memory Management and Partitioning",
   "A full playable game showcasing all systems"
 ];

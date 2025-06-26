@@ -68,7 +68,7 @@ class _BarButtonDropState extends State<BarButtonDrop> {
             ),
             items: [
               DropdownMenuItem<String>(
-                alignment: Alignment.centerRight,
+                alignment: Alignment.center ,
                 enabled: false,
                 value: closeValue,
                 child:

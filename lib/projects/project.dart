@@ -52,8 +52,8 @@ class Project extends StatelessWidget {
     bool isMobile = screenWidth < 800;
 
     return Container(
-      height: ((isMobile && award != '') ? 730 : 700),
-      width: 450,
+      height: 700,
+      width: 430,
       decoration: BoxDecoration(
         color: kPrimaryColor,
         borderRadius: BorderRadius.circular(15),

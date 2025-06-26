@@ -28,13 +28,14 @@ const Color kTitleColor = Color.fromARGB(255, 58, 62, 108);
 const Color kGreyColor = Color.fromARGB(255, 138, 140, 172); 
 
 Map<String, Color> tags = {
-  "Unity": Color.fromARGB(200, 158, 145, 139),
-  "C++": Color.fromARGB(200, 0, 225, 255),
-  "UE5": Color.fromARGB(199, 255, 85, 178),
-  "C#": Color.fromARGB(200, 72, 255, 0),
-  "AI": Color.fromARGB(199, 0, 255, 213),
-  "UI": Color.fromARGB(199, 255, 0, 0),
-  "VR": Color.fromARGB(199, 238, 255, 0),
+  "Unity": Color.fromARGB(199, 109, 0, 109),
+  "C++": Color.fromARGB(198, 0, 94, 182),
+  "UE5": Color.fromARGB(198, 54, 0, 141),
+  "C#": Color.fromARGB(198, 0, 121, 129),
+  "AI": Color.fromARGB(197, 179, 1, 1),
+  "UI": Color.fromARGB(197, 179, 1, 1),
+  "Tools": Color.fromARGB(197, 179, 1, 1),
+  "OpenGL": Color.fromARGB(197, 134, 121, 0),
 };
 
 enum Platforms { windows, oculus, steam, itch, android, vr, git, none }

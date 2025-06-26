@@ -11,7 +11,6 @@ import 'package:veris744/sections/copyright.dart';
 import 'package:veris744/texts.dart';
 import 'package:veris744/widgets/columns_layout.dart';
 import 'package:veris744/widgets/header.dart';
-import 'package:veris744/widgets/top_bar.dart';
 import 'package:veris744/widgets/top_bar_project.dart';
 import 'package:veris744/widgets/up_button.dart';
 
@@ -84,42 +83,56 @@ class _EndOfLifeState extends State<EndOfLife> {
                           ),
                           kBlankSeparator,
                           kBlankSeparator,
-                          Container(
-                            width: 400,
-                            padding: EdgeInsets.all(8),
-                            decoration: BoxDecoration(
-                              color: Colors.amber[600],
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Column(
-                              children: [
-                                Text(
-                                  awardEOL,
-                                  style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                  textAlign: TextAlign.center,
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.workspace_premium_outlined,
+                                size: 100,
+                                color: Colors.amber,
+                              ),
+
+                              Container(
+                                padding: EdgeInsets.all(12),
+                                decoration: BoxDecoration(
+                                  color: kPrimaryColor,
+                                  borderRadius: BorderRadius.circular(10),
                                 ),
-                                InkWell(
-                                  onTap: () async {
-                                    final Uri url = Uri.parse(
-                                      'https://playstationtalents.es/finalistas-end-of-life/',
-                                    );
-                                    if (await canLaunchUrl(url)) {
-                                      await launchUrl(url);
-                                    }
-                                  },
-                                  child: Text(
-                                    'https://playstationtalents.es/finalistas-end-of-life/',
-                                    style: TextStyle(
-                                      color: Colors.blue,
-                                      decoration: TextDecoration.underline,
+
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      awardEOL,
+                                      style: TextStyle(
+                                        color: kTextSecond,
+                                        fontSize: 16,
+                                        height: 1.5,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                      textAlign: TextAlign.left,
                                     ),
-                                  ),
+                                    InkWell(
+                                      onTap: () async {
+                                        final Uri url = Uri.parse(
+                                          'https://blog.es.playstation.com/2023/11/28/conoce-los-finalistas-a-la-10a-edicion-de-los-premios-iokool-playstation-talents/',
+                                        );
+                                        if (await canLaunchUrl(url)) {
+                                          await launchUrl(url);
+                                        }
+                                      },
+                                      child: Text(
+                                        'Play Station Talents Finalists 2023',
+                                        style: TextStyle(
+                                          color: const Color.fromARGB(255, 9, 91, 158),
+                                          decoration: TextDecoration.underline,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                           kBlankSeparator,
                           kBlankSeparator,

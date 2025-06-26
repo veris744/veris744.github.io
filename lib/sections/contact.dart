@@ -21,7 +21,7 @@ class ContactSection extends StatelessWidget {
             ),
           ),
           kBlankSeparator,
-          Text('Feel free to contact me on:', style: kHeaderSubtitle),
+          Text('Feel free to follow or contact me on:', style: kHeaderSubtitle),
           kBlankSeparator,
           SizedBox(
             height: 75,
