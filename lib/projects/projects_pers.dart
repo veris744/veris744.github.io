@@ -13,14 +13,16 @@ class ProjectsSectionPers extends StatelessWidget {
       constraints: BoxConstraints(
         minWidth: double.infinity,
         maxWidth: double.infinity,
-        minHeight: 0, 
+        minHeight: 0,
       ),
       child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Header(text: "Personal Projects"),
-            kBlankSeparatorBig,
-            Wrap(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Header(text: "Personal Projects"),
+          kBlankSeparatorBig,
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            child: Wrap(
               alignment: WrapAlignment.center,
               spacing: 20,
               runSpacing: 10,
@@ -62,10 +64,11 @@ class ProjectsSectionPers extends StatelessWidget {
                 ),
               ],
             ),
-            kBlankSeparatorBig,
-            kBlankSeparatorBig,
-          ],
-        ),
+          ),
+          kBlankSeparatorBig,
+          kBlankSeparatorBig,
+        ],
+      ),
     );
   }
 }

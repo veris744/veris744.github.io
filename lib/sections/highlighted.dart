@@ -3,9 +3,7 @@ import 'package:url_launcher/link.dart';
 import 'package:veris744/constants.dart';
 import 'package:veris744/sections/video.dart';
 import 'package:veris744/texts.dart';
-import 'package:veris744/widgets/bold_bulletpoint.dart';
 import 'package:veris744/widgets/bulletpoint.dart';
-import 'package:veris744/widgets/carousel.dart';
 import 'package:veris744/widgets/columns_layout.dart';
 
 class HighlightedSection extends StatelessWidget {
@@ -59,7 +57,7 @@ class HighlightedSection extends StatelessWidget {
                     spacing: 5,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(kHighlighted1, style: kBodyTextStyle),
+                      Text(kHighlighted1, style: kBodyTextStyle, textAlign: TextAlign.justify,),
                       ...kBPAccomplished.map(
                         (point) =>
                             Bulletpoint(point: point, style: kBodyTextStyle),

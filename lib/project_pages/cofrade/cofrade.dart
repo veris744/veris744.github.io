@@ -9,7 +9,6 @@ import 'package:veris744/sections/video.dart';
 import 'package:veris744/texts.dart';
 import 'package:veris744/widgets/bold_bulletpoint.dart';
 import 'package:veris744/widgets/columns_layout.dart';
-import 'package:veris744/widgets/top_bar.dart';
 import 'package:veris744/widgets/top_bar_project.dart';
 import 'package:veris744/widgets/up_button.dart';
 

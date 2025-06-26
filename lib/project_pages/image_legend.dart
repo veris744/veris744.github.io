@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:veris744/constants.dart';
 
 class ImageLegend extends StatelessWidget {
   const ImageLegend({super.key, required this.path, required this.legend});
@@ -14,9 +15,9 @@ class ImageLegend extends StatelessWidget {
         Text(
           legend,
           style: TextStyle(
-            color: Colors.grey[600],
+            color: kBackgroundColor,
             fontStyle: FontStyle.italic,
-            fontSize: 10,
+            fontSize: 14,
           ),
         ),
       ],

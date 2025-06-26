@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:footer/footer.dart';
 import 'package:footer/footer_view.dart';
+import 'package:url_launcher/link.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:veris744/constants.dart';
 import 'package:veris744/project_pages/image_legend.dart';
@@ -112,22 +113,29 @@ class _EndOfLifeState extends State<EndOfLife> {
                                       ),
                                       textAlign: TextAlign.left,
                                     ),
-                                    InkWell(
-                                      onTap: () async {
-                                        final Uri url = Uri.parse(
-                                          'https://blog.es.playstation.com/2023/11/28/conoce-los-finalistas-a-la-10a-edicion-de-los-premios-iokool-playstation-talents/',
-                                        );
-                                        if (await canLaunchUrl(url)) {
-                                          await launchUrl(url);
-                                        }
-                                      },
-                                      child: Text(
-                                        'Play Station Talents Finalists 2023',
-                                        style: TextStyle(
-                                          color: const Color.fromARGB(255, 9, 91, 158),
-                                          decoration: TextDecoration.underline,
-                                        ),
+                                    Link(
+                                      uri: Uri.parse(
+                                        'https://blog.es.playstation.com/2023/11/28/conoce-los-finalistas-a-la-10a-edicion-de-los-premios-iokool-playstation-talents/',
                                       ),
+                                      target: LinkTarget.blank,
+                                      builder: (context, followLink) {
+                                        return InkWell(
+                                          onTap: followLink,
+                                          child: Text(
+                                            'Play Station Talents Finalists 2023',
+                                            style: TextStyle(
+                                              color: const Color.fromARGB(
+                                                255,
+                                                9,
+                                                91,
+                                                158,
+                                              ),
+                                              decoration:
+                                                  TextDecoration.underline,
+                                            ),
+                                          ),
+                                        );
+                                      },
                                     ),
                                   ],
                                 ),
@@ -166,23 +174,24 @@ class _EndOfLifeState extends State<EndOfLife> {
                           Text(kDesc1_5EOL, style: kBodyTextStyle),
                           Align(
                             alignment: Alignment.centerLeft,
-                            child: InkWell(
-                              onTap: () async {
-                                final Uri url = Uri.parse(
-                                  'https://vandal.elespanol.com/noticia/1350762654/un-mundo-fragmentado-define-la-jugabilidad-del-shooter-end-of-life/',
-                                );
-                                if (await canLaunchUrl(url)) {
-                                  await launchUrl(url);
-                                }
-                              },
-                              child: Text(
-                                'https://vandal.elespanol.com/noticia/1350762654/un-mundo-fragmentado-define-la-jugabilidad-del-shooter-end-of-life/',
-                                style: TextStyle(
-                                  color: Colors.blue,
-                                  fontSize: 20.0,
-                                  decoration: TextDecoration.underline,
-                                ),
+                            child: Link(
+                              uri: Uri.parse(
+                                'https://vandal.elespanol.com/noticia/1350762654/un-mundo-fragmentado-define-la-jugabilidad-del-shooter-end-of-life/'
                               ),
+                              target: LinkTarget.blank,
+                              builder: (context, followLink) {
+                                return InkWell(
+                                  onTap: followLink,
+                                  child: Text(
+                                    'https://vandal.elespanol.com/noticia/1350762654/un-mundo-fragmentado-define-la-jugabilidad-del-shooter-end-of-life/',
+                                    style: TextStyle(
+                                      color: Colors.blue,
+                                      fontSize: 20.0,
+                                      decoration: TextDecoration.underline,
+                                    ),
+                                  ),
+                                );
+                              },
                             ),
                           ),
                           kBlankSeparatorBig,
@@ -235,7 +244,7 @@ class _EndOfLifeState extends State<EndOfLife> {
                                   child: ImageLegend(
                                     path: 'assets/images/eolEditor.png',
                                     legend:
-                                        "Screenshot from the Editor showing multi-gravity world and Navmesh",
+                                        "Screenshot from the Editor showing multi-gravity world and custom Navmesh",
                                   ),
                                 ),
                               ),

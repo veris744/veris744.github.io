@@ -13,14 +13,16 @@ class ProjectsSectionAc extends StatelessWidget {
       constraints: BoxConstraints(
         minWidth: double.infinity,
         maxWidth: double.infinity,
-        minHeight: 0, 
+        minHeight: 0,
       ),
       child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Header(text: "Academic Projects"),
-            kBlankSeparatorBig,
-            Wrap(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Header(text: "Academic Projects"),
+          kBlankSeparatorBig,
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            child: Wrap(
               spacing: 20,
               runSpacing: 10,
               alignment: WrapAlignment.center,
@@ -58,16 +60,16 @@ class ProjectsSectionAc extends StatelessWidget {
                   description: kSMUShortDesc,
                   bulletPoints: kBPSMU,
                   pageName: "SocialMatchUp",
-                  platforms: [Platforms.vr, Platforms.oculus, Platforms.itch],
+                  platforms: [Platforms.vr, Platforms.oculus],
                   links: ['https://github.com/veris744/Social-Matchup'],
                 ),
               ],
             ),
-
-            kBlankSeparatorBig,
-            kBlankSeparatorBig,
-          ],
-        ),
+          ),
+          kBlankSeparatorBig,
+          kBlankSeparatorBig,
+        ],
+      ),
     );
   }
 }

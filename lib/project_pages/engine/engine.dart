@@ -2,18 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:footer/footer.dart';
 import 'package:footer/footer_view.dart';
 import 'package:veris744/constants.dart';
-import 'package:veris744/project_pages/eol/youtube_video_eol.dart';
 import 'package:veris744/project_pages/image_legend.dart';
 import 'package:veris744/project_pages/status.dart';
 import 'package:veris744/projects/link_button.dart';
 import 'package:veris744/sections/copyright.dart';
 import 'package:veris744/sections/video.dart';
 import 'package:veris744/texts.dart';
-import 'package:veris744/widgets/bold_bulletpoint.dart';
 import 'package:veris744/widgets/bulletpoint.dart';
 import 'package:veris744/widgets/columns_layout.dart';
 import 'package:veris744/widgets/header.dart';
-import 'package:veris744/widgets/top_bar.dart';
 import 'package:veris744/widgets/top_bar_project.dart';
 import 'package:veris744/widgets/up_button.dart';
 

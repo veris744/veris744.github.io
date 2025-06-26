@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:veris744/constants.dart';
 
 class ColumnsLayout extends StatelessWidget {
-  ColumnsLayout({super.key, required this.text, required this.imageWidget});
+  const ColumnsLayout({super.key, required this.text, required this.imageWidget});
 
-  Widget text;
-  Widget imageWidget;
+  final Widget text;
+  final Widget imageWidget;
 
   @override
   Widget build(BuildContext context) {
