@@ -26,6 +26,7 @@ const Color kTextSecond = Color.fromARGB(255, 19, 20, 39);
 const Color kAccentColor = Color.fromARGB(255, 131, 135, 195); 
 const Color kTitleColor = Color.fromARGB(255, 58, 62, 108); 
 const Color kGreyColor = Color.fromARGB(255, 138, 140, 172); 
+const Color kTickColor = Color.fromARGB(255, 9, 102, 14);
 
 Map<String, Color> tags = {
   "Unity": Color.fromARGB(199, 109, 0, 109),
@@ -103,7 +104,12 @@ TextStyle kBodyBoldTextStyle = TextStyle(
   height: 1.5,
   color: kTextColor,
   fontWeight: FontWeight.bold,
-  
+);
+TextStyle kBodyBoldTextStyleDark = TextStyle(
+  fontSize: 20.0,
+  height: 1.5,
+  color: kBackgroundColor,
+  fontWeight: FontWeight.bold,
 );
 
 // ================ Spacing/Padding ================

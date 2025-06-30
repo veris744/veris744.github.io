@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:veris744/constants.dart';
 import 'package:veris744/skills/languages.dart';
-import 'package:veris744/skills/soft.dart';
 import 'package:veris744/skills/tools.dart';
 
 class SkillsSection extends StatelessWidget {

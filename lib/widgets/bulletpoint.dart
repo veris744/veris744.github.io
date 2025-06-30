@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:veris744/constants.dart';
 
 class Bulletpoint extends StatelessWidget {
   const Bulletpoint({super.key, required this.point, required this.style});
@@ -19,7 +20,7 @@ class Bulletpoint extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Icon(Icons.done, color: const Color.fromARGB(255, 9, 102, 14)),
+            Icon(Icons.done, color: kTickColor),
             SizedBox(width: 5,),
             Flexible(child: Text(point, style: style)),
           ],

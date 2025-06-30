@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:footer/footer.dart';
 import 'package:footer/footer_view.dart';
 import 'package:url_launcher/link.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:veris744/constants.dart';
 import 'package:veris744/project_pages/image_legend.dart';
 import 'package:veris744/project_pages/status.dart';
@@ -10,6 +9,7 @@ import 'package:veris744/projects/link_button.dart';
 import 'package:veris744/project_pages/eol/youtube_video_eol.dart';
 import 'package:veris744/sections/copyright.dart';
 import 'package:veris744/texts.dart';
+import 'package:veris744/widgets/bold_bulletpoint.dart';
 import 'package:veris744/widgets/columns_layout.dart';
 import 'package:veris744/widgets/header.dart';
 import 'package:veris744/widgets/top_bar_project.dart';
@@ -84,8 +84,9 @@ class _EndOfLifeState extends State<EndOfLife> {
                           ),
                           kBlankSeparator,
                           kBlankSeparator,
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
+                          Wrap(
+                            alignment: WrapAlignment.center,
+                            crossAxisAlignment: WrapCrossAlignment.center,
                             children: [
                               Icon(
                                 Icons.workspace_premium_outlined,
@@ -176,7 +177,7 @@ class _EndOfLifeState extends State<EndOfLife> {
                             alignment: Alignment.centerLeft,
                             child: Link(
                               uri: Uri.parse(
-                                'https://vandal.elespanol.com/noticia/1350762654/un-mundo-fragmentado-define-la-jugabilidad-del-shooter-end-of-life/'
+                                'https://vandal.elespanol.com/noticia/1350762654/un-mundo-fragmentado-define-la-jugabilidad-del-shooter-end-of-life/',
                               ),
                               target: LinkTarget.blank,
                               builder: (context, followLink) {
@@ -228,24 +229,31 @@ class _EndOfLifeState extends State<EndOfLife> {
                             children: [
                               Padding(
                                 padding: const EdgeInsets.all(16.0),
-                                child: Text(
-                                  kDesc2EOL,
-                                  style: kBodyTextStyleDark,
-                                  textAlign: TextAlign.justify,
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.symmetric(
-                                  vertical: 16.0,
-                                  horizontal: 32,
-                                ),
-                                child: SizedBox(
-                                  width: 800,
-                                  child: ImageLegend(
-                                    path: 'assets/images/eolEditor.png',
-                                    legend:
-                                        "Screenshot from the Editor showing multi-gravity world and custom Navmesh",
-                                  ),
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      kDesc2EOL,
+                                      style: kBodyTextStyleDark,
+                                      textAlign: TextAlign.justify,
+                                    ),
+                                    ...kAIEOL.map(
+                                      (point) => BoldBulletpoint(
+                                        point: point[1],
+                                        title: point[0],
+                                        style: kBodyTextStyleDark,
+                                        styleBold: kBodyBoldTextStyleDark, 
+                                      ),
+                                    ),
+                                    kBlankSeparator,
+                                    SizedBox(
+                                      width: 800,
+                                      child: ImageLegend(
+                                        path: 'assets/images/eolEditor.png',
+                                        legend:
+                                            "Screenshot from the Editor showing multi-gravity world and custom Navmesh",
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ],

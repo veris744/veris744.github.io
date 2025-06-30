@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:veris744/constants.dart';
 
 class ColumnsLayout extends StatelessWidget {
   const ColumnsLayout({super.key, required this.text, required this.imageWidget});

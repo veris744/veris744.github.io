@@ -105,6 +105,8 @@ class _CofradeState extends State<Cofrade> {
                               (point) => BoldBulletpoint(
                                 point: point[1],
                                 title: point[0],
+                                style: kBodyTextStyle,
+                                styleBold: kBodyBoldTextStyle,
                               ),
                             ),
                           ],

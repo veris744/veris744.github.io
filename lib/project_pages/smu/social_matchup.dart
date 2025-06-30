@@ -10,7 +10,6 @@ import 'package:veris744/texts.dart';
 import 'package:veris744/widgets/bold_bulletpoint.dart';
 import 'package:veris744/widgets/columns_layout.dart';
 import 'package:veris744/widgets/header.dart';
-import 'package:veris744/widgets/top_bar.dart';
 import 'package:veris744/widgets/top_bar_project.dart';
 import 'package:veris744/widgets/up_button.dart';
 
@@ -107,6 +106,8 @@ class _SocialMatchUpState extends State<SocialMatchUp> {
                             (point) => BoldBulletpoint(
                               point: point[1],
                               title: point[0],
+                              style: kBodyTextStyle,
+                              styleBold: kBodyBoldTextStyle,
                             ),
                           ),
                         ],

@@ -50,8 +50,8 @@ class _EngineState extends State<Engine> {
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-    double widgetWidth = screenWidth < 600 ? (screenWidth - 10) : 600;
+    // double screenWidth = MediaQuery.of(context).size.width;
+    // double widgetWidth = screenWidth < 600 ? (screenWidth - 10) : 600;
 
     return Scaffold(
       backgroundColor: kBackgroundColor,
