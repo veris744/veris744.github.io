@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:veris744/constants.dart';
 import 'package:video_player/video_player.dart';
 
 class Video extends StatefulWidget {
@@ -69,7 +70,7 @@ class _VideoState extends State<Video> {
               fit: BoxFit.cover,
             ),
           ),
-          const Center(child: CircularProgressIndicator()),
+          const Center(child: CircularProgressIndicator(color: kPrimaryColor,)),
         ],
       );
     }
@@ -120,9 +121,9 @@ class _VideoState extends State<Video> {
                             allowScrubbing: true,
                             padding: EdgeInsets.zero,
                             colors: VideoProgressColors(
-                              playedColor: Colors.red,
-                              bufferedColor: Colors.grey,
-                              backgroundColor: Colors.black54,
+                              playedColor: kTitleColor,
+                              bufferedColor: kPrimaryColor,
+                              backgroundColor: kPrimaryColor,
                             ),
                           ),
                         ),

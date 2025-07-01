@@ -6,6 +6,7 @@ import 'package:veris744/project_pages/eol/youtube_video_eol.dart';
 import 'package:veris744/project_pages/status.dart';
 import 'package:veris744/projects/link_button.dart';
 import 'package:veris744/sections/copyright.dart';
+import 'package:veris744/sections/video.dart';
 import 'package:veris744/texts.dart';
 import 'package:veris744/widgets/bold_bulletpoint.dart';
 import 'package:veris744/widgets/columns_layout.dart';
@@ -74,7 +75,7 @@ class _SocialMatchUpState extends State<SocialMatchUp> {
                         children: [
                           Status(
                             isDone: true,
-                            duration: "3 months",
+                            duration: "1 month",
                             language: "C#",
                             software: "Unity, Oculus VR",
                             role: "Programmer",
@@ -98,7 +99,10 @@ class _SocialMatchUpState extends State<SocialMatchUp> {
 
                             imageWidget: SizedBox(
                               width: 600,
-                              child: YoutubeVideoEol(),
+                              height: 350,
+                              child: Video(
+                                videoAssetPath: 'assets/videos/social.mp4',
+                                imagePath: 'assets/images/social.png',),
                             ),
                           ),
                           kBlankSeparatorBig,

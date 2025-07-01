@@ -55,7 +55,7 @@ class ProjectsSectionAc extends StatelessWidget {
                 ),
                 Project(
                   name: "Social MatchUp",
-                  imagePath: "assets/images/test.png",
+                  imagePath: "assets/images/social.png",
                   tags: ["C#", "Unity", "Oculus", "VR", "Multiplayer"],
                   description: kSMUShortDesc,
                   bulletPoints: kBPSMU,

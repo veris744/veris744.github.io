@@ -231,17 +231,21 @@ class _EndOfLifeState extends State<EndOfLife> {
                                 padding: const EdgeInsets.all(16.0),
                                 child: Column(
                                   children: [
-                                    Text(
-                                      kDesc2EOL,
-                                      style: kBodyTextStyleDark,
-                                      textAlign: TextAlign.justify,
+                                    SizedBox(
+                                      width: double.infinity,
+                                      child: Text(
+                                        kDesc2EOL,
+                                        style: kBodyTextStyleDark,
+                                        textAlign: TextAlign.justify,
+                                      ),
                                     ),
+                                    kBlankSeparator,
                                     ...kAIEOL.map(
                                       (point) => BoldBulletpoint(
                                         point: point[1],
                                         title: point[0],
                                         style: kBodyTextStyleDark,
-                                        styleBold: kBodyBoldTextStyleDark, 
+                                        styleBold: kBodyBoldTextStyleDark,
                                       ),
                                     ),
                                     kBlankSeparator,

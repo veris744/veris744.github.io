@@ -68,6 +68,7 @@ class _VideoBackgroundState extends State<VideoBackground> {
         width: double.infinity,
         color: Colors.black,
         child: Stack(
+          alignment: Alignment.center,
           children: [
             SizedBox(
               height: double.infinity,
@@ -76,7 +77,7 @@ class _VideoBackgroundState extends State<VideoBackground> {
                 fit: BoxFit.cover,
               ),
             ),
-            Center(child: CircularProgressIndicator()),
+            CircularProgressIndicator(color: kPrimaryColor),
           ],
         ),
       );

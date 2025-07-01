@@ -69,11 +69,11 @@ class Project extends StatelessWidget {
               ? Container(
                 width: 300,
                 height: 30,
-                padding: EdgeInsets.all(5),
                 decoration: BoxDecoration(
                   color: Colors.amber,
                   borderRadius: BorderRadius.circular(10),
                 ),
+                alignment: Alignment.center,
                 child: Text(
                   award,
                   style: TextStyle(
@@ -101,7 +101,7 @@ class Project extends StatelessWidget {
               children: tags.map((tag) => Tag(name: tag)).toList(),
             ),
           ),
-          kBlankSeparator,
+          SizedBox(height: 2),
           ConstrainedBox(
             constraints: BoxConstraints(
               minWidth: double.infinity, // Full width
@@ -157,14 +157,14 @@ class Project extends StatelessWidget {
               ),
             ],
           ),
-          kBlankSeparator,
+          SizedBox(height: 4),
           Container(
             decoration: BoxDecoration(
               color: kAccentColor,
               borderRadius: BorderRadius.circular(18),
               border: Border.all(color: kTitleColor),
             ),
-            padding: EdgeInsets.symmetric(vertical: 6, horizontal: 12),
+            padding: EdgeInsets.symmetric(vertical: 4, horizontal: 12),
             child: Link(
               uri: Uri.parse('/$pageName'),
               target: LinkTarget.self,
@@ -183,7 +183,7 @@ class Project extends StatelessWidget {
               },
             ),
           ),
-          SizedBox(height: 4),
+          SizedBox(height: 2),
           Padding(
             padding: EdgeInsets.only(bottom: 10),
             child: ConstrainedBox(

@@ -80,7 +80,7 @@ class HighlightedSection extends StatelessWidget {
                     borderRadius: BorderRadius.circular(18),
                     border: Border.all(color: kTitleColor, width: 1.5)
                   ),
-                  padding: EdgeInsets.symmetric(vertical: 6, horizontal: 12),
+                  padding: EdgeInsets.symmetric(vertical: 4, horizontal: 12),
                   child: Link(
                     uri: Uri.parse('/Engine'),
                     target: LinkTarget.self,
