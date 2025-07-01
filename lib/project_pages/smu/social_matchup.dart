@@ -95,7 +95,7 @@ class _SocialMatchUpState extends State<SocialMatchUp> {
                           ),
                           kBlankSeparator,
                           ColumnsLayout(
-                            text: Text(kDescSMU1, style: kBodyTextStyle),
+                            text: Text(kDescSMU1, style: kBodyTextStyle, textAlign: TextAlign.justify,),
 
                             imageWidget: SizedBox(
                               width: 600,

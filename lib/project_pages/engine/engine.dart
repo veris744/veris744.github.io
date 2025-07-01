@@ -95,7 +95,7 @@ class _EngineState extends State<Engine> {
                             ],
                           ),
                           ColumnsLayout(
-                            text: Text(kDescEng1, style: kBodyTextStyle),
+                            text: Text(kDescEng1, style: kBodyTextStyle, textAlign: TextAlign.justify),
                             imageWidget: SizedBox(
                               width: 600,
                               height: 350,

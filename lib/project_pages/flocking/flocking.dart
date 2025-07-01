@@ -102,9 +102,9 @@ class _FlockingState extends State<Flocking> {
                           ColumnsLayout(
                             text: Column(
                               children: [
-                                Text(kDescFlock1, style: kBodyTextStyle),
+                                Text(kDescFlock1, style: kBodyTextStyle, textAlign: TextAlign.justify),
                                 kBlankSeparatorBig,
-                                Text(kDescFlock2, style: kBodyTextStyle),
+                                Text(kDescFlock2, style: kBodyTextStyle, textAlign: TextAlign.justify),
                               ],
                             ),
                             imageWidget: SizedBox(
@@ -117,7 +117,7 @@ class _FlockingState extends State<Flocking> {
                             ),
                           ),
                           kBlankSeparatorBig,
-                          Text(kDescFlock3, style: kBodyTextStyle),
+                          Text(kDescFlock3, style: kBodyTextStyle, textAlign: TextAlign.justify),
                         ],
                       ),
                     ),

@@ -103,7 +103,7 @@ class _NowhereToRunState extends State<NowhereToRun> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               spacing: 5,
                               children: [
-                                Text(kDescNTR1, style: kBodyTextStyle),
+                                Text(kDescNTR1, style: kBodyTextStyle, textAlign: TextAlign.justify),
                                 SizedBox(height: 8),
                                 ...kDescNTR2.map(
                                   (point) => BoldBulletpoint(
