@@ -151,6 +151,7 @@ class Project extends StatelessWidget {
                     child: SvgPicture.network(
                       platformsIcons[platform]!,
                       fit: BoxFit.contain,
+                      color: kBackgroundColor,
                     ),
                   ),
                 ),

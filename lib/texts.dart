@@ -144,11 +144,9 @@ const List<List<String>> kDescNTR2 = [
 const String kDescSMU1 = "Developed as part of a User Experience (UX) course at Politecnico di Milano, this VR game was created for Oculus headsets using Unity and Photon for online multiplayer functionality.\n\nIt was a collaborative project developed in partnership with a designer, who was responsible for the game's visual design and artistic direction, while I focused on the technical implementation.\nThe game is intended for neurodivergent children and their parents, teachers, or therapists, offering a cooperative minigame where two children communicate to describe and match emojis representing emotions. An optional adult participant can join as a passive observer and offer guidance via voice chat.";
 
 const List<List<String>> kDescSMU2 = [
-  ["VR Implementation: ","Full Oculus VR integration including hand/controller input and headset tracking"],
-  ["Multiplayer Networking: ","Full Oculus VR integration including hand/controller input and headset tracking."],
-  ["UI & Feedback Systems: ","Created intuitive, VR-optimized UI and feedback for emoji selection, voice activity, and session state"],
-  ["Session Management: ","Created intuitive, VR-optimized UI and feedback for emoji selection, voice activity, and session state"],
-  ["Prototyping & Iteration: ","Developed and tested gameplay through multiple UX-centered iterations to ensure clarity and comfort in VR"],
+  ["VR Implementation: ", "Fully integrated Oculus VR support, including headset tracking and hand/controller input."],
+  ["Multiplayer Networking: ", "Implemented online multiplayer using Photon, with real-time interaction, session management, and player role handling."],
+  ["UI & Feedback Systems: ", "Designed intuitive, VR-optimized UI for emoji selection, voice activity indicators, and session feedback."]
 ];
 
 
