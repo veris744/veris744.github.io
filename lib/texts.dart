@@ -25,11 +25,10 @@ const String kHighlighted1 = "I’m currently developing my own game engine with
 
 const List<String> kBPAccomplished = [
   "Entities & Components System",
-  "3D Graphics with OpenGL"
+  "2D and 3D Graphics with OpenGL",
   "Reflection System",
   "Simple Physics",
   "Player Controller",
-  "2D Graphics with OpenGL",
   "Debugging Tools",
   "Built with CMake",
   "Mini-Game",
@@ -180,7 +179,7 @@ const List<List<String>> kDescCofr2 = [
 
 const String kDescEng1 = "This is a solo game engine project developed in C++ using CMake, with the long-term goal of building a complete game entirely on top of this custom engine. The engine is designed to support both 2D and 3D games, and aims to balance performance, modularity, and usability — with editor tools and data-driven workflows to make development smoother.\n\nIt is a work in progress and continues to grow as features are added.";
 
-const String kEngGraphics = "Built with OpenGL, the engine supports both 2D and 3D rendering, with entity transformations that handle both world and relative positioning. Models and their textures are loaded via Assimp. The engine includes lighting shaders based on the Phong model, as well as 2D shaders and texture rendering with support for repeat or scaled patterns. It also features custom shaders, such as a neon-glow effect. The shader library is designed to expand and improve over time.";
+const String kEngGraphics = "Built with OpenGL, the engine supports both 2D and 3D rendering, with entity transformations that handle both world and relative positioning. Models and their textures are loaded via Assimp. The engine includes lighting shaders based on the Phong model, as well as 2D shaders and texture rendering with support for repeat or scaled patterns. It also supports transparency, culling, and layering in 2D rendering for better visual control and performance. Additionally, it features custom shaders, such as a neon-glow effect, and the shader library is designed to expand and improve over time.";
 
 const String kEngECS = "A flexible Entity-Component-System (ECS) framework enables game logic to be defined through modular components attached to entities. Entities are centrally managed and can be dynamically created or modified at runtime or during scene loading. The entity manager maintains references to all created entities and handles their lifecycle, including destruction through a deferred system: entities are first disabled and then removed at the end of the frame loop to optimize performance. Memory cleanup is handled automatically via smart pointers in C++, ensuring safe and efficient resource management. A factory-based architecture supports instantiation of entities and components from YAML-defined scenes. Components can be added or removed at runtime, enabling dynamic behavior changes. The system is designed with extensibility in mind, allowing easy integration of custom components and systems.";
 
