@@ -31121,7 +31121,7 @@ if(r.f!==B.lT){r.f=B.lT
 r.KU()}}return r.d.a.Uo(a)},
 KU(){var s,r
 for(s=this.w,r=0;r<s.length;++r)s[r].$1(this.f)},
-Un(a){if(B.b.q(B.II,a))return this.f===B.eZ
+Un(a){if(B.b.q(B.IH,a))return this.f===B.eZ
 return!1}}
 A.ZU.prototype={
 $0(){return new A.fQ(Date.now(),0,!1)},
@@ -58904,7 +58904,7 @@ A.kD.prototype={}
 A.Ko.prototype={
 k0(a,b){var s,r,q,p,o,n=$.al.az$.d.c
 if(n==null||n.e==null)return!1
-for(s=t.W,r=0;r<2;++r){q=B.IJ[r]
+for(s=t.W,r=0;r<2;++r){q=B.II[r]
 p=n.e
 p.toString
 o=A.anM(p,q,s)
@@ -70727,7 +70727,7 @@ s=3
 return A.J(new A.qu(new A.ec(a,b.h("ec<1>"))).S8(),$async$f2)
 case 3:m=b0
 p=5
-b=self
+b=self.window
 a=a8.b
 a0=a.j(0)
 a1=!J.qi(m)?m:null
@@ -75885,7 +75885,7 @@ this.d.V(new A.agc(this))},
 l(){this.d.l()
 this.aD()},
 I(b0){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a=null,a0="https://github.com/veris744/WHYNOT",a1="assets/images/editorMenu.png",a2=A.xf(B.ao,new A.iS(a),new A.ao(0,0,0,0)),a3=t.p,a4=A.f0(A.a([new A.eW(a0,A.pB(a0),a)],a3),B.r,B.b4,B.v,0),a5=A.aI("This is a solo game engine project developed in C++ using CMake, with the long-term goal of building a complete game entirely on top of this custom engine. The engine is designed to support both 2D and 3D games, and aims to balance performance, modularity, and usability \u2014 with editor tools and data-driven workflows to make development smoother.\n\nIt is a work in progress and continues to grow as features are added.",a,a,a,$.hc(),B.P,a),a6=A.b9(A.Bq(a1,"assets/videos/enginegame.mp4"),350,600),a7=$.cU(),a8=A.aI("Graphics",a,a,a,$.eS(),B.ae,a),a9=A.df(B.aE,a,a,a)
-a9=A.hl(B.B,A.a([new A.bp(B.aM,A.aI("Built with OpenGL, the engine supports both 2D and 3D rendering, with entity transformations that handle both world and relative positioning. Models and their textures are loaded via Assimp. The engine includes lighting shaders based on the Phong model, as well as 2D shaders and texture rendering with support for repeat or scaled patterns. It also features custom shaders, such as a neon-glow effect. The shader library is designed to expand and improve over time.",a,a,a,$.fK(),B.P,a),a)],a3),B.B,a,a8,a9)
+a9=A.hl(B.B,A.a([new A.bp(B.aM,A.aI("Built with OpenGL, the engine supports both 2D and 3D rendering, with entity transformations that handle both world and relative positioning. Models and their textures are loaded via Assimp. The engine includes lighting shaders based on the Phong model, as well as 2D shaders and texture rendering with support for repeat or scaled patterns. It also supports transparency, culling, and layering in 2D rendering for better visual control and performance. Additionally, it features custom shaders, such as a neon-glow effect, and the shader library is designed to expand and improve over time.",a,a,a,$.fK(),B.P,a),a)],a3),B.B,a,a8,a9)
 a8=$.cU()
 s=A.aI("Entities and Components System",a,a,a,$.eS(),B.ae,a)
 r=A.df(B.aE,a,a,a)
@@ -76270,7 +76270,7 @@ A.Iu.prototype={
 I(a){var s,r,q,p,o,n=null,m=A.ct(a,n,t.w).w,l=t.p,k=A.c1(n,A.bM(A.a([A.aI("Current Project",n,n,n,$.FL(),B.as,n),A.aI("C++ Game Engine",n,n,n,$.anA(),B.as,n)],l),B.r,B.u,B.v,0),n,new A.cb(B.be,n,n,n,n,n,B.a0),n,n,new A.ao(0,15,0,15),1/0),j=$.fJ()
 m=m.a.a>1000?280:10
 s=A.a([A.aI("I\u2019m currently developing my own game engine with the goal of creating a complete game that incorporates core features common to most games. Here's a brief overview of what\u2019s been accomplished so far:\n\nCompleted Features:",n,n,n,$.hc(),B.P,n)],l)
-B.b.D(s,new A.a3(B.IH,new A.a0w(),t.vr))
+B.b.D(s,new A.a3(B.IM,new A.a0w(),t.vr))
 s=A.bM(s,B.aU,B.u,B.v,5)
 r=A.b9(A.Bq("assets/images/editorMenu.png","assets/videos/enginegame.mp4"),350,600)
 q=$.cU()
@@ -81243,12 +81243,12 @@ B.VH=new A.l2(B.xX,B.xW)
 B.IC=A.a(s([B.VF,B.VI,B.VG,B.VH]),A.a_("u<l2>"))
 B.ID=A.a(s(["UI Programming","Gameplay programming"]),t.s)
 B.IE=A.a(s(["Game Mechanics and Design","Gameplay Programming, AI, UI","Android VR development"]),t.s)
-B.IH=A.a(s(["Entities & Components System","3D Graphics with OpenGLReflection System","Simple Physics","Player Controller","2D Graphics with OpenGL","Debugging Tools","Built with CMake","Mini-Game"]),t.s)
-B.II=A.a(s(["click","scroll"]),t.s)
+B.IH=A.a(s(["click","scroll"]),t.s)
 B.zX=new A.lp()
 B.iW=new A.LQ(1,"page")
 B.iX=new A.f1(B.K,B.iW)
-B.IJ=A.a(s([B.zX,B.iX]),A.a_("u<aN>"))
+B.II=A.a(s([B.zX,B.iX]),A.a_("u<aN>"))
+B.IM=A.a(s(["Entities & Components System","2D and 3D Graphics with OpenGL","Reflection System","Simple Physics","Player Controller","Debugging Tools","Built with CMake","Mini-Game"]),t.s)
 B.IX=A.a(s([]),t.QP)
 B.mg=A.a(s([]),A.a_("u<aNS>"))
 B.IQ=A.a(s([]),t.E)
@@ -81282,8 +81282,8 @@ B.ih=A.a(s([B.FJ,B.FL,B.FN,B.J,B.ah,B.dx,B.bt,B.FR,B.lR]),A.a_("u<hm>"))
 B.Jc=A.a(s(["Environment Query System (EQS): ","Developed a system to dynamically evaluate the environment and inform NPC tactical decisions. The algorithm scanned points across a grid and scored them based on several contextual factors \u2014 including the player\u2019s position, the NPC\u2019s current location, and the positions of other nearby enemies. These evaluations were used to classify potential destinations and determine optimal positioning for flanking or regrouping behavior."]),t.s)
 B.I4=A.a(s(["Movement and Path Following: ","I developed the NPC movement and path-following logic for our team\u2019s custom navmesh system, enabling characters to navigate a world with rotating geometry and variable gravity directions. Enemies could also dynamically use a hook mechanic, similar to the player\u2019s, to jump between platforms and traverse vertical spaces, allowing for fast repositioning and more dynamic encounters."]),t.s)
 B.Js=A.a(s(["Behavior Trees & State Machines: ","Used Unreal Engine\u2019s built-in AI tools to design and implement flexible Behavior Trees, combining high-level strategies with reactive, moment-to-moment decision-making. I integrated our custom systems \u2014 including the navmesh, path-following, and Environment Query System (EQS) \u2014 into Unreal\u2019s AI framework. Core strategy values such as proximity thresholds, separation distances, and reach radii were exposed to the editor, giving designers direct control over AI behavior tuning."]),t.s)
-B.IL=A.a(s(["Optimization & Profiling: ","Analyzed performance bottlenecks related to AI perception and navigation, implementing profiling tools and improving CPU usage under load."]),t.s)
-B.J6=A.a(s([B.Jc,B.I4,B.Js,B.IL]),t.rj)
+B.IK=A.a(s(["Optimization & Profiling: ","Analyzed performance bottlenecks related to AI perception and navigation, implementing profiling tools and improving CPU usage under load."]),t.s)
+B.J6=A.a(s([B.Jc,B.I4,B.Js,B.IK]),t.rj)
 B.dF=A.a(s([B.c_,B.bq,B.em,B.en,B.eo]),t.QP)
 B.Je=A.a(s(["Improved illumination and shadows","AI features using Behavior Trees","Memory Management and Partitioning","A full playable game showcasing all systems"]),t.s)
 B.jk=new A.tF(0,"butt")
@@ -81309,12 +81309,12 @@ B.mi=A.a(s([1,2,4,8,16,32,64,128,256,512,1024,2048,4096,8192,16384,32768,65536,1
 B.Jq=A.a(s(["AI, including custom movement, BTs and a EQS","UI Programming","Team Management of a 18 people team, including artists, designers and programmers"]),t.s)
 B.Jj=A.a(s(["VR Implementation: ","Android VR integration with controller input and head tracking"]),t.s)
 B.Jw=A.a(s(["Game Design: ","Level layout, objective structure, pacing, and horror atmosphere"]),t.s)
-B.IM=A.a(s(["AI Programming: ","Simple enemy AI for zombie detection, chasing, spawning and attacking"]),t.s)
-B.IK=A.a(s(["Gameplay Programming: ","Player movement, item collection, world interaction and animations programming"]),t.s)
+B.IL=A.a(s(["AI Programming: ","Simple enemy AI for zombie detection, chasing, spawning and attacking"]),t.s)
+B.IJ=A.a(s(["Gameplay Programming: ","Player movement, item collection, world interaction and animations programming"]),t.s)
 B.Jv=A.a(s(["UI Design & Programming: ","Menus and In-world and overlay UI for objectives and player feedback"]),t.s)
 B.I_=A.a(s(["Audio: ","Ambient sound, music cues, and SFX for horror immersion"]),t.s)
 B.Ik=A.a(s(["Performance Optimization: ","Ensured stable performance on mobile VR hardware"]),t.s)
-B.Jr=A.a(s([B.Jj,B.Jw,B.IM,B.IK,B.Jv,B.I_,B.Ik]),t.rj)
+B.Jr=A.a(s([B.Jj,B.Jw,B.IL,B.IJ,B.Jv,B.I_,B.Ik]),t.rj)
 B.xj=new A.tG(0,"miter")
 B.PX=new A.tG(1,"round")
 B.PZ=new A.tG(2,"bevel")
